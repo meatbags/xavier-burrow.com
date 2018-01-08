@@ -16,7 +16,6 @@ add_action('admin_menu', 'remove_admin_post_types');
 */
 
 function add_admin_post_types() {
-  //remove_post_type_support('page', 'editor');
 	register_post_type('Projects', array(
 		'label' => 'Projects',
 		'public' => true,
@@ -28,7 +27,7 @@ function add_admin_post_types() {
 		'taxonomies' => array('category', 'post_tag'),
 		'supports' => array('title', 'editor', 'revisions', 'thumbnail')
 	));
-  remove_post_type_support('lineup', 'editor');
+	remove_post_type_support('projects', 'editor');
 }
 add_action('init', 'add_admin_post_types');
 
