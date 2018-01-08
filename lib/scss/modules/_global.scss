@@ -4,9 +4,10 @@ div, * {
 }
 
 canvas {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
+  z-index: $indexCanvas;
 }
 
 body, html {
@@ -15,4 +16,14 @@ body, html {
   font-family: $fontStack;
   font-size: $fontSize;
   //font-feature-settings: 'swsh';
+}
+
+.content {
+  z-index: $indexContent;
+  width: 100%;
+
+  .wrapper {
+    position: relative;
+    width: 100%;
+  }
 }
