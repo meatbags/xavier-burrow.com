@@ -1,9 +1,11 @@
 
 .box {
   position: fixed;
-  left: 30vw;
-  top: 40vh;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
   padding: $space * 8;
   border: 1px solid black;
   display: inline-block;
+  cursor: pointer;
 }

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class='box'>
-  HELLO WORLD!
+  xavier burrow
 </div>
 
 <?php get_footer(); ?>
