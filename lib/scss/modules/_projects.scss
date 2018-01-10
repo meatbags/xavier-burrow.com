@@ -1,0 +1,33 @@
+.projects {
+  width: 800px;
+  height: 120vh;
+  padding-top: $space * 4;
+
+  .item {
+    width: 100%;
+    padding: $space * 2;
+    margin-bottom: $space * 2;
+
+    .item__title {
+
+    }
+
+    .item__body {
+      display: none;
+    }
+
+    &.active {
+      .item__body {
+        display: block;
+      }
+    }
+  }
+
+  .row {
+    margin-bottom: $space * 2;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
+}

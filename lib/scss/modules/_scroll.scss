@@ -1,0 +1,17 @@
+::-webkit-scrollbar {
+  width: $space;
+  height: $space;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $colourPrimary;
+}
+
+::-webkit-scrollbar-track {
+   background: rgba(0,0,0,0);
+   border: $colourPrimary;
+}
+
+::-webkit-scrollbar-corner {
+   opacity: 0;
+}
