@@ -27,3 +27,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.font-large {
+  font-size: $fontSizeLarge;
+}
+
+.noselect {
+  user-select: none;
+}

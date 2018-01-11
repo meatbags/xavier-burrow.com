@@ -23,8 +23,29 @@
   }
 }
 
+.desc {
+
+  .desc__p {
+    @media screen and (max-width: 760px) {
+      padding: $space * 4;
+      margin-left: $space * 2;
+      margin-right: $space * 2;
+    }
+  }
+
+  .desc__link {
+    padding: $space * 2;
+    margin-right: $space * 2;
+    margin-top: 0;
+  }
+}
+
 .box {
   border: $border;
+
+  &.no-border {
+    border: none;
+  }
 
   &:hover {
     //border: 1px solid white;

@@ -1,0 +1,80 @@
+$speed: 0.25s;
+$blue: #44f;
+
+.gradient-selected {
+	background: none;
+	background: -webkit-linear-gradient(0deg, rgba(255,255,255,0), $blue);
+	background: -o-linear-gradient(0deg, rgba(255,255,255,0), $blue);
+	background: -moz-linear-gradient(0deg, rgba(255,255,255,0), $blue);
+	background: linear-gradient(0deg, rgba(255,255,255,0), $blue);
+}
+
+.piano {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-top: $space / 2;
+  margin-bottom: $space * 4;
+  cursor: pointer;
+
+  .keys-white {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    li {
+      flex-grow: 1;
+      border: 1px solid black;
+      border-top: none;
+      border-right: none;
+      //transition: background $speed;
+
+      &:hover {
+        @extend .gradient-selected;
+      }
+
+      &:last-child {
+        border-right: $border;
+      }
+    }
+  }
+
+  .keys-black {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    pointer-events: none;
+    transform: translateX(2.08%);
+
+    li {
+      pointer-events: all;
+      height: 70%;
+      margin-top: 0;
+      margin-left: $space / 1.8;
+      margin-right: $space / 1.8;
+      flex-grow: 1;
+      border: 1px solid black;
+      border-top: none;
+      background: black;
+      transition: background-color $speed;
+
+      &:nth-child(7n), &:nth-child(7n-4), &:nth-last-child(1) {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &:hover {
+        background: $blue;
+      }
+    }
+  }
+}
