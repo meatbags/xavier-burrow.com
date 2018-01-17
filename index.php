@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id='section-title' class='section active'>
+<div id='section-title' class='section'>
   <div class='box active clickable padding-8' id='to-menu'>
     xavier burrow
   </div>
@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<div id='section-projects' class='section'>
+<div id='section-projects' class='section active'>
   <div class='section__inner projects'>
     <div class='row margin-top grid'>
       <div class='to-back grid__half box clickable padding-2 flex-centre'>&larr; back</div>
@@ -35,6 +35,8 @@
         'posts_per_page' => -1
       ));
       $i = 1;
+      $end = $query->post_count;
+
       if ($query->have_posts()):
         while ($query->have_posts()):
             $query->the_post();
@@ -42,18 +44,27 @@
             $desc = get_field('description');
             $gallery = get_field('gallery');
             $links = get_field('links');
+            $classes = '';
+
+            if ($i == 1 || $i == 4 || $i == 7) {
+              $classes = 'open';
+            } else if ($i == 3 || $i == 6 || $i == $end) {
+              $classes = 'close margin-bottom';
+            }
           ?>
-          <div class='item box'>
-            <div class='item__title'>
-              <?php echo $title; ?>
-            </div>
-            <div class='item__body'>
-              <?php echo $desc; ?>
-            </div>
-            <div class='item__links'>
-              <?php foreach($links as $link): ?>
-                <a class='link' href='<?php echo $link['url']; ?>' target='_blank'><?php echo $link['label']; ?></a>
-              <?php endforeach; ?>
+          <div class='item box active <?php echo $classes; ?>'>
+            <div class='item__inner'>
+              <div class='item__title'>
+                <?php echo $title; ?>
+              </div>
+              <div class='item__body'>
+                <?php echo $desc; ?>
+              </div>
+              <div class='item__links'>
+                <?php foreach($links as $link): ?>
+                  <a class='link' href='<?php echo $link['url']; ?>' target='_blank'><?php echo $link['label']; ?></a>
+                <?php endforeach; ?>
+              </div>
             </div>
           </div>
         <?php

@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 	<title><?php bloginfo('name'); ?></title>
-	<meta name="description" content="<?php bloginfo(); ?>">
 	<meta charset="utf-8" />
+	<meta name="description" content="">
+  <meta name="keywords" content="Xavier Burrow">
+  <meta name="author" content="Xavier Burrow">
 	<meta property="og:url" content="" />
 	<meta property="og:title" content="Xavier Burrow"/>
 	<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/screenshot.jpg"/>
