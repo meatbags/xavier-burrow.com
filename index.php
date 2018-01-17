@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id='section-title' class='section'>
+<div id='section-title' class='section active'>
   <div class='box active clickable padding-8' id='to-menu'>
     xavier burrow
   </div>
@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<div id='section-projects' class='section active'>
+<div id='section-projects' class='section'>
   <div class='section__inner projects'>
     <div class='row margin-top grid'>
       <div class='to-back grid__half box clickable padding-2 flex-centre'>&larr; back</div>
@@ -52,7 +52,7 @@
               $classes = 'close margin-bottom';
             }
           ?>
-          <div class='item box active <?php echo $classes; ?>'>
+          <div class='item box <?php echo $classes; ?>'>
             <div class='item__inner'>
               <div class='item__title'>
                 <?php echo $title; ?>
