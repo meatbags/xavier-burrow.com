@@ -1,5 +1,3 @@
-# mcncs.io
+# xavierburrow.com
 
-mcncs.io
-
-A festival website built with webgl + glsl.
+my cv site + some interactive curiosities
