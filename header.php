@@ -23,5 +23,3 @@
 	</script>
 </head>
 <body class="<?php echo join(' ', get_body_class(''));?>">
-<div class="content">
-	<div class="wrapper">
