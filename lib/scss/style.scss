@@ -1,19 +1,2 @@
-// lib
-@import 'normalize';
-
-// set up
-@import 'utils/vars';
-@import 'utils/utils';
-
-// style
-@import 'modules/global';
-@import 'modules/grid';
-@import 'modules/section';
-@import 'modules/projects';
-
-// apps
-@import 'modules/piano';
-@import 'modules/chess';
-
-// scroll
-@import 'modules/scroll';
+@import 'utils/index';
+@import 'modules/index';
