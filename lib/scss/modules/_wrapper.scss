@@ -1,4 +1,6 @@
 .wrapper {
+  position: absolute;
+  width: 100%;
   z-index: $indexContent;
   display: flex;
   justify-content: center;

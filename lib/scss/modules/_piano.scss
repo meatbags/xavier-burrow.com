@@ -1,14 +1,6 @@
 $speed: 0.25s;
 $blue: #44f;
 
-.gradient-selected {
-	background: none;
-	background: -webkit-linear-gradient(0deg, rgba(255,255,255,0), $blue);
-	background: -o-linear-gradient(0deg, rgba(255,255,255,0), $blue);
-	background: -moz-linear-gradient(0deg, rgba(255,255,255,0), $blue);
-	background: linear-gradient(0deg, rgba(255,255,255,0), $blue);
-}
-
 .piano {
   position: relative;
   width: 100%;
@@ -32,10 +24,9 @@ $blue: #44f;
       border: 1px solid black;
       border-top: none;
       border-right: none;
-      //transition: background $speed;
 
       &:hover {
-        @extend .gradient-selected;
+        background: linear-gradient(0deg, rgba(255,255,255,0), $blue);
       }
 
       &:last-child {

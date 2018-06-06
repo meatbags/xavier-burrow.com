@@ -13,20 +13,24 @@ ul {
 
 body, html {
   padding: 0;
-  margin: 0;
+  margin: 0; }
+
+body {
   font-family: "Karla", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 1px;
   width: 100%;
-  height: 100vh;
   overflow-x: hidden;
-  color: #00f; }
+  color: #00f;
+  background: #fff; }
 
 a, a:visited {
   color: inherit; }
 
 .wrapper {
-  z-index: 10;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -44,7 +48,7 @@ a, a:visited {
           width: 100%;
           padding: 20px; }
           .wrapper .wrapper__inner .sections .section .section__inner .section-title {
-            font-size: 20px; }
+            font-size: 24px; }
           .wrapper .wrapper__inner .sections .section .section__inner .section-links {
             color: #f00; }
 
@@ -52,11 +56,12 @@ canvas {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; }
-
-.gradient-selected, .piano .keys-white li:hover, .chess .right .chess-board ul li.active, .chess .right .chess-board ul li:hover {
-  background: none;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0), #44f); }
+  z-index: 5;
+  pointer-events: none; }
+  canvas.canvas-2d {
+    width: 100vw;
+    height: 100vh;
+    z-index: 10; }
 
 .piano {
   position: relative;
@@ -83,6 +88,8 @@ canvas {
       border: 1px solid black;
       border-top: none;
       border-right: none; }
+      .piano .keys-white li:hover {
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0), #44f); }
       .piano .keys-white li:last-child {
         border-right: 1px solid black; }
   .piano .keys-black {
@@ -183,7 +190,8 @@ canvas {
           cursor: pointer;
           font-size: 22px; }
           .chess .right .chess-board ul li.active, .chess .right .chess-board ul li:hover {
-            font-size: 26px; }
+            font-size: 26px;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0), #44f); }
         .chess .right .chess-board ul li:nth-child(n+1):nth-child(-n+8) {
           border-top: 1px solid #000; }
         .chess .right .chess-board ul li:nth-child(8n) {
