@@ -1,10 +1,12 @@
 // spacing
-$space: 10px;
-$width: 680px;
+$space: 8px;
+$width: $space * 160;
 
 // colour
 $colourPrimary: #00f;
 $colourSecondary: #f00;
+$colourGrid: #ddf;
+$gridSize: $space * 1.5;
 $black: #000;
 $white: #fff;
 $light: #aaa;
@@ -13,6 +15,7 @@ $light: #aaa;
 $indexContent: 100;
 $indexCanvas2d: 10;
 $indexCanvas: 5;
+$indexGameWindow: 200;
 
 // borders
 $border: 1px solid black;

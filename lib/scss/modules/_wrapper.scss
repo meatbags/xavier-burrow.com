@@ -1,25 +1,27 @@
 .wrapper {
   position: absolute;
+  user-select: none;
   width: 100%;
   z-index: $indexContent;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  background-size: $gridSize $gridSize;
+  background-image: linear-gradient(to right, $colourGrid 1px, transparent 1px), linear-gradient(to bottom, $colourGrid 1px, transparent 1px);
 
   .wrapper__inner {
     width: $width;
-    @media screen and (max-width: $width) {
-      width: 100%;
-    }
+    display: flex;
+    justify-content: flex-start;
 
     .sections {
-      width: 100%;
+      width: 75%;
 
       .section {
         width: 100%;
 
         .section__inner {
+          @include pad(8, 2);
           width: 100%;
-          padding: $space * 2;
 
           .section-title {
             font-size: $fontLarge;
@@ -33,6 +35,14 @@
             color: $colourSecondary;
           }
         }
+      }
+    }
+
+    @media screen and (max-width: $width) {
+      width: 100%;
+
+      .sections {
+        width: 100%;
       }
     }
   }

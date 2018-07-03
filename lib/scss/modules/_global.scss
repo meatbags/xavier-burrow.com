@@ -1,6 +1,6 @@
 div, * {
   box-sizing: border-box;
-  outline: 1px solid rgba(0,0,0,0.1);
+  outline: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 li {
@@ -23,8 +23,6 @@ body {
   width: 100%;
   overflow-x: hidden;
   color: $colourPrimary;
-  background: $white;
-  //font-feature-settings: 'swsh';
 }
 
 a, a:visited {

@@ -1,3 +1,10 @@
 .clickable {
   cursor: pointer;
 }
+
+@mixin pad($x, $y) {
+  padding-left: $x * $space;
+  padding-top: $y * $space;
+  padding-right: $x * $space;
+  padding-bottom: $y * $space;
+}
