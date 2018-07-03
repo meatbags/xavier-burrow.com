@@ -1,9 +1,10 @@
 $speed: 0.25s;
-$blue: #44f;
+$blue: #00f;
+$red: #f00;
 
 .piano {
   position: relative;
-  width: 100%;
+  width: 600px;
   height: 100px;
   margin-top: $space / 2;
   margin-bottom: $space * 4;
@@ -21,16 +22,16 @@ $blue: #44f;
 
     li {
       flex-grow: 1;
-      border: 1px solid black;
+      border: 1px solid $blue;
       border-top: none;
       border-right: none;
 
       &:hover {
-        background: linear-gradient(0deg, rgba(255,255,255,0), $blue);
+        background: linear-gradient(0deg, rgba(255,255,255,0), $red);
       }
 
       &:last-child {
-        border-right: $border;
+        border-right: 1px solid red;
       }
     }
   }
@@ -53,9 +54,9 @@ $blue: #44f;
       margin-left: $space / 1.8;
       margin-right: $space / 1.8;
       flex-grow: 1;
-      border: 1px solid black;
+      border: 1px solid $blue;
       border-top: none;
-      background: black;
+      background: $blue;
       transition: background-color $speed;
 
       &:nth-child(7n), &:nth-child(7n-4), &:nth-last-child(1) {
@@ -64,7 +65,7 @@ $blue: #44f;
       }
 
       &:hover {
-        background: $blue;
+        background: $red;
       }
     }
   }

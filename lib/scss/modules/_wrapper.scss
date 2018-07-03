@@ -15,27 +15,7 @@
 
     .sections {
       width: 75%;
-
-      .section {
-        width: 100%;
-
-        .section__inner {
-          @include pad(8, 2);
-          width: 100%;
-
-          .section-title {
-            font-size: $fontLarge;
-          }
-
-          .section-description {
-
-          }
-
-          .section-links {
-            color: $colourSecondary;
-          }
-        }
-      }
+      @include pad(8, 2);
     }
 
     @media screen and (max-width: $width) {

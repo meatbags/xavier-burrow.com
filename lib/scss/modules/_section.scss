@@ -1,0 +1,40 @@
+.section {
+  width: 100%;
+
+  .section__inner {
+    @include pad(0, 2);
+    width: 100%;
+
+    .section-title {
+      font-size: $fontLarge;
+      text-transform: uppercase;
+      position: relative;
+
+      .section-title__overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        width: 25%;
+        height: $space * 1.5;
+        background: $colourPrimary;
+        color: red;
+
+        .text {
+          position: absolute;
+          white-space: nowrap;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+
+    .section-description {
+      padding: $space * 2;
+    }
+
+    .section-links {
+      color: $colourSecondary;
+    }
+  }
+}

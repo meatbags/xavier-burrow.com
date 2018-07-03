@@ -1,15 +1,55 @@
 .clickable {
   cursor: pointer; }
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 div, * {
   box-sizing: border-box;
   outline: 1px solid rgba(0, 0, 0, 0.05); }
 
 li {
   text-decoration: none; }
-
-ul {
-  list-style: none; }
 
 body, html {
   padding: 0;
@@ -47,24 +87,47 @@ a, a:visited {
     -ms-flex-pack: start;
         justify-content: flex-start; }
     .wrapper .wrapper__inner .sections {
-      width: 75%; }
-      .wrapper .wrapper__inner .sections .section {
-        width: 100%; }
-        .wrapper .wrapper__inner .sections .section .section__inner {
-          padding-left: 64px;
-          padding-top: 16px;
-          padding-right: 64px;
-          padding-bottom: 16px;
-          width: 100%; }
-          .wrapper .wrapper__inner .sections .section .section__inner .section-title {
-            font-size: 20px; }
-          .wrapper .wrapper__inner .sections .section .section__inner .section-links {
-            color: #f00; }
+      width: 75%;
+      padding-left: 64px;
+      padding-top: 16px;
+      padding-right: 64px;
+      padding-bottom: 16px; }
     @media screen and (max-width: 1280px) {
       .wrapper .wrapper__inner {
         width: 100%; }
         .wrapper .wrapper__inner .sections {
           width: 100%; } }
+
+.section {
+  width: 100%; }
+  .section .section__inner {
+    padding-left: 0px;
+    padding-top: 16px;
+    padding-right: 0px;
+    padding-bottom: 16px;
+    width: 100%; }
+    .section .section__inner .section-title {
+      font-size: 30px;
+      text-transform: uppercase;
+      position: relative; }
+      .section .section__inner .section-title .section-title__overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        width: 25%;
+        height: 12px;
+        background: #00f;
+        color: red; }
+        .section .section__inner .section-title .section-title__overlay .text {
+          position: absolute;
+          white-space: nowrap;
+          bottom: 0;
+          left: 0; }
+    .section .section__inner .section-description {
+      padding: 16px; }
+    .section .section__inner .section-links {
+      color: #f00; }
 
 .game-window {
   position: fixed;
@@ -103,7 +166,7 @@ a, a:visited {
 
 .piano {
   position: relative;
-  width: 100%;
+  width: 600px;
   height: 100px;
   margin-top: 4px;
   margin-bottom: 32px;
@@ -123,13 +186,13 @@ a, a:visited {
     .piano .keys-white li {
       -ms-flex-positive: 1;
           flex-grow: 1;
-      border: 1px solid black;
+      border: 1px solid #00f;
       border-top: none;
       border-right: none; }
       .piano .keys-white li:hover {
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0), #44f); }
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0), #f00); }
       .piano .keys-white li:last-child {
-        border-right: 1px solid black; }
+        border-right: 1px solid red; }
   .piano .keys-black {
     position: absolute;
     top: 0;
@@ -150,15 +213,15 @@ a, a:visited {
       margin-right: 4.44444px;
       -ms-flex-positive: 1;
           flex-grow: 1;
-      border: 1px solid black;
+      border: 1px solid #00f;
       border-top: none;
-      background: black;
+      background: #00f;
       transition: background-color 0.25s; }
       .piano .keys-black li:nth-child(7n), .piano .keys-black li:nth-child(7n-4), .piano .keys-black li:nth-last-child(1) {
         opacity: 0;
         pointer-events: none; }
       .piano .keys-black li:hover {
-        background: #44f; }
+        background: #f00; }
 
 .chess {
   width: 100%;
@@ -229,7 +292,7 @@ a, a:visited {
           font-size: 22px; }
           .chess .right .chess-board ul li.active, .chess .right .chess-board ul li:hover {
             font-size: 26px;
-            background: linear-gradient(0deg, rgba(255, 255, 255, 0), #44f); }
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0), #00f); }
         .chess .right .chess-board ul li:nth-child(n+1):nth-child(-n+8) {
           border-top: 1px solid #000; }
         .chess .right .chess-board ul li:nth-child(8n) {
