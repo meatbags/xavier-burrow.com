@@ -1,4 +1,3 @@
-
 <div class='sections'>
   <?php
     $query = new WP_Query(array('post_type' => 'projects', 'orderby' => 'menu_order', 'posts_per_page' => -1));
@@ -16,3 +15,5 @@
     endif;
   ?>
 </div>
+
+<?php get_template_part('business_card'); ?>

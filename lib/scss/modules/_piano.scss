@@ -4,8 +4,8 @@ $red: #f00;
 
 .piano {
   position: relative;
-  width: 600px;
-  height: 100px;
+  width: 608px;
+  height: 96px;
   margin-top: $space / 2;
   margin-bottom: $space * 4;
   cursor: pointer;
@@ -31,7 +31,7 @@ $red: #f00;
       }
 
       &:last-child {
-        border-right: 1px solid red;
+        border-right: 1px solid $blue;
       }
     }
   }

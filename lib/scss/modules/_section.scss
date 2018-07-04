@@ -6,25 +6,28 @@
     width: 100%;
 
     .section-title {
-      font-size: $fontLarge;
+      font-size: $fontSmall;
       text-transform: uppercase;
       position: relative;
+      width: auto;
+      display: inline-block;
+      padding: $space;
 
       .section-title__overlay {
         position: absolute;
         bottom: 0;
         left: 0;
         overflow: hidden;
-        width: 25%;
-        height: $space * 1.5;
+        width: 0;
+        height: 100%;
         background: $colourPrimary;
-        color: red;
+        color: $white;
+        transition: width 0.25s;
 
         .text {
-          position: absolute;
+          //position: absolute;
+          padding: $space;
           white-space: nowrap;
-          bottom: 0;
-          left: 0;
         }
       }
     }
@@ -35,6 +38,16 @@
 
     .section-links {
       color: $colourSecondary;
+    }
+  }
+
+  &:hover {
+    .section__inner {
+      outline: 1px solid $colourPrimary;
+
+      .section-title__overlay {
+        width: 100%;
+      }
     }
   }
 }

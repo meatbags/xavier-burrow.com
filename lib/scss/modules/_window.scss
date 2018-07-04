@@ -1,0 +1,54 @@
+.window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $indexGameWindow;
+  user-select: none;
+  border: 1px solid $colourPrimary;
+
+  .window__header {
+    @include pad(0.5, 0.5);
+    background: $colourPrimary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: grab;
+    font-size: $fontSmall;
+    color: $white;
+  }
+
+  .window__body {
+    background: $white;
+    position: relative;
+    font-size: $fontSmall;
+    overflow: hidden;
+    z-index: $indexGameWindow + 1;
+
+    .window__body-resize {
+      position: absolute;
+      padding: $space;
+      bottom: 0;
+      right: 0;
+      cursor: nwse-resize;
+      opacity: 0;
+    }
+
+    &:hover {
+      .window__body-resize {
+        opacity: 1;
+        z-index: $indexGameWindow + 2;
+      }
+    }
+  }
+
+  &.alt {
+    .window__body {
+      background: $colourPrimaryDark;
+      color: $white;
+    }
+  }
+
+  &:hover {
+    box-shadow: $space $space rgba(0, 0, 0, 0.25);
+  }
+}

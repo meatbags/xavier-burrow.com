@@ -1,0 +1,98 @@
+.bc-wrapper {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, $black, $colourPrimaryDark);
+  overflow: hidden;
+
+  .bc-parent {
+    width: 100%;
+    height: 100%;
+    min-width: 400px;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: perspective(1200px);
+
+    .bc {
+      width: 300px;
+      height: 180px;
+      background: linear-gradient(20deg, darken(white, 25%), darken($white, 5%), $white);
+      color: $black;
+      transition: 0.1s;
+      transform: translate(0);
+
+      .bc__inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+
+        .bc-side {
+          display: flex;
+        }
+
+        .bc-side-1 {}
+
+        .bc-side-2 {
+          display: none;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+
+          .grid {
+            width: $space * 12 + 1;
+            height: $space * 12 + 1;
+            background-size: $space $space;
+            background-image: linear-gradient(to right, $colourPrimaryLight 1px, transparent 1px), linear-gradient(to bottom, $colourPrimaryLight 1px, transparent 1px);
+            transform: rotate3d(1, 1, 1, 45deg);
+            position: relative;
+          }
+
+          .fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(red, $white, transparent);
+          }
+        }
+
+        .bc-switch {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: $space;
+          opacity: 0;
+          transition: 0.25s;
+          cursor: pointer;
+        }
+
+        &:hover {
+          .bc-switch {
+            opacity: 1;
+          }
+        }
+      }
+
+      &.active {
+        .bc__inner {
+          .bc-side-1 {
+            display: none;
+          }
+
+          .bc-side-2 {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}

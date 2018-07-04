@@ -78,7 +78,7 @@ a, a:visited {
   display: flex;
   -ms-flex-pack: start;
       justify-content: flex-start;
-  background-size: 12px 12px;
+  background-size: 16px 16px;
   background-image: linear-gradient(to right, #ddf 1px, transparent 1px), linear-gradient(to bottom, #ddf 1px, transparent 1px); }
   .wrapper .wrapper__inner {
     width: 1280px;
@@ -107,41 +107,45 @@ a, a:visited {
     padding-bottom: 16px;
     width: 100%; }
     .section .section__inner .section-title {
-      font-size: 30px;
+      font-size: 12px;
       text-transform: uppercase;
-      position: relative; }
+      position: relative;
+      width: auto;
+      display: inline-block;
+      padding: 8px; }
       .section .section__inner .section-title .section-title__overlay {
         position: absolute;
         bottom: 0;
         left: 0;
         overflow: hidden;
-        width: 25%;
-        height: 12px;
+        width: 0;
+        height: 100%;
         background: #00f;
-        color: red; }
+        color: #fff;
+        transition: width 0.25s; }
         .section .section__inner .section-title .section-title__overlay .text {
-          position: absolute;
-          white-space: nowrap;
-          bottom: 0;
-          left: 0; }
+          padding: 8px;
+          white-space: nowrap; }
     .section .section__inner .section-description {
       padding: 16px; }
     .section .section__inner .section-links {
       color: #f00; }
+  .section:hover .section__inner {
+    outline: 1px solid #00f; }
+    .section:hover .section__inner .section-title__overlay {
+      width: 100%; }
 
-.game-window {
+.window {
   position: fixed;
-  top: 48px;
-  right: 48px;
+  top: 0;
+  left: 0;
   z-index: 200;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   border: 1px solid #00f; }
-  .game-window:hover {
-    box-shadow: 8px 8px rgba(0, 0, 0, 0.25); }
-  .game-window .game-window__header {
+  .window .window__header {
     padding-left: 4px;
     padding-top: 4px;
     padding-right: 4px;
@@ -154,20 +158,32 @@ a, a:visited {
     cursor: grab;
     font-size: 12px;
     color: #fff; }
-  .game-window .game-window__body {
+  .window .window__body {
     background: #fff;
-    position: relative; }
-    .game-window .game-window__body .game-window__body-resize {
+    position: relative;
+    font-size: 12px;
+    overflow: hidden;
+    z-index: 201; }
+    .window .window__body .window__body-resize {
       position: absolute;
       padding: 8px;
       bottom: 0;
       right: 0;
-      cursor: nwse-resize; }
+      cursor: nwse-resize;
+      opacity: 0; }
+    .window .window__body:hover .window__body-resize {
+      opacity: 1;
+      z-index: 202; }
+  .window.alt .window__body {
+    background: #008;
+    color: #fff; }
+  .window:hover {
+    box-shadow: 8px 8px rgba(0, 0, 0, 0.25); }
 
 .piano {
   position: relative;
-  width: 600px;
-  height: 100px;
+  width: 608px;
+  height: 96px;
   margin-top: 4px;
   margin-bottom: 32px;
   cursor: pointer; }
@@ -192,7 +208,7 @@ a, a:visited {
       .piano .keys-white li:hover {
         background: linear-gradient(0deg, rgba(255, 255, 255, 0), #f00); }
       .piano .keys-white li:last-child {
-        border-right: 1px solid red; }
+        border-right: 1px solid #00f; }
   .piano .keys-black {
     position: absolute;
     top: 0;
@@ -299,6 +315,84 @@ a, a:visited {
           border-right: 1px solid #000; }
   .chess .chess-reset-board {
     display: none; }
+
+.bc-wrapper {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #000, #008);
+  overflow: hidden; }
+  .bc-wrapper .bc-parent {
+    width: 100%;
+    height: 100%;
+    min-width: 400px;
+    min-height: 300px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    transform-style: preserve-3d;
+    transform: perspective(1200px); }
+    .bc-wrapper .bc-parent .bc {
+      width: 300px;
+      height: 180px;
+      background: linear-gradient(20deg, #bfbfbf, #f2f2f2, #fff);
+      color: #000;
+      transition: 0.1s;
+      transform: translate(0); }
+      .bc-wrapper .bc-parent .bc .bc__inner {
+        width: 100%;
+        height: 100%;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+            justify-content: center;
+        -ms-flex-align: center;
+            align-items: center;
+        position: relative;
+        overflow: hidden; }
+        .bc-wrapper .bc-parent .bc .bc__inner .bc-side {
+          display: -ms-flexbox;
+          display: flex; }
+        .bc-wrapper .bc-parent .bc .bc__inner .bc-side-2 {
+          display: none;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          -ms-flex-pack: center;
+              justify-content: center;
+          -ms-flex-align: center;
+              align-items: center; }
+          .bc-wrapper .bc-parent .bc .bc__inner .bc-side-2 .grid {
+            width: 97px;
+            height: 97px;
+            background-size: 8px 8px;
+            background-image: linear-gradient(to right, #88f 1px, transparent 1px), linear-gradient(to bottom, #88f 1px, transparent 1px);
+            transform: rotate3d(1, 1, 1, 45deg);
+            position: relative; }
+          .bc-wrapper .bc-parent .bc .bc__inner .bc-side-2 .fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(red, #fff, transparent); }
+        .bc-wrapper .bc-parent .bc .bc__inner .bc-switch {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 8px;
+          opacity: 0;
+          transition: 0.25s;
+          cursor: pointer; }
+        .bc-wrapper .bc-parent .bc .bc__inner:hover .bc-switch {
+          opacity: 1; }
+      .bc-wrapper .bc-parent .bc.active .bc__inner .bc-side-1 {
+        display: none; }
+      .bc-wrapper .bc-parent .bc.active .bc__inner .bc-side-2 {
+        display: -ms-flexbox;
+        display: flex; }
 
 /*
 ::-webkit-scrollbar {
