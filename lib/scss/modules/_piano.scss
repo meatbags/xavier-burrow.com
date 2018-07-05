@@ -4,10 +4,9 @@ $red: #f00;
 
 .piano {
   position: relative;
-  width: 608px;
-  height: 96px;
-  margin-top: $space / 2;
-  margin-bottom: $space * 4;
+  width: 24 * $space * 2.5;
+  height: $space * 8;
+  margin-top: $space * 2;
   cursor: pointer;
 
   .keys-white {

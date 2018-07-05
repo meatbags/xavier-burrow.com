@@ -109,13 +109,17 @@ a, a:visited {
     .section .section__inner .section-header {
       height: 32px;
       border-bottom: 1px solid #00f;
-      position: relative; }
+      position: relative;
+      cursor: pointer; }
       .section .section__inner .section-header .section-title {
         font-size: 12px;
         text-transform: uppercase;
         position: absolute;
         bottom: 0;
         left: 0; }
+      .section .section__inner .section-header:hover {
+        color: #f00;
+        border-bottom: 1px solid #f00; }
     .section .section__inner .section-body {
       height: 0;
       overflow: hidden; }
@@ -173,10 +177,9 @@ a, a:visited {
 
 .piano {
   position: relative;
-  width: 608px;
-  height: 96px;
-  margin-top: 4px;
-  margin-bottom: 32px;
+  width: 480px;
+  height: 64px;
+  margin-top: 16px;
   cursor: pointer; }
   .piano .keys-white {
     position: absolute;

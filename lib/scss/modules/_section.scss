@@ -9,6 +9,7 @@
       height: $space * 4;
       border-bottom: 1px solid $colourPrimary;
       position: relative;
+      cursor: pointer;
 
       .section-title {
         font-size: $fontSmall;
@@ -16,6 +17,11 @@
         position: absolute;
         bottom: 0;
         left: 0;
+      }
+
+      &:hover {
+        color: $colourSecondary;
+        border-bottom: 1px solid $colourSecondary;
       }
     }
 
