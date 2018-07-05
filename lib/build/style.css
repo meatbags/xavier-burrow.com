@@ -81,18 +81,18 @@ a, a:visited {
   background-size: 16px 16px;
   background-image: linear-gradient(to right, #ddf 1px, transparent 1px), linear-gradient(to bottom, #ddf 1px, transparent 1px); }
   .wrapper .wrapper__inner {
-    width: 1280px;
+    width: 800px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: start;
         justify-content: flex-start; }
     .wrapper .wrapper__inner .sections {
-      width: 75%;
+      width: 100%;
       padding-left: 64px;
-      padding-top: 16px;
+      padding-top: 0px;
       padding-right: 64px;
-      padding-bottom: 16px; }
-    @media screen and (max-width: 1280px) {
+      padding-bottom: 0px; }
+    @media screen and (max-width: 800px) {
       .wrapper .wrapper__inner {
         width: 100%; }
         .wrapper .wrapper__inner .sections {
@@ -102,38 +102,29 @@ a, a:visited {
   width: 100%; }
   .section .section__inner {
     padding-left: 0px;
-    padding-top: 16px;
+    padding-top: 0px;
     padding-right: 0px;
-    padding-bottom: 16px;
+    padding-bottom: 0px;
     width: 100%; }
-    .section .section__inner .section-title {
-      font-size: 12px;
-      text-transform: uppercase;
-      position: relative;
-      width: auto;
-      display: inline-block;
-      padding: 8px; }
-      .section .section__inner .section-title .section-title__overlay {
+    .section .section__inner .section-header {
+      height: 32px;
+      border-bottom: 1px solid #00f;
+      position: relative; }
+      .section .section__inner .section-header .section-title {
+        font-size: 12px;
+        text-transform: uppercase;
         position: absolute;
         bottom: 0;
-        left: 0;
-        overflow: hidden;
-        width: 0;
-        height: 100%;
-        background: #00f;
-        color: #fff;
-        transition: width 0.25s; }
-        .section .section__inner .section-title .section-title__overlay .text {
-          padding: 8px;
-          white-space: nowrap; }
-    .section .section__inner .section-description {
-      padding: 16px; }
-    .section .section__inner .section-links {
-      color: #f00; }
-  .section:hover .section__inner {
-    outline: 1px solid #00f; }
-    .section:hover .section__inner .section-title__overlay {
-      width: 100%; }
+        left: 0; }
+    .section .section__inner .section-body {
+      height: 0;
+      overflow: hidden; }
+      .section .section__inner .section-body .section-body__inner .section-description {
+        padding: 16px; }
+      .section .section__inner .section-body .section-body__inner .section-links {
+        color: #f00; }
+  .section.active .section__inner .section-body {
+    height: auto; }
 
 .window {
   position: fixed;
@@ -242,9 +233,10 @@ a, a:visited {
 .chess {
   width: 100%;
   position: relative;
-  margin-bottom: 32px;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
   .chess .left {
     width: 40%; }
     .chess .left .title {
@@ -280,8 +272,8 @@ a, a:visited {
     display: -ms-flexbox;
     display: flex; }
     .chess .right .chess-board {
-      width: 320px;
-      height: 280px; }
+      width: 256px;
+      height: 256px; }
       .chess .right .chess-board ul {
         width: 100%;
         height: 100%;
@@ -294,8 +286,8 @@ a, a:visited {
              -moz-user-select: none;
               -ms-user-select: none;
                   user-select: none;
-          border-bottom: 1px solid #000;
-          border-left: 1px solid #000;
+          border-bottom: 1px solid #00f;
+          border-left: 1px solid #00f;
           width: 12.5%;
           height: 12.5%;
           display: -ms-flexbox;
@@ -308,11 +300,11 @@ a, a:visited {
           font-size: 22px; }
           .chess .right .chess-board ul li.active, .chess .right .chess-board ul li:hover {
             font-size: 26px;
-            background: linear-gradient(0deg, rgba(255, 255, 255, 0), #00f); }
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0), red); }
         .chess .right .chess-board ul li:nth-child(n+1):nth-child(-n+8) {
-          border-top: 1px solid #000; }
+          border-top: 1px solid #00f; }
         .chess .right .chess-board ul li:nth-child(8n) {
-          border-right: 1px solid #000; }
+          border-right: 1px solid #00f; }
   .chess .chess-reset-board {
     display: none; }
 
@@ -333,7 +325,10 @@ a, a:visited {
     -ms-flex-align: center;
         align-items: center;
     transform-style: preserve-3d;
-    transform: perspective(1200px); }
+    transform: perspective(1200px);
+    transition: transform 0.4s; }
+    .bc-wrapper .bc-parent.flip {
+      transform: perspective(1200px) rotateY(180deg); }
     .bc-wrapper .bc-parent .bc {
       width: 300px;
       height: 180px;
@@ -341,6 +336,8 @@ a, a:visited {
       color: #000;
       transition: 0.1s;
       transform: translate(0); }
+      .bc-wrapper .bc-parent .bc.flipping {
+        transition: 0.4s; }
       .bc-wrapper .bc-parent .bc .bc__inner {
         width: 100%;
         height: 100%;
@@ -368,9 +365,16 @@ a, a:visited {
             width: 97px;
             height: 97px;
             background-size: 8px 8px;
-            background-image: linear-gradient(to right, #88f 1px, transparent 1px), linear-gradient(to bottom, #88f 1px, transparent 1px);
+            background-image: linear-gradient(to right, #44f 1px, transparent 1px), linear-gradient(to bottom, #44f 1px, transparent 1px);
             transform: rotate3d(1, 1, 1, 45deg);
             position: relative; }
+            .bc-wrapper .bc-parent .bc .bc__inner .bc-side-2 .grid .grid__dot {
+              position: absolute;
+              width: 8px;
+              height: 8px;
+              transform: translate(44px, 20px);
+              background: #44f;
+              border-radius: 8px; }
           .bc-wrapper .bc-parent .bc .bc__inner .bc-side-2 .fill {
             position: absolute;
             top: 0;
@@ -393,6 +397,9 @@ a, a:visited {
       .bc-wrapper .bc-parent .bc.active .bc__inner .bc-side-2 {
         display: -ms-flexbox;
         display: flex; }
+      .bc-wrapper .bc-parent .bc.active .bc__inner .bc-switch {
+        right: auto;
+        left: 0; }
 
 /*
 ::-webkit-scrollbar {

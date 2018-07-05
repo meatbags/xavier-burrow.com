@@ -8,7 +8,10 @@
           </div>
           <div class='bc-side bc-side-2'>
             <div class='fill'></div>
-            <div class='grid'></div>
+            <div class='grid'>
+              <div class='grid__dot'>
+              </div>
+            </div>
           </div>
           <div class='bc-switch'>
             &#8635;

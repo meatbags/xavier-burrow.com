@@ -14,6 +14,11 @@
     align-items: center;
     transform-style: preserve-3d;
     transform: perspective(1200px);
+    transition: transform 0.4s;
+
+    &.flip {
+      transform: perspective(1200px) rotateY(180deg);
+    }
 
     .bc {
       width: 300px;
@@ -22,6 +27,10 @@
       color: $black;
       transition: 0.1s;
       transform: translate(0);
+
+      &.flipping {
+        transition: 0.4s;
+      }
 
       .bc__inner {
         width: 100%;
@@ -53,6 +62,15 @@
             background-image: linear-gradient(to right, $colourPrimaryLight 1px, transparent 1px), linear-gradient(to bottom, $colourPrimaryLight 1px, transparent 1px);
             transform: rotate3d(1, 1, 1, 45deg);
             position: relative;
+
+            .grid__dot {
+              position: absolute;
+              width: $space;
+              height: $space;
+              transform: translate($space * 5.5, $space * 2.5);
+              background: $colourPrimaryLight;
+              border-radius: $space;
+            }
           }
 
           .fill {
@@ -90,6 +108,11 @@
 
           .bc-side-2 {
             display: flex;
+          }
+
+          .bc-switch {
+            right: auto;
+            left: 0;
           }
         }
       }

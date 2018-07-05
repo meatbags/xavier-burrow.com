@@ -2,51 +2,43 @@
   width: 100%;
 
   .section__inner {
-    @include pad(0, 2);
+    @include pad(0, 0);
     width: 100%;
 
-    .section-title {
-      font-size: $fontSmall;
-      text-transform: uppercase;
+    .section-header {
+      height: $space * 4;
+      border-bottom: 1px solid $colourPrimary;
       position: relative;
-      width: auto;
-      display: inline-block;
-      padding: $space;
 
-      .section-title__overlay {
+      .section-title {
+        font-size: $fontSmall;
+        text-transform: uppercase;
         position: absolute;
         bottom: 0;
         left: 0;
-        overflow: hidden;
-        width: 0;
-        height: 100%;
-        background: $colourPrimary;
-        color: $white;
-        transition: width 0.25s;
-
-        .text {
-          //position: absolute;
-          padding: $space;
-          white-space: nowrap;
-        }
       }
     }
 
-    .section-description {
-      padding: $space * 2;
-    }
+    .section-body {
+      height: 0;
+      overflow: hidden;
 
-    .section-links {
-      color: $colourSecondary;
+      .section-body__inner {
+        .section-description {
+          padding: $space * 2;
+        }
+
+        .section-links {
+          color: $colourSecondary;
+        }
+      }
     }
   }
 
-  &:hover {
+  &.active {
     .section__inner {
-      outline: 1px solid $colourPrimary;
-
-      .section-title__overlay {
-        width: 100%;
+      .section-body {
+        height: auto;
       }
     }
   }

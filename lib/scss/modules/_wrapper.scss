@@ -14,8 +14,8 @@
     justify-content: flex-start;
 
     .sections {
-      width: 75%;
-      @include pad(8, 2);
+      width: 100%;
+      @include pad(8, 0);
     }
 
     @media screen and (max-width: $width) {

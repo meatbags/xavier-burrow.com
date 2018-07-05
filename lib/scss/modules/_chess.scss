@@ -1,8 +1,8 @@
 .chess {
   width: 100%;
   position: relative;
-  margin-bottom: $space * 4;
   display: flex;
+  flex-direction: column;
 
   .left {
     width: 40%;
@@ -43,8 +43,8 @@
     display: flex;
 
     .chess-board {
-      width: 320px;
-      height: 280px;
+      width: 256px;
+      height: 256px;
 
       ul {
         width: 100%;
@@ -54,8 +54,8 @@
 
         li {
           user-select: none;
-          border-bottom: 1px solid $black;
-          border-left: 1px solid $black;
+          border-bottom: 1px solid $colourPrimary;
+          border-left: 1px solid $colourPrimary;
           width: 12.5%;
           height: 12.5%;
           display: flex;
@@ -66,16 +66,16 @@
 
           &.active, &:hover {
             font-size: 26px;
-            background: linear-gradient(0deg, rgba(255,255,255,0), $blue);
+            background: linear-gradient(0deg, rgba(255,255,255,0), red);
           }
         }
 
         li:nth-child(n+1):nth-child(-n+8) {
-          border-top: 1px solid $black;
+          border-top: 1px solid $colourPrimary;
         }
 
         li:nth-child(8n) {
-          border-right: 1px solid $black;
+          border-right: 1px solid $colourPrimary;
         }
       }
     }
