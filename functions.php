@@ -66,6 +66,8 @@ function xb_load_scripts()
 	wp_enqueue_script('xbscript_three', get_stylesheet_directory_uri() . '/lib/build/three.min.js');
 	wp_enqueue_script('xbscript_piano', get_stylesheet_directory_uri() . '/lib/build/midi.min.js');
 	wp_enqueue_script('xbscript_app', get_stylesheet_directory_uri() . '/lib/build/app.min.js');
+	wp_enqueue_script('xbscript_objloader', get_stylesheet_directory_uri() . '/lib/build/objloader.js');
+
   wp_register_style('xbstyle', get_stylesheet_directory_uri() . '/lib/build/style.css' );
 	wp_enqueue_style('xbstyle');
 }

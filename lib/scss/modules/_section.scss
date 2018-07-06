@@ -7,7 +7,6 @@
 
     .section-header {
       height: $space * 4;
-      border-bottom: 1px solid $colourPrimary;
       position: relative;
       cursor: pointer;
 
@@ -17,11 +16,16 @@
         position: absolute;
         bottom: 0;
         left: 0;
+        border-bottom: 1px solid $colourPrimary;
       }
 
       &:hover {
         color: $colourSecondary;
-        border-bottom: 1px solid $colourSecondary;
+
+        .section-title {
+          border-bottom: 1px solid $colourSecondary;
+          margin-bottom: 1px;
+        }
       }
     }
 

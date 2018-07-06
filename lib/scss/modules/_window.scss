@@ -1,5 +1,5 @@
 .window {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: $indexGameWindow;
@@ -23,6 +23,8 @@
     font-size: $fontSmall;
     overflow: hidden;
     z-index: $indexGameWindow + 1;
+    width: 0;
+    height: 0;
 
     .window__body-resize {
       position: absolute;

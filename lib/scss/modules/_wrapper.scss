@@ -2,6 +2,7 @@
   position: absolute;
   user-select: none;
   width: 100%;
+  min-height: 150vh;
   z-index: $indexContent;
   display: flex;
   justify-content: flex-start;

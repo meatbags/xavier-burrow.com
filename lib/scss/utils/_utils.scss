@@ -2,6 +2,10 @@
   cursor: pointer;
 }
 
+.display-none {
+  display: none;
+}
+
 @mixin pad($x, $y) {
   padding-left: $x * $space;
   padding-top: $y * $space;
