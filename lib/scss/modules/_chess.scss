@@ -1,82 +1,71 @@
-.chess {
+.chess-wrapper {
   width: 100%;
-  position: relative;
+  height: 100%;
+  min-width: 200px;
+  min-height: 200px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 
-  .left {
-    width: 40%;
+  &.display-none {
+    display: none;
+  }
+}
 
-    .title {
-      width: 100%;
-      height: 100%;
-      min-height: 280px;
-      padding: $space * 2;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+.chess {
+  position: relative;
 
-      .inner {
-        white-space: nowrap;
-        padding: $space;
-        padding-left: $space * 2;
-        padding-right: $space * 2;
-        padding-top: 0;
-        font-weight: bold;
-      }
-
-      .reset {
-        padding: $space;
-        padding-left: $space * 2;
-        padding-right: $space * 2;
-        text-decoration: underline;
-        cursor: pointer;
-      }
-    }
+  .chess-title {
+    width: 100%;
+    text-align: right;
+    font-weight: bold;
+    padding: $space / 2;
   }
 
-  .right {
-    width: 60%;
-    padding: $space * 2;
-    display: flex;
+  .chess-reset {
+    padding: $space / 2;
+    width: 100%;
+    text-align: right;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 
-    .chess-board {
-      width: 256px;
-      height: 256px;
+  .chess-board {
+    width: 256px;
+    height: 256px;
 
-      ul {
-        width: 100%;
-        height: 100%;
+    ul {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        user-select: none;
+        border-bottom: 1px solid $colourPrimary;
+        border-left: 1px solid $colourPrimary;
+        width: 12.5%;
+        height: 12.5%;
         display: flex;
-        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 22px;
 
-        li {
-          user-select: none;
-          border-bottom: 1px solid $colourPrimary;
-          border-left: 1px solid $colourPrimary;
-          width: 12.5%;
-          height: 12.5%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          font-size: 22px;
-
-          &.active, &:hover {
-            font-size: 26px;
-            background: linear-gradient(0deg, rgba(255,255,255,0), red);
-          }
+        &.active, &:hover {
+          font-size: 26px;
+          background: linear-gradient(0deg, rgba(255,255,255,0), red);
         }
+      }
 
-        li:nth-child(n+1):nth-child(-n+8) {
-          border-top: 1px solid $colourPrimary;
-        }
+      li:nth-child(n+1):nth-child(-n+8) {
+        border-top: 1px solid $colourPrimary;
+      }
 
-        li:nth-child(8n) {
-          border-right: 1px solid $colourPrimary;
-        }
+      li:nth-child(8n) {
+        border-right: 1px solid $colourPrimary;
       }
     }
   }

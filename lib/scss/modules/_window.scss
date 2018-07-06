@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: $indexGameWindow;
+  z-index: $indexWindow;
   user-select: none;
   border: 1px solid $colourPrimary;
 
@@ -22,7 +22,7 @@
     position: relative;
     font-size: $fontSmall;
     overflow: hidden;
-    z-index: $indexGameWindow + 1;
+    z-index: $indexWindow + 1;
     width: 0;
     height: 0;
 
@@ -38,7 +38,7 @@
     &:hover {
       .window__body-resize {
         opacity: 1;
-        z-index: $indexGameWindow + 2;
+        z-index: $indexWindow + 2;
       }
     }
   }

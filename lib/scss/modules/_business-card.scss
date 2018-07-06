@@ -45,7 +45,13 @@
           display: flex;
         }
 
-        .bc-side-1 {}
+        .bc-side-1 {
+          a {
+            &:hover {
+              color: $colourSecondary;
+            }
+          }
+        }
 
         .bc-side-2 {
           display: none;
@@ -91,6 +97,10 @@
           opacity: 0;
           transition: 0.25s;
           cursor: pointer;
+
+          &:hover {
+            color: $colourSecondary;
+          }
         }
 
         &:hover {
