@@ -3,8 +3,8 @@ $space: 8px;
 $width: $space * 100;
 
 // colour
-$colourPrimary: #00f;
-$colourPrimaryDark: #008;
+$colourPrimary: #00f;//#23e99c; //#00f;
+$colourPrimaryDark: darken($colourPrimary, 25%);
 $colourPrimaryLight: #44f;
 $colourSecondary: #f00;
 $colourSecondaryDark: #a00;

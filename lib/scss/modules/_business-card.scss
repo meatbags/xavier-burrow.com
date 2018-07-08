@@ -1,7 +1,7 @@
 .bc-wrapper {
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, $black, $colourPrimaryDark);
+  background: linear-gradient(0deg, $black, rgba($colourPrimaryDark, 0.5));
   overflow: hidden;
 
   .bc-parent {

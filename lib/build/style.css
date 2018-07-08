@@ -84,23 +84,23 @@ a, a:visited {
       justify-content: flex-start;
   background-size: 16px 16px;
   background-image: linear-gradient(to right, #ddf 1px, transparent 1px), linear-gradient(to bottom, #ddf 1px, transparent 1px); }
-  .wrapper .wrapper__inner {
-    width: 800px;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: start;
-        justify-content: flex-start; }
-    .wrapper .wrapper__inner .sections {
-      width: 100%;
-      padding-left: 64px;
-      padding-top: 0px;
-      padding-right: 64px;
-      padding-bottom: 0px; }
-    @media screen and (max-width: 800px) {
-      .wrapper .wrapper__inner {
-        width: 100%; }
-        .wrapper .wrapper__inner .sections {
-          width: 100%; } }
+
+.sections {
+  width: 100%;
+  height: 100%;
+  min-width: 200px;
+  min-height: 400px; }
+  .sections.display-none {
+    display: none; }
+  .sections .sections__inner {
+    padding-left: 8px;
+    padding-top: 0px;
+    padding-right: 8px;
+    padding-bottom: 0px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll; }
 
 .section {
   width: 100%; }
@@ -129,9 +129,11 @@ a, a:visited {
     .section .section__inner .section-body {
       height: 0;
       overflow: hidden; }
-      .section .section__inner .section-body .section-body__inner .section-description {
-        padding: 16px; }
-      .section .section__inner .section-body .section-body__inner .section-links {
+      .section .section__inner .section-body .section-description {
+        padding: 8px;
+        padding-left: 16px; }
+      .section .section__inner .section-body .section-links {
+        padding-left: 16px;
         color: #f00; }
   .section.active .section__inner .section-body {
     height: auto; }
@@ -145,7 +147,8 @@ a, a:visited {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  border: 1px solid #00f; }
+  border: 1px solid #00f;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.25); }
   .window .window__header {
     padding-left: 4px;
     padding-top: 4px;
@@ -160,7 +163,7 @@ a, a:visited {
     font-size: 12px;
     color: #fff; }
   .window .window__body {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.5);
     position: relative;
     font-size: 12px;
     overflow: hidden;
@@ -178,10 +181,22 @@ a, a:visited {
       opacity: 1;
       z-index: 202; }
   .window.alt .window__body {
-    background: #008;
+    background: rgba(0, 0, 128, 0.5);
     color: #fff; }
+  .window.transparent .window__body {
+    background: rgba(255, 255, 255, 0.25); }
   .window:hover {
     box-shadow: 8px 8px rgba(0, 0, 0, 0.25); }
+
+.logo-wrapper {
+  width: 100%;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex; }
+  .logo-wrapper.display-none {
+    display: none; }
+  .logo-wrapper .logo {
+    text-shadow: 1px 1px #f00; }
 
 .piano-wrapper {
   width: 100%;
@@ -193,7 +208,7 @@ a, a:visited {
   -ms-flex-align: center;
       align-items: center;
   overflow: hidden;
-  background: linear-gradient(0deg, #000, #a00);
+  background: linear-gradient(0deg, #000, rgba(170, 0, 0, 0.5));
   position: relative; }
   .piano-wrapper.display-none {
     display: none; }
@@ -340,7 +355,7 @@ a, a:visited {
 .bc-wrapper {
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, #000, #008);
+  background: linear-gradient(0deg, #000, rgba(0, 0, 128, 0.5));
   overflow: hidden; }
   .bc-wrapper .bc-parent {
     width: 100%;

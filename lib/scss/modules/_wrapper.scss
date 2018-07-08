@@ -8,23 +8,4 @@
   justify-content: flex-start;
   background-size: $gridSize $gridSize;
   background-image: linear-gradient(to right, $colourGrid 1px, transparent 1px), linear-gradient(to bottom, $colourGrid 1px, transparent 1px);
-
-  .wrapper__inner {
-    width: $width;
-    display: flex;
-    justify-content: flex-start;
-
-    .sections {
-      width: 100%;
-      @include pad(8, 0);
-    }
-
-    @media screen and (max-width: $width) {
-      width: 100%;
-
-      .sections {
-        width: 100%;
-      }
-    }
-  }
 }

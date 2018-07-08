@@ -5,6 +5,7 @@
   z-index: $indexWindow;
   user-select: none;
   border: 1px solid $colourPrimary;
+  box-shadow: $space/2 $space/2 rgba(0, 0, 0, 0.25);
 
   .window__header {
     @include pad(0.5, 0.5);
@@ -18,7 +19,7 @@
   }
 
   .window__body {
-    background: $white;
+    background: rgba($white, 0.5);
     position: relative;
     font-size: $fontSmall;
     overflow: hidden;
@@ -45,8 +46,14 @@
 
   &.alt {
     .window__body {
-      background: $colourPrimaryDark;
+      background: rgba($colourPrimaryDark, 0.5);
       color: $white;
+    }
+  }
+
+  &.transparent {
+    .window__body {
+      background: rgba($white, 0.25);
     }
   }
 

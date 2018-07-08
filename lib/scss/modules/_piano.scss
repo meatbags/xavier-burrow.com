@@ -9,7 +9,7 @@ $red: #f00;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(0deg, $black, $colourSecondaryDark);
+  background: linear-gradient(0deg, $black, rgba($colourSecondaryDark, 0.5));
   position: relative;
 
   &.display-none {
