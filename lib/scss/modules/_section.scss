@@ -3,6 +3,7 @@
   height: 100%;
   min-width: 200px;
   min-height: 400px;
+  padding-bottom: $space * 2;
 
   &.display-none {
     display: none;
@@ -17,8 +18,20 @@
   }
 }
 
+.sections-image {
+  position: fixed;
+  pointer-events: none;
+  z-index: $indexProjectImage;
+
+  .full {
+    border: 1px solid $colourPrimary;
+    box-shadow: $space $space rgba(0, 0, 0, 0.25);
+  }
+}
+
 .section {
   width: 100%;
+  font-size: $fontSize;
 
   .section__inner {
     @include pad(0, 0);
@@ -30,11 +43,11 @@
       cursor: pointer;
 
       .section-title {
-        font-size: $fontSize;
         text-transform: uppercase;
         position: absolute;
         bottom: 0;
         left: 0;
+        width: 100%;
         border-bottom: 1px solid $colourPrimary;
       }
 
@@ -43,7 +56,6 @@
 
         .section-title {
           border-bottom: 1px solid $colourSecondary;
-          margin-bottom: 1px;
         }
       }
     }
@@ -54,14 +66,17 @@
 
       .section-body__inner {
         display: flex;
+        padding-top: $space;
 
         .section-body__left {
-          font-size: 26px;
-          width: 20px;
-          padding-top: $space / 2;
+          width: $space * 2;
+          margin-top: $space;
+          border-right: 1px solid $colourPrimary;
         }
 
         .section-body__right {
+          padding-top: $space;
+          padding-left: $space;
           width: 100%;
 
           .section-description {
@@ -93,17 +108,6 @@
                   display: none;
                   pointer-events: none;
                   position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 300px;
-                  height: auto;
-                  z-index: 1000;
-                }
-
-                &:hover {
-                  .full {
-                    display: block;
-                  }
                 }
               }
             }
@@ -120,13 +124,6 @@
 
   &.active {
     .section__inner {
-      .section-header {
-        .section-title {
-          border-bottom: 1px solid $colourSecondary;
-          margin-bottom: 1px;
-        }
-      }
-
       .section-body {
         height: auto;
         overflow: visible;

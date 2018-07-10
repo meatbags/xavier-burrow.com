@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<div id='sections-current-image' class='sections-image'></div>
+
 <div class='wrapper'>
   <div class='wrapper__inner'>
     <?php get_template_part('index_content'); ?>

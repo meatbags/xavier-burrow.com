@@ -12,9 +12,7 @@
     </div>
     <div class='section-body'>
       <div class='section-body__inner'>
-        <div class='section-body__left'>
-          &#9758;
-        </div>
+        <div class='section-body__left'></div>
         <div class='section-body__right'>
           <div class='section-description'>
             <?php echo $desc; ?>
