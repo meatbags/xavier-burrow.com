@@ -2,14 +2,14 @@
   position: absolute;
   user-select: none;
   width: 100%;
-  min-height: 150vh;
+  min-height: 100vh;
   z-index: $indexContent;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   background-size: $gridSize $gridSize;
   background-image: linear-gradient(to right, $colourGrid 1px, transparent 1px), linear-gradient(to bottom, $colourGrid 1px, transparent 1px);
-  
+
   @media screen and (max-width: $mobile) {
     min-height: 100vh;
   }
