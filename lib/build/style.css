@@ -194,7 +194,11 @@ a, a:visited {
   width: 100vw;
   height: 100vh;
   z-index: 300;
-  pointer-events: none; }
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
   .ui .ui__inner {
     width: 100%;
     height: 100%;
@@ -226,7 +230,52 @@ a, a:visited {
 
 .ui-canvas {
   position: fixed;
-  z-index: 200; }
+  z-index: 200;
+  pointer-events: none; }
+
+@keyframes flash {
+  0% {
+    opacity: 1.0; }
+  100% {
+    opacity: 0.5; } }
+
+.menu {
+  position: fixed;
+  z-index: 150;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  .menu .menu__inner {
+    width: 80vh;
+    height: 70vh;
+    background: white;
+    opacity: 0;
+    transition: 0.5s;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    transform: scale(0.75); }
+    .menu .menu__inner.active {
+      opacity: 1;
+      transform: scale(1); }
+    .menu .menu__inner .item {
+      padding: 8px;
+      cursor: pointer;
+      border: 8px solid black;
+      font-size: 30px;
+      font-weight: bold; }
+      .menu .menu__inner .item:hover {
+        animation: flash 0.2s infinite; }
 
 .window {
   position: absolute;

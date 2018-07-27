@@ -6,6 +6,7 @@
   height: 100vh;
   z-index: $indexUI;
   pointer-events: none;
+  user-select: none;
 
   .ui__inner {
     width: 100%;
@@ -46,4 +47,5 @@
 .ui-canvas {
   position: fixed;
   z-index: $indexCanvas;
+  pointer-events: none;
 }
