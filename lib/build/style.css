@@ -187,6 +187,47 @@ a, a:visited {
     height: auto;
     overflow: visible; }
 
+.ui {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 300;
+  pointer-events: none; }
+  .ui .ui__inner {
+    width: 100%;
+    height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center; }
+    .ui .ui__inner .ui-centre {
+      width: 40vw;
+      height: 30vw;
+      pointer-events: none; }
+      .ui .ui__inner .ui-centre.active {
+        cursor: pointer;
+        pointer-events: all; }
+  .ui .ui-close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 16px;
+    cursor: pointer;
+    opacity: 0;
+    font-size: 30px;
+    pointer-events: none; }
+    .ui .ui-close.active {
+      opacity: 1;
+      pointer-events: all; }
+
+.ui-canvas {
+  position: fixed;
+  z-index: 200; }
+
 .window {
   position: absolute;
   top: 0;
