@@ -3,7 +3,7 @@
     <div class='bc'>
       <div class='bc__inner'>
         <div class='bc-side bc-side-1'>
-          <a href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a>
+          <a href='mailto:jxburrow@gmail.com'>xavier burrow</a>
         </div>
         <div class='bc-side bc-side-2'>
           <div class='fill'></div>

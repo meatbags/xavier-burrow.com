@@ -1,7 +1,7 @@
 .bc-wrapper {
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, $black, rgba($colourPrimaryDark, 0.5));
+  //background: linear-gradient(0deg, $black, rgba($colourPrimaryDark, 0.5));
   overflow: hidden;
 
   .bc-parent {
@@ -23,7 +23,8 @@
     .bc {
       width: 225px;
       height: 135px;
-      background: linear-gradient(20deg, darken(white, 25%), darken($white, 5%), $white);
+      background: linear-gradient(20deg, darken(rgba(white, 0.25), 25%), darken(rgba($white, 0.125), 5%), rgba($white, 0));
+      border: 1px solid white;
       color: $black;
       transition: 0.1s;
       transform: translate(0);
@@ -47,6 +48,7 @@
 
         .bc-side-1 {
           a {
+            color: $white;
             &:hover {
               color: $colourSecondary;
             }
@@ -97,6 +99,7 @@
           opacity: 0;
           transition: 0.25s;
           cursor: pointer;
+          color: $white;
 
           &:hover {
             color: $colourSecondary;

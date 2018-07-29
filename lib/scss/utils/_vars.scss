@@ -8,7 +8,7 @@ $colourPrimaryDark: darken($colourPrimary, 25%);
 $colourPrimaryLight: #44f;
 $colourSecondary: #f00;
 $colourSecondaryDark: #a00;
-$colourGrid: #ddf;
+$colourGrid: rgba(#ddd, 0.0625);
 $gridSize: $space * 2;
 $black: #000;
 $white: #fff;
@@ -19,9 +19,8 @@ $indexCanvas2d: 10;
 $indexContent: 100;
 $indexMenu: 150;
 $indexCanvas: 200;
-$indexWindow: 200;
+$indexWindow: 600;
 $indexUI: 300;
-$indexProjectImage: 1000;
 
 // borders
 $border: 1px solid black;

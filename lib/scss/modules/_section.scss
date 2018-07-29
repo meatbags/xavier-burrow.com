@@ -21,7 +21,6 @@
 .sections-image {
   position: fixed;
   pointer-events: none;
-  z-index: $indexProjectImage;
 
   .full {
     border: 1px solid $colourPrimary;

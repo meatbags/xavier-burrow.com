@@ -4,7 +4,7 @@
   left: 0;
   z-index: $indexWindow;
   user-select: none;
-  border: 1px solid $colourPrimary;
+  border: 1px solid rgba($white, 0.25);
   box-shadow: $space/2 $space/2 rgba(0, 0, 0, 0.25);
 
   &.fade-in {
@@ -18,7 +18,7 @@
 
   .window__header {
     @include pad(0.5, 0.5);
-    background: $colourPrimary;
+    // background: $colourPrimary;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -28,7 +28,7 @@
   }
 
   .window__body {
-    background: rgba($white, 0.5);
+    //background: rgba($white, 0.5);
     position: relative;
     font-size: $fontSmall;
     overflow: hidden;
@@ -55,20 +55,20 @@
 
   &.alt {
     .window__body {
-      background: rgba($colourPrimaryDark, 0.5);
+      //background: rgba($colourPrimaryDark, 0.5);
       color: $white;
     }
   }
 
   &.transparent {
     .window__body {
-      background: rgba($white, 0.25);
+      //background: rgba($white, 0.25);
     }
   }
 
   &.opaque {
     .window__body {
-      background: $white;
+      //background: $white;
     }
   }
 

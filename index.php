@@ -6,7 +6,7 @@
 <div class='menu'>
   <div id='menu-target' class='menu__inner'>
     <div class='item'>
-      COMING SOON
+      <a href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a>
     </div>
   </div>
 </div>
@@ -32,6 +32,10 @@
     <?php get_template_part('app/business_card'); ?>
     <?php get_template_part('app/logo'); ?>
   </div>
+</div>
+
+<div class='background-image'>
+  <img src='<?php echo get_template_directory_uri(); ?>/lib/img/background-invert-2.jpg'/>
 </div>
 
 <?php get_footer(); ?>
