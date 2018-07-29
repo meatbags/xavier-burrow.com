@@ -15,29 +15,42 @@
   align-items: center;
 
   .menu__inner {
-    width: 80vh;
-    height: 70vh;
+    width: 45vh;
+    height: 30vh;
+    margin-right: 27.5vh;
+    margin-bottom: 20vh;
     opacity: 0;
+    //border: 1px solid white;
     transition: 0.5s;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: rotate3d(1, 0.25, 0.5, 180deg);
-    transition: 1.0s;
+    transform: rotate3d(1, 1, 0, 90deg);
+    transition: transform 1.0s, opacity 1.0s;
 
     &.active {
       opacity: 1;
-      transform: rotate3d(1, 1, 1, 0deg);
+      transform: rotate3d(0, 1, 1, 0deg);
     }
 
     .item {
+      $a: #aaa;
+      $b: darken($a, 25%);
+      $x: 0.5px;
       color: $black;
-      text-shadow: 1px 1px 2px $colourPrimary, -1px 1px 10px $colourSecondary, -1px -1px 2px $colourPrimary, 1px -1px 2px $colourPrimary;
+      text-shadow: $x $x 10px $a, -$x $x 4px $b, -$x -$x 1px $a, $x -$x 2px $a;
       padding: $space;
       cursor: pointer;
+      text-align: center;
       //border: $space solid black;
-      font-size: $fontLarge;
+      font-size: $fontMedium;
       font-weight: bold;
+
+      a {
+        &:hover {
+          color: $colourPrimary;
+        }
+      }
 
       &:hover {
         animation: flash 0.2s infinite;

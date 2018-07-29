@@ -6,6 +6,7 @@
 <div class='menu'>
   <div id='menu-target' class='menu__inner'>
     <div class='item'>
+      SITE UNDER MAINTENANCE<br />
       <a href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a>
     </div>
   </div>
