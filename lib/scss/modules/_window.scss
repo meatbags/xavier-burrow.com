@@ -19,6 +19,7 @@
   .window__header {
     @include pad(0.5, 0.5);
     // background: $colourPrimary;
+    border-bottom: 1px solid rgba($white, 0.125);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -47,6 +48,7 @@
 
     &:hover {
       .window__body-resize {
+        color: $white;
         opacity: 1;
         z-index: $indexWindow + 2;
       }

@@ -299,6 +299,7 @@ a, a:visited {
     padding-top: 4px;
     padding-right: 4px;
     padding-bottom: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.125);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -321,6 +322,7 @@ a, a:visited {
       cursor: nwse-resize;
       opacity: 0; }
     .window .window__body:hover .window__body-resize {
+      color: #fff;
       opacity: 1;
       z-index: 602; }
   .window.alt .window__body {
@@ -520,7 +522,7 @@ a, a:visited {
     .bc-wrapper .bc-parent .bc {
       width: 225px;
       height: 135px;
-      background: linear-gradient(20deg, rgba(191, 191, 191, 0.25), rgba(242, 242, 242, 0.125), rgba(255, 255, 255, 0));
+      background: linear-gradient(30deg, rgba(191, 191, 191, 0.25), rgba(242, 242, 242, 0.025), rgba(255, 255, 255, 0));
       border: 1px solid white;
       color: #000;
       transition: 0.1s;
