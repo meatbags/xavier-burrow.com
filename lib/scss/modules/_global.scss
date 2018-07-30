@@ -16,11 +16,11 @@ body, html {
 body {
   font-family: $fontStack;
   font-size: $fontSize;
-  letter-spacing: 3px;
+  letter-spacing: $letterSpacing;
   width: 100%;
   height: 100%;
   color: $colourPrimary;
-  line-height: 1.2;
+  line-height: $lineHeight;
   overflow-x: hidden;
   overflow: hidden;
 }

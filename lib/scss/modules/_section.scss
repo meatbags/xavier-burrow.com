@@ -13,7 +13,8 @@
     display: none;
     transition: $transition;
     opacity: 1;
-    padding-bottom: 200px;
+    padding-top: $space * 4;
+    padding-bottom: 33vh;
 
     &.active {
       display: flex;
@@ -21,14 +22,15 @@
     }
 
     .section {
-      padding-top: $space * 2;
-      padding-bottom: $space * 3;
+      padding-bottom: $space * 6;
       width: 100%;
-      max-width: 360px;
-      transition: $transitionFast;
+      max-width: $sectionSize;
+      font-weight: lighter;
+      opacity: 0;
+      //transition: $transitionFast;
 
       .section__inner {
-        text-shadow: 1px 1px 2px rgba($colourSecondary, 0.5);
+        //text-shadow: 1px 1px 2px rgba($colourSecondary, 0.5);
 
         .section-title {
           font-size: $fontLarge;
@@ -38,8 +40,9 @@
         }
 
         .section-description {
-          @include pad(0, 2);
+          @include pad(0, 1);
           font-size: $fontSize;
+          font-family: $fontStackAlt;
         }
 
         .section-links {

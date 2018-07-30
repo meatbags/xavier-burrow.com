@@ -3,22 +3,24 @@ $space: 8px;
 $width: $space * 100;
 
 // colour
-$colourPrimary: #cccccc;//#00f;//#23e99c; //#00f;
+$colourPrimary: #ccc;//#00f;//#23e99c; //#00f;
 $colourPrimaryDark: darken($colourPrimary, 25%);
 $colourPrimaryLight: #44f;
-$colourSecondary: #111;
+$colourSecondary: #222;
 $colourSecondaryDark: #a00;
-$colourGrid: rgba(#888, 0.05);
-$gridSize: $space * 2;
+$colourGrid: rgba(#888, 0.025);
+$gridSize: $space * 1;
 $black: #000;
 $white: #fff;
 $light: #aaa;
 
 // index
+$indexBackgroundImage: 1;
+$indexCanvas: 2;
+$indexBackgroundFill: 3;
 $indexCanvas2d: 10;
 $indexContent: 100;
 $indexMenu: 150;
-$indexCanvas: 200;
 $indexWindow: 600;
 $indexUI: 300;
 
@@ -30,4 +32,6 @@ $transition: 0.35s;
 $transitionFast: 0.5s;
 
 // breaks
+$menuSize: $space * 46;
+$sectionSize: $space * 36;
 $mobile: 600px;

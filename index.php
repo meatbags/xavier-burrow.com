@@ -6,9 +6,9 @@
       <div class='menu__inner'>
         <div class='menu-title'>xavier burrow</div>
         <div class='menu-list'>
-          <div data-target='#section-code' class='item active'>code.</div>
-          <div data-target='#section-art' class='item'>art.</div>
-          <div data-target='#section-fun' class='item'>fun.</div>
+          <div data-target='#section-code' class='item active'>code</div>
+          <div data-target='#section-art' class='item'>art</div>
+          <div data-target='#section-fun' class='item'>fun</div>
         </div>
       </div>
     </div>
@@ -44,6 +44,7 @@
 <div class='background-image'>
   <img src='<?php echo get_template_directory_uri(); ?>/lib/img/background-grey.jpg'/>
 </div>
+<div class='background-fill'></div>
 
 
 <?php get_footer(); ?>

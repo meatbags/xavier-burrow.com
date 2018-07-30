@@ -14,10 +14,11 @@
 	<style type='text/css'>
 		@font-face {
 			font-family: "Birch";
-			src: url("<?php echo get_template_directory_uri(); ?>/font/BirchStd.ttf") format("truetype");
+			src: url("<?php echo get_template_directory_uri(); ?>/font/BirchStd.otf");
 		}
 	</style>
-	<!-- <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
 	<?php wp_head(); ?>
 	<script>

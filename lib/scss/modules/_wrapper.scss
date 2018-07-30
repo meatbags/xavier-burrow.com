@@ -12,7 +12,7 @@
 
   .wrapper__inner {
     position: relative;
-    @include pad(8, 8);
+    @include pad(6, 6);
     padding-right: 0;
     width: 100%;
     height: 100%;
@@ -20,14 +20,22 @@
     flex-direction: column;
     justify-content: flex-start;
 
+    @media screen and (max-width: $mobile) {
+      @include pad(3, 3);
+    }
+
     .contact-box {
       position: absolute;
       bottom: 0;
       right: 0;
-      @include pad(8, 8);
+      @include pad(6, 6);
       font-size: $fontLarge;
       cursor: pointer;
       transition: $transition;
+
+      @media screen and (max-width: $mobile) {
+        @include pad(3, 3);
+      }
 
       &:hover {
         opacity: 0.5;

@@ -5,10 +5,23 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  opacity: 0.4;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: $indexBackgroundImage;
 
   img {
     object-fit: cover;
   }
+}
+
+.background-fill {
+  //background: $white;
+  background: $black;
+  opacity: 0.6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: $indexBackgroundFill;
 }

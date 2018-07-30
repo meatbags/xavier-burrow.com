@@ -1,20 +1,19 @@
 .menu {
   @include pad(0, 0);
   width: 100%;
-  max-width: 400px;
-  height: $space * 4;
+  max-width: $menuSize;
+  height: $space * 3;
   background: $colourPrimary;
   color: $colourSecondary;
   font-size: $fontLarge;
   font-weight: bold;
-  margin-bottom: $space * 2;
+  margin-bottom: 1px;
   user-select: none;
   position: relative;
 
   .menu__inner {
     position: absolute;
     width: 100%;
-    padding-left: $space / 4;
     display: flex;
     bottom: 0;
     left: 0;

@@ -1,6 +1,9 @@
 $fontStack: "Birch", sans-serif;
-//$fontStack: 'Karla', sans-serif;
-$fontSize: 16px;
-$fontSmall: 13px;
-$fontLarge: 21px;
+$fontStackAlt: $fontStack;
+//$fontStackAlt: "Karla", sans-serif;
+$letterSpacing: 1.8px;
+$lineHeight: 1.2;
+$fontSize: 14px;
+$fontSmall: 14px;
+$fontLarge: 20px;
 $fontMedium: $fontSize;
