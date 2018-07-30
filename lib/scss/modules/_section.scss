@@ -3,35 +3,56 @@
   height: 100%;
   overflow-y: scroll;
   flex: 1;
+  position: relative;
 
-  .section {
-    @include pad(0, 3);
+  .section-wrapper {
     width: 100%;
-    max-width: 360px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    transition: $transition;
+    opacity: 1;
+    padding-bottom: 200px;
 
-    .section__inner {
-      .section-title {
-        font-size: $fontLarge;
-        text-decoration: underline;
-        text-transform: lowercase;
-        font-weight: normal;
-      }
+    &.active {
+      display: flex;
+      flex-direction: column;
+    }
 
-      .section-description {
-        @include pad(0, 2);
-        font-size: $fontSize;
-      }
+    .section {
+      padding-top: $space * 2;
+      padding-bottom: $space * 3;
+      width: 100%;
+      max-width: 360px;
+      transition: $transitionFast;
 
-      .section-links {
-        font-size: $fontSmall;
+      .section__inner {
+        text-shadow: 1px 1px 2px rgba($colourSecondary, 0.5);
 
-        .link {
+        .section-title {
+          font-size: $fontLarge;
+          text-decoration: underline;
           text-transform: lowercase;
-          margin-right: $space / 2;
-          transition: 0.5s;
+          font-weight: normal;
+        }
 
-          &:hover {
-            opacity: 0.5;
+        .section-description {
+          @include pad(0, 2);
+          font-size: $fontSize;
+        }
+
+        .section-links {
+          font-size: $fontSmall;
+
+          .link {
+            text-transform: lowercase;
+            margin-right: $space / 2;
+            transition: 0.5s;
+
+            &:hover {
+              opacity: 0.5;
+            }
           }
         }
       }

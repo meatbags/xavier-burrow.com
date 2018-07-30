@@ -1,25 +1,45 @@
 .menu {
-  @include pad(0, 1);
+  @include pad(0, 0);
   width: 100%;
   max-width: 400px;
-  display: flex;
+  height: $space * 4;
   background: $colourPrimary;
   color: $colourSecondary;
   font-size: $fontLarge;
   font-weight: bold;
+  margin-bottom: $space * 2;
+  user-select: none;
+  position: relative;
 
-  .menu-title {
-    width: 50%;
-    text-align: left;
-  }
-
-  .menu-list {
-    width: 50%;
+  .menu__inner {
+    position: absolute;
+    width: 100%;
+    padding-left: $space / 4;
     display: flex;
-    justify-content: flex-end;
+    bottom: 0;
+    left: 0;
+    transform: translateY(5px);
 
-    .item {
-      margin-left: $space;
+    .menu-title {
+      width: 50%;
+      text-align: left;
+    }
+
+    .menu-list {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+
+      .item {
+        margin-left: $space;
+        transition: $transition;
+        opacity: 0.5;
+        cursor: pointer;
+
+        &:hover, &.active {
+          opacity: 1.0;
+        }
+      }
     }
   }
 }

@@ -3,23 +3,33 @@
 <div class='wrapper'>
   <div class='wrapper__inner'>
     <div class='menu'>
-      <div class='menu-title'>xavier burrow</div>
-      <div class='menu-list'>
-        <div class='item'>code.</div>
-        <div class='item'>art.</div>
-        <div class='item'>fun.</div>
+      <div class='menu__inner'>
+        <div class='menu-title'>xavier burrow</div>
+        <div class='menu-list'>
+          <div data-target='#section-code' class='item active'>code.</div>
+          <div data-target='#section-art' class='item'>art.</div>
+          <div data-target='#section-fun' class='item'>fun.</div>
+        </div>
       </div>
     </div>
     <div id='sections-target' class='sections'>
-      <?php
-      $query = new WP_Query(array('post_type' => 'projects', 'orderby' => 'menu_order', 'posts_per_page' => -1));
-      if ($query->have_posts()):
-        while ($query->have_posts()):
-          $query->the_post();
-          get_template_part('index_project');
-        endwhile;
-      endif;
-      ?>
+      <div id='section-code' class='section-wrapper active'>
+        <?php
+          $query = new WP_Query(array('post_type' => 'projects', 'orderby' => 'menu_order', 'posts_per_page' => -1));
+          if ($query->have_posts()):
+            while ($query->have_posts()):
+              $query->the_post();
+              get_template_part('index_project');
+            endwhile;
+          endif;
+        ?>
+      </div>
+      <div id='section-art' class='section-wrapper'>
+        // art loads here
+      </div>
+      <div id='section-fun' class='section-wrapper'>
+        // fun loads here
+      </div>
     </div>
     <div class='contact-box'>contact.</div>
   </div>

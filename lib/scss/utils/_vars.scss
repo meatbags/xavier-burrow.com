@@ -3,10 +3,10 @@ $space: 8px;
 $width: $space * 100;
 
 // colour
-$colourPrimary: #c5c5c5;//#00f;//#23e99c; //#00f;
+$colourPrimary: #cccccc;//#00f;//#23e99c; //#00f;
 $colourPrimaryDark: darken($colourPrimary, 25%);
 $colourPrimaryLight: #44f;
-$colourSecondary: #000;
+$colourSecondary: #111;
 $colourSecondaryDark: #a00;
 $colourGrid: rgba(#ddd, 0.0625);
 $gridSize: $space * 2;
@@ -24,6 +24,10 @@ $indexUI: 300;
 
 // borders
 $border: 1px solid black;
+
+// animation
+$transition: 0.35s;
+$transitionFast: 0.5s;
 
 // breaks
 $mobile: 600px;

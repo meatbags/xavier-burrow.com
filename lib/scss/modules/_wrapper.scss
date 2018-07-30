@@ -26,6 +26,12 @@
       right: 0;
       @include pad(8, 8);
       font-size: $fontLarge;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
 }
