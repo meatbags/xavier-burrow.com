@@ -7,7 +7,7 @@
 
 <div class='section'>
   <div class='section__inner'>
-    <div class='section-title'><?php echo $title; ?></div>
+    <div class='section-title'>// <?php echo $title; ?></div>
     <div class='section-description'><?php echo $desc; ?></div>
     <div class='section-links'>
       <?php foreach($links as $link): ?>
