@@ -3,10 +3,10 @@ $space: 8px;
 $width: $space * 100;
 
 // colour
-$colourPrimary: #00f;//#23e99c; //#00f;
+$colourPrimary: #c5c5c5;//#00f;//#23e99c; //#00f;
 $colourPrimaryDark: darken($colourPrimary, 25%);
 $colourPrimaryLight: #44f;
-$colourSecondary: #f00;
+$colourSecondary: #000;
 $colourSecondaryDark: #a00;
 $colourGrid: rgba(#ddd, 0.0625);
 $gridSize: $space * 2;
