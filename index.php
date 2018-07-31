@@ -59,7 +59,10 @@
 <div class='background-image'>
   <img src='<?php echo get_template_directory_uri(); ?>/lib/img/background-grey.jpg'/>
 </div>
-<div class='background-selected-image'></div>
+<div class='background-selected-image'>
+  <div class='pane active'></div>
+  <div class='pane'></div>
+</div>
 <div class='background-fill'></div>
 <div class='loading-screen'>
   <div class='loading-screen__inner'>
