@@ -12,3 +12,10 @@
   padding-right: $x * $space;
   padding-bottom: $y * $space;
 }
+
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $top * $space;
+  padding-right: $right * $space;
+  padding-bottom: $bottom * $space;
+  padding-left: $left * $space;
+}

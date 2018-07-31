@@ -31,7 +31,12 @@
         // fun loads here
       </div>
     </div>
-    <div class='contact-box'>contact.</div>
+    <div class='contact-box'>
+      <div class='contact-box__header'>contact.</div>
+      <div class='contact-box__contact'>
+        <a href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a>
+      </div>
+    </div>
   </div>
 </div>
 
