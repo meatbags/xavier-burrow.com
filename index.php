@@ -35,7 +35,7 @@
       <div class='contact-box__header'>contact.</div>
       <div class='contact-box__contact'>
         <div class='email'>
-          <a href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a>
+          <a href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a> <a target='_blank' href='https://www.instagram.com/xavebabes'>insta</a>
         </div>
       </div>
     </div>

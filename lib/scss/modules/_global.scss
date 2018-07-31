@@ -25,6 +25,14 @@ body {
   overflow: hidden;
 }
 
+a {
+  transition: opacity $transition;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
 a, a:visited {
   color: inherit;
 }

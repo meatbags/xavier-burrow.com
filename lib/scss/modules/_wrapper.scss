@@ -3,7 +3,7 @@
   user-select: none;
   width: 100%;
   height: 100vh;
-  z-index: $indexContent;
+  z-index: $indexWrapper;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -12,61 +12,15 @@
 
   .wrapper__inner {
     position: relative;
-    @include padding(6, 6, 0, 6);
-    padding-right: 0;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    @include padding(6, 6, 0, 6);
 
     @media screen and (max-width: $mobile) {
-      @include pad(3, 3);
-    }
-
-    .contact-box {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      @include pad(6, 6);
-      font-size: $fontLarge;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-
-      @media screen and (max-width: $mobile) {
-        @include pad(3, 3);
-      }
-
-      .contact-box__header {
-        transition: $transition;
-
-        &:hover {
-          opacity: 0.5;
-        }
-      }
-
-      &.active {
-        .contact-box__header {
-          opacity: 0.5;
-        }
-      }
-
-      .contact-box__contact {
-        height: 0;
-        overflow: hidden;
-        transition: $transition;
-
-        .email {
-          opacity: 0;
-          transition: $transitionSlow;
-
-          &.active {
-            opacity: 1;
-          }
-        }
-      }
+      @include padding(3, 3, 4, 3);
     }
   }
 }

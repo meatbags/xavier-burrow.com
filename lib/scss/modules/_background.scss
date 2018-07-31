@@ -4,13 +4,14 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  //display: flex;
+  //justify-content: flex-start;
+  //align-items: flex-start;
   z-index: $indexBackgroundImage;
 
   img {
     object-fit: cover;
+    object-position: left top;
   }
 }
 

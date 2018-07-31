@@ -1,0 +1,45 @@
+.contact-box {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  @include pad(6, 6);
+  font-size: $fontLarge;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: $indexContactBox;
+
+  @media screen and (max-width: $mobile) {
+    @include pad(3, 3);
+  }
+
+  .contact-box__header {
+    transition: $transition;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &.active {
+    .contact-box__header {
+      opacity: 0.5;
+    }
+  }
+
+  .contact-box__contact {
+    height: 0;
+    overflow: hidden;
+    transition: $transition;
+
+    .email {
+      opacity: 0;
+      transition: $transitionSlow;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}

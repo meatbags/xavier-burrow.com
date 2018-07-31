@@ -1,8 +1,8 @@
 .sections {
-  width: 100%;
+  width: 150%;
   height: 100%;
-  overflow-y: scroll;
   flex: 1;
+  overflow-y: scroll;
   position: relative;
 
   .section-wrapper {
@@ -13,7 +13,7 @@
     display: none;
     transition: $transition;
     opacity: 1;
-    padding-top: $space * 4;
+    padding-top: $space * 3;
     padding-bottom: 33vh;
 
     &.active {
@@ -27,6 +27,8 @@
       max-width: $sectionSize;
       font-weight: lighter;
       opacity: 0;
+      font-family: $fontStackAlt;
+      letter-spacing: $letterSpacingAlt;
       //transition: $transitionFast;
 
       .section__inner {
@@ -36,13 +38,13 @@
           font-size: $fontLarge;
           text-decoration: underline;
           text-transform: lowercase;
-          font-weight: normal;
+          font-family: $fontStack;
+          letter-spacing: $letterSpacing;
         }
 
         .section-description {
           @include pad(0, 1);
           font-size: $fontSize;
-          font-family: $fontStackAlt;
         }
 
         .section-links {
