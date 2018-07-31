@@ -1,17 +1,27 @@
-.background-image {
+.background-image, .background-selected-image {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  //display: flex;
-  //justify-content: flex-start;
-  //align-items: flex-start;
   z-index: $indexBackgroundImage;
 
   img {
     object-fit: cover;
     object-position: left top;
+    min-width: 100%;
+  }
+}
+
+.background-selected-image {
+  z-index: $indexBackgroundSelectedImage;
+  transition: opacity $transitionSlow;
+  opacity: 0;
+  filter: saturate(100%) brightness(50%);
+  mix-blend-mode: hard-light;
+
+  &.active {
+    opacity: 0.9;
   }
 }
 
@@ -25,4 +35,9 @@
   width: 100vw;
   height: 100vh;
   z-index: $indexBackgroundFill;
+  transition: opacity $transitionSlow;
+
+  &.dimmed {
+    opacity: 0.25;
+  }
 }

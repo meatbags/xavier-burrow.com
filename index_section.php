@@ -1,8 +1,10 @@
 <?php
   $title = get_the_title();
   $desc = get_field('description');
-  $gallery = get_field('gallery');
+  $image = get_field('image');
+  $video = get_field('video');
   $links = get_field('links');
+  $id = get_the_ID();
 ?>
 
 <div class='section'>
@@ -17,21 +19,18 @@
           <a class='link' href='<?php echo $link['url']; ?>' target='_blank'><?php echo $link['label']; ?></a>
         <?php endforeach; ?>
       </div>
-    <?php endif; ?>
-    <!--
-    <?php foreach($gallery as $img):
-      if (is_array($img) && array_key_exists('sizes', $img)):
-        $thumb = $img['sizes']['thumbnail'];
-        $src = $img['sizes']['large'];
-      ?>
-      <div class='gallery-image'>
-        <img class='thumbnail' src='<?php echo $thumb; ?>'>
-        <img class='full' src='<?php echo $src; ?>'>
+    <?php endif;
+      if ($image):
+        $target = 'image-' . $id;
+        ?>
+      <div id='<?php echo $target; ?>' class='section-image'>
+        <img data-target='<?php echo '#' . $target; ?>' src='<?php echo $image['url']; ?>' />
       </div>
-      <?php
-        endif;
-      endforeach;
-    ?>
-    -->
+    <?php endif;
+      if ($video): ?>
+      <div class='section-video'>
+        <?php echo $video; ?>
+      </div>
+    <?php endif; ?>
   </div>
 </div>
