@@ -9,23 +9,21 @@
   flex-direction: column;
   align-items: flex-end;
   z-index: $indexContactBox;
+  opacity: 0;
+  transition: opacity $transition;
 
   @media screen and (max-width: $mobile) {
     @include pad(3, 3);
   }
 
-  .contact-box__header {
-    transition: $transition;
-
-    &:hover {
+  &.active, &:hover {
+    .contact-box__header {
       opacity: 0.5;
     }
   }
 
-  &.active {
-    .contact-box__header {
-      opacity: 0.5;
-    }
+  .contact-box__header {
+    transition: $transition;
   }
 
   .contact-box__contact {

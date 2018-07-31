@@ -21,15 +21,18 @@
       </div>
     <?php endif;
       if ($image):
-        $target = 'image-' . $id;
+        $imageId = 'image-' . $id;
+        $wrapperId = 'wrapper-' . $id;
         ?>
-      <div id='<?php echo $target; ?>' class='section-image'>
-        <img data-target='<?php echo '#' . $target; ?>' src='<?php echo $image['url']; ?>' />
+      <div id='<?php echo $wrapperId; ?>' data-target='<?php echo '#' . $imageId; ?>' class='section-image'>
+        <img id='<?php echo $imageId; ?>' data-target='<?php echo '#' . $wrapperId; ?>' src='<?php echo $image['url']; ?>' />
       </div>
     <?php endif;
       if ($video): ?>
       <div class='section-video'>
-        <?php echo $video; ?>
+        <div class='section-video__inner'>
+          <?php echo $video; ?>
+        </div>
       </div>
     <?php endif; ?>
   </div>

@@ -56,7 +56,7 @@
 <?php //get_template_part('app/business_card'); ?>
 <?php //get_template_part('app/logo'); ?>
 
-<div class='background-image'>
+<div class='background-image dimmed'>
   <img src='<?php echo get_template_directory_uri(); ?>/lib/img/background-grey.jpg'/>
 </div>
 <div class='background-selected-image'>

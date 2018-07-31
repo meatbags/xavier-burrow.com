@@ -1,10 +1,15 @@
-.background-image, .background-selected-image {
+.background-image {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: $indexBackgroundImage;
+  transition: opacity 2s;
+
+  &.dimmed {
+    opacity: 0.75;
+  }
 
   img {
     object-fit: cover;
@@ -40,9 +45,28 @@
       object-fit: cover;
       object-position: left top;
       min-width: 100%;
+    }
+  }
 
-      @media screen and (max-width: $mobile) {
-        object-position: center top;
+  @media screen and (max-width: $mobile) {
+    filter: saturate(100%) brightness(65%);
+
+    .pane {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.active {
+        opacity: 0.95;
+      }
+
+      img {
+        object-fit: cover;
+        object-position: 50% 50%;
+        width: 100vh;
+        height: auto;
+        transform: rotate(90deg);
+        min-width: inherit;
       }
     }
   }
@@ -61,5 +85,11 @@
 
   &.dimmed {
     opacity: 0.2;
+  }
+
+  @media screen and (max-width: $mobile) {
+    &.dimmed {
+      opacity: 0.1;
+    }
   }
 }

@@ -4,6 +4,7 @@ canvas {
   pointer-events: none;
   opacity: 0.0;
   transition: opacity 5s;
+  mix-blend-mode: hard-light;
 
   &.active {
     opacity: 0.2;
