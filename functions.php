@@ -27,7 +27,19 @@ function add_admin_post_types() {
 		'taxonomies' => array('category', 'post_tag'),
 		'supports' => array('title', 'editor', 'revisions', 'thumbnail')
 	));
+	register_post_type('Artworks', array(
+		'label' => 'Artworks',
+		'public' => true,
+		'capability_type' => 'post',
+		'hierarchical' => true,
+		'rewrite' => array('slug' => 'artworks'),
+		'query_var' => true,
+		'menu_icon' => 'dashicons-admin-appearance',
+		'taxonomies' => array('category', 'post_tag'),
+		'supports' => array('title', 'editor', 'revisions', 'thumbnail')
+	));
 	remove_post_type_support('projects', 'editor');
+	remove_post_type_support('artworks', 'editor');
 }
 add_action('init', 'add_admin_post_types');
 

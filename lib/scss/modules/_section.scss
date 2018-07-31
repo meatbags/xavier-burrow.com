@@ -4,6 +4,12 @@
   flex: 1;
   overflow-y: scroll;
   position: relative;
+  transition: opacity $transitionSlow;
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+  }
 
   .section-wrapper {
     width: 100%;

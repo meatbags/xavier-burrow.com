@@ -82,7 +82,7 @@ canvas {
   z-index: 2;
   pointer-events: none;
   opacity: 0.0;
-  transition: opacity 2s; }
+  transition: opacity 5s; }
   canvas.active {
     opacity: 0.2; }
 
@@ -130,7 +130,11 @@ canvas {
   -ms-flex: 1;
       flex: 1;
   overflow-y: scroll;
-  position: relative; }
+  position: relative;
+  transition: opacity 1s;
+  opacity: 0; }
+  .sections.active {
+    opacity: 1; }
   .sections .section-wrapper {
     width: 100%;
     position: absolute;
@@ -214,13 +218,42 @@ canvas {
       .contact-box .contact-box__contact .email.active {
         opacity: 1; }
 
+@keyframes flash {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .loading-screen {
   position: fixed;
-  background: #000;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 1000;
-  transition: 1s; }
+  transition: 1s;
+  font-size: 20px;
+  background-color: #111;
+  background-size: 8px 8px;
+  background-image: linear-gradient(to right, rgba(136, 136, 136, 0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(136, 136, 136, 0.025) 1px, transparent 1px);
+  padding-left: 48px;
+  padding-top: 48px;
+  padding-right: 48px;
+  padding-bottom: 48px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  @media screen and (max-width: 600px) {
+    .loading-screen {
+      padding-left: 24px;
+      padding-top: 24px;
+      padding-right: 24px;
+      padding-bottom: 24px; } }
+  .loading-screen .loading-screen__inner {
+    animation: flash 0.5s infinite; }
 
 .menu {
   padding-left: 0px;

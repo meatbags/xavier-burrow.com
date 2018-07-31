@@ -8,7 +8,7 @@
         <div class='menu-list'>
           <div data-target='#section-code' class='item active'>code</div>
           <div data-target='#section-art' class='item'>art</div>
-          <div data-target='#section-fun' class='item'>fun</div>
+          <div data-target='#section-fun' class='item mobile-remove'>fun</div>
         </div>
       </div>
     </div>
@@ -19,13 +19,21 @@
           if ($query->have_posts()):
             while ($query->have_posts()):
               $query->the_post();
-              get_template_part('index_project');
+              get_template_part('index_section');
             endwhile;
           endif;
         ?>
       </div>
       <div id='section-art' class='section-wrapper'>
-        // art loads here
+        <?php
+          $query = new WP_Query(array('post_type' => 'artworks', 'orderby' => 'menu_order', 'posts_per_page' => -1));
+          if ($query->have_posts()):
+            while ($query->have_posts()):
+              $query->the_post();
+              get_template_part('index_section');
+            endwhile;
+          endif;
+        ?>
       </div>
       <div id='section-fun' class='section-wrapper'>
         // fun loads here
@@ -52,6 +60,10 @@
   <img src='<?php echo get_template_directory_uri(); ?>/lib/img/background-grey.jpg'/>
 </div>
 <div class='background-fill'></div>
-<div class='loading-screen'>loading.</div>
+<div class='loading-screen'>
+  <div class='loading-screen__inner'>
+    loading.
+  </div>
+</div>
 
 <?php get_footer(); ?>

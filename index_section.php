@@ -8,12 +8,16 @@
 <div class='section'>
   <div class='section__inner'>
     <div class='section-title'><?php echo $title; ?>.</div>
-    <div class='section-description'><?php echo $desc; ?></div>
-    <div class='section-links'>
-      <?php foreach($links as $link): ?>
-        <a class='link' href='<?php echo $link['url']; ?>' target='_blank'><?php echo $link['label']; ?></a>
-      <?php endforeach; ?>
-    </div>
+    <?php if ($desc): ?>
+      <div class='section-description'><?php echo $desc; ?></div>
+    <?php endif;
+      if ($links): ?>
+      <div class='section-links'>
+        <?php foreach($links as $link): ?>
+          <a class='link' href='<?php echo $link['url']; ?>' target='_blank'><?php echo $link['label']; ?></a>
+        <?php endforeach; ?>
+      </div>
+    <?php endif; ?>
     <!--
     <?php foreach($gallery as $img):
       if (is_array($img) && array_key_exists('sizes', $img)):
