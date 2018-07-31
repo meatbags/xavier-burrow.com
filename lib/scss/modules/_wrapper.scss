@@ -41,17 +41,32 @@
 
       .contact-box__header {
         transition: $transition;
-        
+
         &:hover {
           opacity: 0.5;
         }
       }
 
-      .contact-box__contact {
-
+      &.active {
+        .contact-box__header {
+          opacity: 0.5;
+        }
       }
 
+      .contact-box__contact {
+        height: 0;
+        overflow: hidden;
+        transition: $transition;
 
+        .email {
+          opacity: 0;
+          transition: $transitionSlow;
+
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 }

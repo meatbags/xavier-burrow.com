@@ -34,7 +34,9 @@
     <div class='contact-box'>
       <div class='contact-box__header'>contact.</div>
       <div class='contact-box__contact'>
-        <a href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a>
+        <div class='email'>
+          <a href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a>
+        </div>
       </div>
     </div>
   </div>
@@ -50,6 +52,6 @@
   <img src='<?php echo get_template_directory_uri(); ?>/lib/img/background-grey.jpg'/>
 </div>
 <div class='background-fill'></div>
-
+<div class='loading-screen'>loading.</div>
 
 <?php get_footer(); ?>

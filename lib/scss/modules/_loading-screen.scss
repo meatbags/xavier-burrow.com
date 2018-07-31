@@ -1,0 +1,8 @@
+.loading-screen {
+  position: fixed;
+  background: $black;
+  top: 0;
+  left: 0;
+  z-index: $indexLoadingScreen;
+  transition: $transitionSlow;
+}

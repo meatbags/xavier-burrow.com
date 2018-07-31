@@ -22,12 +22,14 @@ $indexCanvas2d: 10;
 $indexContent: 100;
 $indexMenu: 150;
 $indexWindow: 600;
+$indexLoadingScreen: 1000;
 
 // borders
 $border: 1px solid black;
 
 // animation
 $transition: 0.35s;
+$transitionSlow: 1s;
 $transitionFast: 0.5s;
 
 // breaks

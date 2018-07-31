@@ -145,6 +145,17 @@ canvas {
         transition: 0.35s; }
         .wrapper .wrapper__inner .contact-box .contact-box__header:hover {
           opacity: 0.5; }
+      .wrapper .wrapper__inner .contact-box.active .contact-box__header {
+        opacity: 0.5; }
+      .wrapper .wrapper__inner .contact-box .contact-box__contact {
+        height: 0;
+        overflow: hidden;
+        transition: 0.35s; }
+        .wrapper .wrapper__inner .contact-box .contact-box__contact .email {
+          opacity: 0;
+          transition: 1s; }
+          .wrapper .wrapper__inner .contact-box .contact-box__contact .email.active {
+            opacity: 1; }
 
 .sections {
   width: 100%;
@@ -194,6 +205,14 @@ canvas {
           transition: 0.5s; }
           .sections .section-wrapper .section .section__inner .section-links .link:hover {
             opacity: 0.5; }
+
+.loading-screen {
+  position: fixed;
+  background: #000;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: 1s; }
 
 .menu {
   padding-left: 0px;
