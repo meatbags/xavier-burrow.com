@@ -139,5 +139,10 @@
         }
       }
     }
+
+    .section-generic {
+      border-left: 1px solid white;
+      padding-left: $space * 1.5;
+    }
   }
 }

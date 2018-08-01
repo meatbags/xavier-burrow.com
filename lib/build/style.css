@@ -236,6 +236,9 @@ canvas {
             display: -ms-flexbox;
             display: flex;
             pointer-events: all; }
+    .sections .section-wrapper .section-generic {
+      border-left: 1px solid white;
+      padding-left: 12px; }
 
 .contact-box {
   position: fixed;

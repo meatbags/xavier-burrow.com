@@ -8,7 +8,7 @@
         <div class='menu-list'>
           <div data-target='#section-code' class='item active'>code</div>
           <div data-target='#section-art' class='item'>visual</div>
-          <div data-target='#section-fun' class='item mobile-remove'>fun</div>
+          <div data-target='#section-fun' class='item mobile-remove'>about</div>
         </div>
       </div>
     </div>
@@ -36,6 +36,14 @@
         ?>
       </div>
       <div id='section-fun' class='section-wrapper'>
+        <div class='section-generic'>
+          Xavier Burrow is an animator and programmer<br />
+          working in three dimensions and five senses.<br />
+          <br />
+          <a href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a>&nbsp;
+          <a href='https://www.instagram.com/xavebabes' target='_blank'>insta</a>&nbsp;
+          <a href='https://github.com/meatbags' target='_blank'>github</a>
+        </div>
         <?php get_template_part('app/piano'); ?>
         <?php get_template_part('app/chess'); ?>
         <?php get_template_part('app/business_card'); ?>
