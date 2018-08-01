@@ -81,6 +81,11 @@
             display: none;
             background: $black;
             pointer-events: all;
+
+            iframe {
+              width: 45vw !important;
+              height: 25vw;
+            }
           }
 
           @media screen and (max-width: $mobile) {
