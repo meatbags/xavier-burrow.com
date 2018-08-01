@@ -90,7 +90,6 @@
             height: auto;
 
             .section-video__inner {
-              display: flex;
               padding: 0;
 
               iframe {
@@ -122,7 +121,6 @@
         padding-left: $space * 1.5;
         color: white;
         text-shadow: 1px 1px 3px $colourSecondary;
-        //opacity: 1 !important; // override parallax
 
         .section__inner {
           .section-video {

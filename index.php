@@ -7,7 +7,7 @@
         <div class='menu-title'>xavier burrow</div>
         <div class='menu-list'>
           <div data-target='#section-code' class='item active'>code</div>
-          <div data-target='#section-art' class='item'>art</div>
+          <div data-target='#section-art' class='item'>visual</div>
           <div data-target='#section-fun' class='item mobile-remove'>fun</div>
         </div>
       </div>
@@ -36,7 +36,10 @@
         ?>
       </div>
       <div id='section-fun' class='section-wrapper'>
-        // fun loads here
+        <?php get_template_part('app/piano'); ?>
+        <?php get_template_part('app/chess'); ?>
+        <?php get_template_part('app/business_card'); ?>
+        <?php get_template_part('app/logo'); ?>
       </div>
     </div>
     <div class='contact-box'>
@@ -49,12 +52,6 @@
     </div>
   </div>
 </div>
-
-<?php //get_template_part('app/computer-ui'); ?>
-<?php //get_template_part('app/piano'); ?>
-<?php //get_template_part('app/chess'); ?>
-<?php //get_template_part('app/business_card'); ?>
-<?php //get_template_part('app/logo'); ?>
 
 <div class='background-image dimmed'>
   <img src='<?php echo get_template_directory_uri(); ?>/lib/img/background-grey.jpg'/>

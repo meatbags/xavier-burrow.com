@@ -208,8 +208,6 @@ canvas {
               width: 100%;
               height: auto; }
               .sections .section-wrapper .section .section__inner .section-video .section-video__inner {
-                display: -ms-flexbox;
-                display: flex;
                 padding: 0; }
                 .sections .section-wrapper .section .section__inner .section-video .section-video__inner iframe {
                   width: 100% !important;
@@ -365,12 +363,13 @@ canvas {
       -ms-user-select: none;
           user-select: none;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 4px 4px rgba(0, 0, 0, 0.25); }
-  .window.fade-in {
-    opacity: 0;
-    transition: 0.5s; }
-    .window.fade-in.active {
-      opacity: 1; }
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.75s;
+  opacity: 0;
+  pointer-events: none; }
+  .window.active {
+    opacity: 1;
+    pointer-events: all; }
   .window .window__header {
     padding-left: 4px;
     padding-top: 4px;
@@ -441,12 +440,13 @@ canvas {
     padding-top: 4px;
     padding-right: 16px;
     padding-bottom: 4px;
-    background: linear-gradient(0deg, #444, #777);
+    background: linear-gradient(0deg, rgba(68, 68, 68, 0.25), #777);
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
         flex-direction: column;
-    border-radius: 1px; }
+    border-radius: 1px;
+    border: 1px solid #fff; }
     .piano-wrapper .piano-wrapper__inner .piano-body .piano-headboard {
       height: 16px;
       background: rgba(255, 255, 255, 0.1);
@@ -456,7 +456,8 @@ canvas {
   position: relative;
   width: 336px;
   height: 40px;
-  cursor: pointer; }
+  cursor: pointer;
+  border-top: 1px solid #fff; }
   .piano .keys-white {
     position: absolute;
     top: 0;
@@ -468,18 +469,17 @@ canvas {
     -ms-flex-direction: row;
         flex-direction: row;
     -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    background: white; }
+        flex-wrap: nowrap; }
     .piano .keys-white li {
       -ms-flex-positive: 1;
           flex-grow: 1;
-      border: 1px solid #00f;
+      border: 1px solid #fff;
       border-top: none;
       border-right: none; }
       .piano .keys-white li:hover {
         background: linear-gradient(0deg, rgba(255, 255, 255, 0), #f00); }
       .piano .keys-white li:last-child {
-        border-right: 1px solid #00f; }
+        border-right: 1px solid #fff; }
   .piano .keys-black {
     position: absolute;
     top: 0;
@@ -500,9 +500,9 @@ canvas {
       margin-right: 4.44444px;
       -ms-flex-positive: 1;
           flex-grow: 1;
-      border: 1px solid #00f;
+      border: 1px solid #fff;
       border-top: none;
-      background: #00f;
+      background: #fff;
       transition: background-color 0.25s; }
       .piano .keys-black li:nth-child(7n), .piano .keys-black li:nth-child(7n-4), .piano .keys-black li:nth-last-child(1) {
         opacity: 0;

@@ -9,7 +9,6 @@ $red: #f00;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  //background: linear-gradient(0deg, $black, rgba($colourSecondaryDark, 0.5));
   position: relative;
 
   &.display-none {
@@ -19,10 +18,11 @@ $red: #f00;
   .piano-wrapper__inner {
     .piano-body {
       @include pad(2, 0.5);
-      background: linear-gradient(0deg, #444, #777);
+      background: linear-gradient(0deg, rgba(#444, 0.25), #777);
       display: flex;
       flex-direction: column;
       border-radius: 1px;
+      border: 1px solid $white;
 
       .piano-headboard {
         height: $space * 2;
@@ -38,6 +38,7 @@ $red: #f00;
   width: 24 * $space * 1.75;
   height: $space * 5;
   cursor: pointer;
+  border-top: 1px solid $white;
 
   .keys-white {
     position: absolute;
@@ -48,11 +49,11 @@ $red: #f00;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    background: white;
+    //background: white;
 
     li {
       flex-grow: 1;
-      border: 1px solid $blue;
+      border: 1px solid $white;
       border-top: none;
       border-right: none;
 
@@ -61,7 +62,7 @@ $red: #f00;
       }
 
       &:last-child {
-        border-right: 1px solid $blue;
+        border-right: 1px solid $white;
       }
     }
   }
@@ -84,9 +85,9 @@ $red: #f00;
       margin-left: $space / 1.8;
       margin-right: $space / 1.8;
       flex-grow: 1;
-      border: 1px solid $blue;
+      border: 1px solid $white;
       border-top: none;
-      background: $blue;
+      background: $white;
       transition: background-color $speed;
 
       &:nth-child(7n), &:nth-child(7n-4), &:nth-last-child(1) {

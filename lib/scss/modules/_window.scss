@@ -6,14 +6,13 @@
   user-select: none;
   border: 1px solid rgba($white, 0.25);
   box-shadow: $space/2 $space/2 rgba(0, 0, 0, 0.25);
+  transition: opacity 0.75s;
+  opacity: 0;
+  pointer-events: none;
 
-  &.fade-in {
-    opacity: 0;
-    transition: 0.5s;
-
-    &.active {
-      opacity: 1;
-    }
+  &.active {
+    opacity: 1;
+    pointer-events: all;
   }
 
   .window__header {
