@@ -50,16 +50,18 @@
         <?php get_template_part('app/logo'); ?>
       </div>
     </div>
-    <div class='contact-box'>
-      <div class='contact-box__header'>contact.</div>
-      <div class='contact-box__contact'>
-        <div class='email'>
-          <a href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a> <a target='_blank' href='https://www.instagram.com/xavebabes'>insta</a>
-        </div>
-      </div>
+  </div>
+</div>
+
+<div class='contact-box'>
+  <div class='contact-box__header'>contact.</div>
+  <div class='contact-box__contact'>
+    <div class='email'>
+      <a href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a> <a target='_blank' href='https://www.instagram.com/xavebabes'>insta</a>
     </div>
   </div>
 </div>
+<!-- <div class='more-box'>&darr;</div> -->
 
 <div class='background-image dimmed'>
   <img src='<?php echo get_template_directory_uri(); ?>/lib/img/background-grey.jpg'/>

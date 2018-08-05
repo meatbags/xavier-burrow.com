@@ -86,7 +86,7 @@ canvas {
   transition: opacity 5s;
   mix-blend-mode: hard-light; }
   canvas.active {
-    opacity: 0.2; }
+    opacity: 0.5; }
 
 .wrapper {
   position: absolute;
@@ -221,14 +221,18 @@ canvas {
           .sections .section-wrapper .section .section__inner .section-links .link {
             text-transform: lowercase;
             margin-right: 4px;
-            transition: 0.5s; }
+            transition: 0.35s; }
             .sections .section-wrapper .section .section__inner .section-links .link:hover {
               opacity: 0.5; }
+      .sections .section-wrapper .section a {
+        pointer-events: none; }
       .sections .section-wrapper .section.active {
         border-left: 1px solid white;
         padding-left: 12px;
         color: white;
         text-shadow: 1px 1px 3px #222; }
+        .sections .section-wrapper .section.active a {
+          pointer-events: all; }
         .sections .section-wrapper .section.active .section__inner .section-video {
           display: -ms-flexbox;
           display: flex; }
@@ -279,6 +283,30 @@ canvas {
       .contact-box .contact-box__contact .email.active {
         opacity: 1; }
 
+.more-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-left: 48px;
+  padding-top: 48px;
+  padding-right: 48px;
+  padding-bottom: 48px;
+  font-size: 16px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  z-index: 101;
+  transition: opacity 0.35s; }
+  @media screen and (max-width: 600px) {
+    .more-box {
+      padding-left: 24px;
+      padding-top: 24px;
+      padding-right: 24px;
+      padding-bottom: 24px; } }
+
 @keyframes flash {
   0% {
     opacity: 0; }
@@ -292,7 +320,7 @@ canvas {
   width: 100vw;
   height: 100vh;
   z-index: 1000;
-  transition: 1s;
+  transition: opacity 1s;
   font-size: 16px;
   background-color: #111;
   background-size: 8px 8px;
@@ -323,9 +351,7 @@ canvas {
   padding-bottom: 0px;
   width: 100%;
   max-width: 384px;
-  height: 24px;
-  background: #ccc;
-  color: #222;
+  height: 32px;
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 1px;
@@ -333,7 +359,8 @@ canvas {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  position: relative; }
+  position: relative;
+  border-bottom: 1px solid #fff; }
   .menu .menu__inner {
     position: absolute;
     width: 100%;
@@ -341,7 +368,7 @@ canvas {
     display: flex;
     bottom: 0;
     left: 0;
-    transform: translateY(4px); }
+    padding-bottom: 4px; }
     .menu .menu__inner .menu-title {
       width: 50%;
       text-align: left; }
@@ -355,9 +382,13 @@ canvas {
         margin-left: 8px;
         transition: 0.35s;
         opacity: 0.5;
-        cursor: pointer; }
-        .menu .menu__inner .menu-list .item:hover, .menu .menu__inner .menu-list .item.active {
+        cursor: pointer;
+        text-decoration: line-through; }
+        .menu .menu__inner .menu-list .item:hover {
           opacity: 1.0; }
+        .menu .menu__inner .menu-list .item.active {
+          opacity: 1.0;
+          text-decoration: none; }
 
 .window {
   position: absolute;
