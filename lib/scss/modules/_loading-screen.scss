@@ -4,6 +4,7 @@
 }
 
 .loading-screen {
+  @include pad(6, 6);
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +16,6 @@
   background-color: #111;
   background-size: $gridSize $gridSize;
   background-image: linear-gradient(to right, $colourGrid 1px, transparent 1px), linear-gradient(to bottom, $colourGrid 1px, transparent 1px);
-  @include pad(6, 6);
   display: flex;
   justify-content: center;
   align-items: center;

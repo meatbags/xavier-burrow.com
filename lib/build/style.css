@@ -83,8 +83,10 @@ canvas {
   z-index: 2;
   pointer-events: none;
   opacity: 0.0;
-  transition: opacity 5s;
-  mix-blend-mode: hard-light; }
+  transition: opacity 5s; }
+  @media screen and (max-width: 600px) {
+    canvas {
+      mix-blend-mode: normal; } }
   canvas.active {
     opacity: 0.2; }
 
@@ -286,6 +288,10 @@ canvas {
     opacity: 1; } }
 
 .loading-screen {
+  padding-left: 48px;
+  padding-top: 48px;
+  padding-right: 48px;
+  padding-bottom: 48px;
   position: fixed;
   top: 0;
   left: 0;
@@ -297,10 +303,6 @@ canvas {
   background-color: #111;
   background-size: 8px 8px;
   background-image: linear-gradient(to right, rgba(136, 136, 136, 0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(136, 136, 136, 0.025) 1px, transparent 1px);
-  padding-left: 48px;
-  padding-top: 48px;
-  padding-right: 48px;
-  padding-bottom: 48px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;

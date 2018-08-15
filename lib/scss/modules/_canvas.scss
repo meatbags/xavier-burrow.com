@@ -4,7 +4,11 @@ canvas {
   pointer-events: none;
   opacity: 0.0;
   transition: opacity 5s;
-  mix-blend-mode: hard-light;
+  //mix-blend-mode: hard-light;
+
+  @media screen and (max-width: $mobile) {
+    mix-blend-mode: normal;
+  }
 
   &.active {
     opacity: 0.2;
