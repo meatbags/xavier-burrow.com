@@ -63,6 +63,8 @@
 </div>
 <!-- <div class='more-box'>&darr;</div> -->
 
+<div class='canvas-wrapper'></div>
+
 <div class='background-image dimmed'>
   <img src='<?php echo get_template_directory_uri(); ?>/lib/img/background-grey.jpg'/>
 </div>

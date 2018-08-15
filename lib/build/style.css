@@ -60,7 +60,7 @@ body, html {
 
 body {
   font-family: "Karla", sans-serif;
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 0.5px;
   width: 100%;
   height: 100%;
@@ -89,6 +89,23 @@ canvas {
       mix-blend-mode: normal; } }
   canvas.active {
     opacity: 0.5; }
+
+.canvas-wrapper {
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  .canvas-wrapper canvas {
+    position: relative; }
 
 .wrapper {
   position: absolute;
@@ -155,7 +172,7 @@ canvas {
       -ms-flex-direction: column;
           flex-direction: column; }
     .sections .section-wrapper .section {
-      width: 288px;
+      width: 480px;
       margin-bottom: 48px;
       font-weight: lighter;
       opacity: 0;
@@ -166,12 +183,12 @@ canvas {
       .sections .section-wrapper .section:hover {
         padding-left: 4px; }
       .sections .section-wrapper .section .section__inner {
-        width: 288px; }
-        @media screen and (max-width: 288px) {
+        width: 480px; }
+        @media screen and (max-width: 480px) {
           .sections .section-wrapper .section .section__inner {
             width: 100%; } }
         .sections .section-wrapper .section .section__inner .section-title {
-          font-size: 16px;
+          font-size: 20px;
           text-decoration: underline;
           text-transform: lowercase;
           font-family: "Karla", sans-serif;
@@ -181,7 +198,7 @@ canvas {
           padding-top: 8px;
           padding-right: 0px;
           padding-bottom: 8px;
-          font-size: 12px; }
+          font-size: 15px; }
         .sections .section-wrapper .section .section__inner .section-image {
           display: none; }
         .sections .section-wrapper .section .section__inner .section-video {
@@ -218,7 +235,7 @@ canvas {
                   width: 100% !important;
                   height: auto; } }
         .sections .section-wrapper .section .section__inner .section-links {
-          font-size: 10px;
+          font-size: 12.5px;
           padding-bottom: 2px; }
           .sections .section-wrapper .section .section__inner .section-links .link {
             text-transform: lowercase;
@@ -254,7 +271,7 @@ canvas {
   padding-top: 48px;
   padding-right: 48px;
   padding-bottom: 48px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   display: -ms-flexbox;
   display: flex;
@@ -293,7 +310,7 @@ canvas {
   padding-top: 48px;
   padding-right: 48px;
   padding-bottom: 48px;
-  font-size: 16px;
+  font-size: 20px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -327,7 +344,7 @@ canvas {
   height: 100vh;
   z-index: 1000;
   transition: opacity 1s;
-  font-size: 16px;
+  font-size: 20px;
   background-color: #111;
   background-size: 8px 8px;
   background-image: linear-gradient(to right, rgba(136, 136, 136, 0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(136, 136, 136, 0.025) 1px, transparent 1px);
@@ -352,9 +369,9 @@ canvas {
   padding-right: 0px;
   padding-bottom: 0px;
   width: 100%;
-  max-width: 384px;
+  max-width: 576px;
   height: 32px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 1px;
   -webkit-user-select: none;
@@ -420,11 +437,11 @@ canvas {
     text-overflow: ellipsis;
     cursor: -webkit-grab;
     cursor: grab;
-    font-size: 10px;
+    font-size: 12.5px;
     color: #fff; }
   .window .window__body {
     position: relative;
-    font-size: 10px;
+    font-size: 12.5px;
     overflow: hidden;
     z-index: 601;
     width: 0;
