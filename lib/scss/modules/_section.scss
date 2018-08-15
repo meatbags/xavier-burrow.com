@@ -112,7 +112,7 @@
           .link {
             text-transform: lowercase;
             margin-right: $space / 2;
-            transition: 0.5s;
+            transition: $transition;
 
             &:hover {
               opacity: 0.5;
@@ -121,11 +121,19 @@
         }
       }
 
+      a {
+        pointer-events: none; // disable links until selected
+      }
+
       &.active {
         border-left: 1px solid white;
         padding-left: $space * 1.5;
         color: white;
         text-shadow: 1px 1px 3px $colourSecondary;
+
+        a {
+          pointer-events: all;
+        }
 
         .section__inner {
           .section-video {

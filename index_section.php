@@ -9,7 +9,15 @@
 
 <div class='section'>
   <div class='section__inner'>
-    <div class='section-title'><?php echo $title; ?>.</div>
+    <div class='section-title'>
+      <?php if ($links): ?>
+        <a class='link' href='<?php echo $links[0]['url']; ?>' target='_blank'>
+          <?php echo $title; ?>.
+        </a>
+      <?php else: ?>
+        <?php echo $title; ?>.
+      <?php endif; ?>
+    </div>
     <?php if ($desc): ?>
       <div class='section-description'><?php echo $desc; ?></div>
     <?php endif;

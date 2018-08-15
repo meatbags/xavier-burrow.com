@@ -11,7 +11,7 @@
   width: 100vw;
   height: 100vh;
   z-index: $indexLoadingScreen;
-  transition: $transitionSlow;
+  transition: opacity $transitionSlow;
   font-size: $fontLarge;
   background-color: #111;
   background-size: $gridSize $gridSize;

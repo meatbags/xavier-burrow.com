@@ -2,14 +2,15 @@
   @include pad(0, 0);
   width: 100%;
   max-width: $menuSize;
-  height: $space * 3;
-  background: $colourPrimary;
-  color: $colourSecondary;
+  height: $space * 4;
+  //background: $colourPrimary;
+  //color: $colourSecondary;
   font-size: $fontLarge;
   font-weight: bold;
   margin-bottom: 1px;
   user-select: none;
   position: relative;
+  border-bottom: 1px solid $white;
 
   .menu__inner {
     position: absolute;
@@ -17,7 +18,7 @@
     display: flex;
     bottom: 0;
     left: 0;
-    transform: translateY(4px);
+    padding-bottom: $space / 2;
 
     .menu-title {
       width: 50%;
@@ -34,9 +35,15 @@
         transition: $transition;
         opacity: 0.5;
         cursor: pointer;
+        text-decoration: line-through;
 
-        &:hover, &.active {
+        &:hover {
           opacity: 1.0;
+        }
+
+        &.active {
+          opacity: 1.0;
+          text-decoration: none;
         }
       }
     }
