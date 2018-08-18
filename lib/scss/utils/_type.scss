@@ -3,7 +3,14 @@ $fontStackAlt: "Karla", sans-serif;
 $letterSpacing: 0.5px;
 $letterSpacingAlt: 0.8px;
 $lineHeight: 1.2;
+<<<<<<< HEAD
 $fontSize: 13px;
 $fontSmall: 10px;
 $fontLarge: 16px;
+=======
+$textScale: 1.25;
+$fontSize: 12px * $textScale;
+$fontSmall: 10px * $textScale;
+$fontLarge: 16px * $textScale;
+>>>>>>> c5ef25f3b88fda9bffc8d17f98eada20c1a31fb4
 $fontMedium: $fontSize;
