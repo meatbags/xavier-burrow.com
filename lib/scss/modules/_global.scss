@@ -10,7 +10,6 @@ li {
 body, html {
   padding: 0;
   margin: 0;
-  background: $black;
 }
 
 body {
@@ -21,9 +20,7 @@ body {
   height: 100%;
   color: $colourPrimary;
   line-height: $lineHeight;
-  background: black;
-  overflow-x: hidden;
-  overflow: hidden;
+  background: $white;
 }
 
 a {

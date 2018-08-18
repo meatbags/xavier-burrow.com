@@ -2,7 +2,7 @@
   position: absolute;
   user-select: none;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   z-index: $indexWrapper;
   display: flex;
   flex-direction: column;

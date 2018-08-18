@@ -9,6 +9,12 @@
 
 <div class='section'>
   <div class='section__inner'>
+    <div class='image-card'>
+      <?php if ($image): ?>
+        <img src='<?php echo $image['url']; ?>'/>
+      <?php endif; ?>
+    </div>
+    <!--
     <div class='section-title'>
       <?php if ($links): ?>
         <a class='link' href='<?php echo $links[0]['url']; ?>' target='_blank'>
@@ -43,5 +49,6 @@
         </div>
       </div>
     <?php endif; ?>
+    -->
   </div>
 </div>

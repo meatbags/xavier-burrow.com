@@ -1,156 +1,134 @@
 .sections {
-  width: 150%;
-  height: 100%;
-  flex: 1;
-  overflow-y: scroll;
-  position: relative;
+  width: 100%;
   transition: opacity $transitionSlow;
+  display: flex;
+  flex-wrap: wrap;
   opacity: 0;
 
   &.active {
     opacity: 1;
   }
 
-  .section-wrapper {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
+  .section {
+    width: 20%;
+    margin-bottom: $space * 6;
+    font-weight: lighter;
+    //opacity: 0;
+    font-family: $fontStackAlt;
+    letter-spacing: $letterSpacingAlt;
+    cursor: pointer;
     transition: $transition;
-    opacity: 1;
-    padding-top: $space * 3;
-    padding-bottom: 33vh;
 
-    &.active {
-      display: flex;
-      flex-direction: column;
+    .section__inner {
+      @include padding(2, 6, 2, 0);
+
+      .image-card {
+        width: 100%;
+        height: 120px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .section-title {
+        font-size: $fontLarge;
+        text-decoration: underline;
+        text-transform: lowercase;
+        font-family: $fontStack;
+        letter-spacing: $letterSpacing;
+      }
+
+      .section-description {
+        @include pad(0, 1);
+        font-size: $fontSize;
+      }
+
+      .section-image {
+        display: none;
+      }
+
+      .section-video {
+        display: none;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+
+        .section-video__inner {
+          display: none;
+          background: $black;
+          pointer-events: all;
+
+          iframe {
+            width: 45vw !important;
+            height: 25vw;
+          }
+        }
+
+        @media screen and (max-width: $mobile) {
+          display: flex;
+          position: relative;
+          width: 100%;
+          height: auto;
+
+          .section-video__inner {
+            padding: 0;
+
+            iframe {
+              width: 100% !important;
+              height: auto;
+            }
+          }
+        }
+      }
+
+      .section-links {
+        font-size: $fontSmall;
+        padding-bottom: $space / 4;
+
+        .link {
+          text-transform: lowercase;
+          margin-right: $space / 2;
+          transition: $transition;
+
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
     }
 
-    .section {
-      width: $sectionSize;
-      margin-bottom: $space * 6;
-      font-weight: lighter;
-      opacity: 0;
-      font-family: $fontStackAlt;
-      letter-spacing: $letterSpacingAlt;
-      cursor: pointer;
-      transition: $transition;
+    a {
+      pointer-events: none; // disable links until selected
+    }
 
-      &:hover {
-        padding-left: $space / 2;
+    &.active {
+      border-left: 1px solid white;
+      padding-left: $space * 1.5;
+      color: white;
+      text-shadow: 1px 1px 3px $colourSecondary;
+
+      a {
+        pointer-events: all;
       }
 
       .section__inner {
-        width: $sectionSize;
-
-        @media screen and (max-width: $sectionSize) {
-          width: 100%;
-        }
-
-        .section-title {
-          font-size: $fontLarge;
-          text-decoration: underline;
-          text-transform: lowercase;
-          font-family: $fontStack;
-          letter-spacing: $letterSpacing;
-        }
-
-        .section-description {
-          @include pad(0, 1);
-          font-size: $fontSize;
-        }
-
-        .section-image {
-          display: none;
-        }
-
         .section-video {
-          display: none;
-          position: fixed;
-          width: 100vw;
-          height: 100vh;
-          top: 0;
-          left: 0;
           display: flex;
-          justify-content: center;
-          align-items: center;
-          pointer-events: none;
 
           .section-video__inner {
-            display: none;
-            background: $black;
+            display: flex;
             pointer-events: all;
-
-            iframe {
-              width: 45vw !important;
-              height: 25vw;
-            }
-          }
-
-          @media screen and (max-width: $mobile) {
-            display: flex;
-            position: relative;
-            width: 100%;
-            height: auto;
-
-            .section-video__inner {
-              padding: 0;
-
-              iframe {
-                width: 100% !important;
-                height: auto;
-              }
-            }
-          }
-        }
-
-        .section-links {
-          font-size: $fontSmall;
-          padding-bottom: $space / 4;
-
-          .link {
-            text-transform: lowercase;
-            margin-right: $space / 2;
-            transition: $transition;
-
-            &:hover {
-              opacity: 0.5;
-            }
           }
         }
       }
-
-      a {
-        pointer-events: none; // disable links until selected
-      }
-
-      &.active {
-        border-left: 1px solid white;
-        padding-left: $space * 1.5;
-        color: white;
-        text-shadow: 1px 1px 3px $colourSecondary;
-
-        a {
-          pointer-events: all;
-        }
-
-        .section__inner {
-          .section-video {
-            display: flex;
-
-            .section-video__inner {
-              display: flex;
-              pointer-events: all;
-            }
-          }
-        }
-      }
-    }
-
-    .section-generic {
-      border-left: 1px solid white;
-      padding-left: $space * 1.5;
     }
   }
 }

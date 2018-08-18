@@ -1,12 +1,7 @@
 canvas {
+  top: 0;
+  left: 0;
   position: fixed;
   z-index: $indexCanvas;
   pointer-events: none;
-  opacity: 0.0;
-  transition: opacity 5s;
-  mix-blend-mode: hard-light;
-
-  &.active {
-    opacity: 0.5;
-  }
 }
