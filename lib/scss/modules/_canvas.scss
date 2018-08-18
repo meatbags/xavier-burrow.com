@@ -4,20 +4,6 @@ canvas {
   position: fixed;
   z-index: $indexCanvas;
   pointer-events: none;
-<<<<<<< HEAD
-=======
-  opacity: 0.0;
-  transition: opacity 5s;
-  //mix-blend-mode: hard-light;
-
-  @media screen and (max-width: $mobile) {
-    mix-blend-mode: normal;
-  }
-
-  &.active {
-    opacity: 0.5;
-  }
->>>>>>> c5ef25f3b88fda9bffc8d17f98eada20c1a31fb4
 }
 
 .canvas-wrapper {
