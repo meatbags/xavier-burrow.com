@@ -1,4 +1,8 @@
+$sectionWidth: 240px;
+$sectionHeight: 135px;
+
 .sections {
+  padding-top: $space * 12;
   width: 100%;
   transition: opacity $transitionSlow;
   display: flex;
@@ -10,22 +14,25 @@
   }
 
   .section {
-    width: 20%;
-    margin-bottom: $space * 6;
+    width: 25%;
     font-weight: lighter;
-    //opacity: 0;
     font-family: $fontStackAlt;
     letter-spacing: $letterSpacingAlt;
     cursor: pointer;
-    transition: $transition;
+    //transition: $transition;
+    margin-bottom: $space * 16;
+    display: flex;
+
+    &:hover {
+      //opacity: 0.5;
+    }
 
     .section__inner {
-      @include padding(2, 6, 2, 0);
-
       .image-card {
-        width: 100%;
-        height: 120px;
+        width: $sectionWidth;
+        height: $sectionHeight;
         overflow: hidden;
+        background: black;
 
         img {
           width: 100%;
@@ -105,29 +112,48 @@
       }
     }
 
-    a {
-      pointer-events: none; // disable links until selected
+    // row spacing
+    &:nth-child(4n-1) {
+      padding-right: calc((25% - #{$sectionWidth}) / 3);
+    }
+    &:nth-child(4n-2) {
+      padding-left: calc((25% - #{$sectionWidth}) / 3);
+    }
+    &:nth-child(4n), &:nth-child(4n-1) {
+      justify-content: flex-end;
     }
 
-    &.active {
-      border-left: 1px solid white;
-      padding-left: $space * 1.5;
-      color: white;
-      text-shadow: 1px 1px 3px $colourSecondary;
+    @media screen and (max-width: $tablet) {
+      width: 33.33%;
 
-      a {
-        pointer-events: all;
+      &:nth-child(4n), &:nth-child(4n-1), &:nth-child(4n-1), &:nth-child(4n-2) {
+        padding: 0;
+        justify-content: flex-start;
       }
+      &:nth-child(3n-1) {
+        justify-content: center;
+      }
+      &:nth-child(3n) {
+        justify-content: flex-end;
+      }
+    }
 
-      .section__inner {
-        .section-video {
-          display: flex;
+    @media screen and (max-width: $tabletPortrait) {
+      width: 50%;
 
-          .section-video__inner {
-            display: flex;
-            pointer-events: all;
-          }
-        }
+      &:nth-child(3n), &:nth-child(3n-1) {
+        justify-content: flex-start;
+      }
+      &:nth-child(2n) {
+        justify-content: flex-end;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+
+      &:nth-child(2n), &:nth-child(2n-1) {
+        justify-content: center;
       }
     }
   }
