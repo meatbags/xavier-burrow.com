@@ -114,6 +114,7 @@ canvas {
       flex-direction: column;
   -ms-flex-pack: start;
       justify-content: flex-start;
+  overflow: hidden;
   background-size: 8px 8px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 1px, transparent 1px); }
   .wrapper.hidden {
