@@ -1,0 +1,39 @@
+.nav {
+  width: 100%;
+  position: relative;
+  margin-top: $space * 2;
+
+  .title {
+    font-family: $fontStackAlt;
+    font-size: $fontLarge;
+  }
+
+  .filters {
+    display: flex;
+    justify-content: flex-start;
+
+    .label {
+      @include padding(1, 1, 1, 0);
+      text-decoration: underline;
+    }
+
+    .item {
+      padding: $space;
+      text-decoration: line-through;
+      cursor: pointer;
+
+      &.active {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .contact {
+    padding-top: $space * 4;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    cursor: pointer;
+  }
+}

@@ -20,7 +20,7 @@
 	</style>
 	-->
 	<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
-	<!--<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">-->
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
 	<?php wp_head(); ?>
 	<script>

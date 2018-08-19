@@ -117,9 +117,9 @@ canvas {
   background-size: 8px 8px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 1px, transparent 1px); }
   .wrapper .wrapper__inner {
-    padding-left: 96px;
+    padding-left: 192px;
     padding-top: 0px;
-    padding-right: 96px;
+    padding-right: 192px;
     padding-bottom: 0px;
     position: relative;
     width: 100%;
@@ -130,6 +130,12 @@ canvas {
         flex-direction: column;
     -ms-flex-pack: start;
         justify-content: flex-start; }
+    @media screen and (max-width: 1280px) {
+      .wrapper .wrapper__inner {
+        padding-left: 96px;
+        padding-top: 0px;
+        padding-right: 96px;
+        padding-bottom: 0px; } }
     @media screen and (max-width: 600px) {
       .wrapper .wrapper__inner {
         padding-left: 48px;
@@ -151,21 +157,21 @@ canvas {
   .sections .section {
     width: 25%;
     font-weight: lighter;
-    font-family: "Karla", sans-serif;
+    font-family: "Playfair Display", sans-serif;
     letter-spacing: 0.8px;
     cursor: pointer;
     margin-bottom: 128px;
     display: -ms-flexbox;
     display: flex; }
     .sections .section .section__inner .image-card {
-      width: 240px;
-      height: 135px;
+      width: 260px;
+      height: 160px;
       overflow: hidden;
       background: black; }
       .sections .section .section__inner .image-card img {
-        width: 100%; }
+        height: 100%; }
     .sections .section .section__inner .section-title {
-      font-size: 16px;
+      font-size: 100px;
       text-decoration: underline;
       text-transform: lowercase;
       font-family: "Karla", sans-serif;
@@ -221,13 +227,13 @@ canvas {
         .sections .section .section__inner .section-links .link:hover {
           opacity: 0.5; }
     .sections .section:nth-child(4n-1) {
-      padding-right: calc((25% - 240px) / 3); }
+      padding-right: calc((25% - 260px) / 3); }
     .sections .section:nth-child(4n-2) {
-      padding-left: calc((25% - 240px) / 3); }
+      padding-left: calc((25% - 260px) / 3); }
     .sections .section:nth-child(4n), .sections .section:nth-child(4n-1) {
       -ms-flex-pack: end;
           justify-content: flex-end; }
-    @media screen and (max-width: 1160px) {
+    @media screen and (max-width: 1280px) {
       .sections .section {
         width: 33.33%; }
         .sections .section:nth-child(4n), .sections .section:nth-child(4n-1), .sections .section:nth-child(4n-1), .sections .section:nth-child(4n-2) {
@@ -256,16 +262,37 @@ canvas {
           -ms-flex-pack: center;
               justify-content: center; } }
 
-.filters {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: start;
-      justify-content: flex-start; }
-  .filters .item {
-    padding: 8px;
-    text-decoration: line-through; }
-    .filters .item.active {
-      text-decoration: none; }
+.nav {
+  width: 100%;
+  position: relative;
+  margin-top: 16px; }
+  .nav .title {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 100px; }
+  .nav .filters {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: start;
+        justify-content: flex-start; }
+    .nav .filters .label {
+      padding-top: 8px;
+      padding-right: 8px;
+      padding-bottom: 8px;
+      padding-left: 0px;
+      text-decoration: underline; }
+    .nav .filters .item {
+      padding: 8px;
+      text-decoration: line-through;
+      cursor: pointer; }
+      .nav .filters .item.active {
+        text-decoration: none; }
+  .nav .contact {
+    padding-top: 32px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    cursor: pointer; }
 
 @keyframes flash {
   0% {
@@ -285,7 +312,7 @@ canvas {
   height: 100vh;
   z-index: 1000;
   transition: opacity 1s;
-  font-size: 16px;
+  font-size: 100px;
   background-color: #111;
   background-size: 8px 8px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 1px, transparent 1px);

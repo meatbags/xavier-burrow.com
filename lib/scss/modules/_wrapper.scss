@@ -11,13 +11,19 @@
   background-image: linear-gradient(to right, $colourGrid 1px, transparent 1px), linear-gradient(to bottom, $colourGrid 1px, transparent 1px);
 
   .wrapper__inner {
-    @include pad(12, 0);
+    @include pad(24, 0);
     position: relative;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    @media screen and (max-width: $tablet) {
+      @include pad(12, 0);
+    }
+
+    @media screen and (max-width: $tabletPortrait) {}
 
     @media screen and (max-width: $mobile) {
       @include pad(6, 0);

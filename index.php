@@ -2,11 +2,21 @@
 
 <div class='wrapper'>
   <div class='wrapper__inner'>
-    <div class='title'>Xavier Burrow</div>
-    <div class='filters'>
-      <div class='item'>code</div>
-      <div class='item'>web</div>
-      <div class='item'>art</div>
+    <div class='nav'>
+      <div class='title'>
+        xavier burrow.
+      </div>
+      <div class='filters'>
+        <div class='label'>filter:</div>
+        <div class='item active'>code</div>
+        <div class='item active'>web</div>
+        <div class='item active'>video</div>
+        <div class='item active'>art</div>
+      </div>
+      <div class='contact'>
+        about<br />
+        &#9993;&#xFE0E;
+      </div>
     </div>
     <div id='sections-target' class='sections'>
       <?php

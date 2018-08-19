@@ -1,5 +1,5 @@
-$sectionWidth: 240px;
-$sectionHeight: 135px;
+$sectionWidth: 260px;
+$sectionHeight: 160px;
 
 .sections {
   padding-top: $space * 12;
@@ -35,7 +35,7 @@ $sectionHeight: 135px;
         background: black;
 
         img {
-          width: 100%;
+          height: 100%;
         }
       }
 
