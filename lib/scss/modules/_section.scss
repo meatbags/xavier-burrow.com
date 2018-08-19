@@ -36,6 +36,10 @@ $sectionHeight: 140px;
         height: $sectionHeight;
         overflow: hidden;
 
+        @media screen and (max-width: $mobile) {
+          width: 100%;
+        }
+
         img {
           width: 100%;
         }
@@ -162,7 +166,7 @@ $sectionHeight: 140px;
       width: 100%;
 
       &:nth-child(2n), &:nth-child(2n-1) {
-        justify-content: center;
+        justify-content: flex-start;
       }
     }
   }

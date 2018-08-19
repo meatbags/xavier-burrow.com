@@ -56,6 +56,8 @@ li {
 body, html {
   padding: 0;
   margin: 0; }
+  body.freeze, html.freeze {
+    overflow: hidden; }
 
 body {
   font-family: "Karla", sans-serif;
@@ -110,11 +112,8 @@ canvas {
   z-index: 100;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
-  overflow: hidden;
+  -ms-flex-pack: center;
+      justify-content: center;
   background-size: 8px 8px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 1px, transparent 1px); }
   .wrapper.hidden {
@@ -125,7 +124,7 @@ canvas {
 
 .wrapper__inner, .project-pane .project-pane__inner {
   position: relative;
-  width: 100%;
+  width: 1200px;
   height: 100%;
   display: -ms-flexbox;
   display: flex;
@@ -133,23 +132,20 @@ canvas {
       flex-direction: column;
   -ms-flex-pack: start;
       justify-content: flex-start;
-  transition: 0.8s;
-  padding-left: 192px;
-  padding-top: 0px;
-  padding-right: 192px;
-  padding-bottom: 0px; }
+  transition: opacity 0.8s, transform 0.8s; }
   @media screen and (max-width: 1280px) {
     .wrapper__inner, .project-pane .project-pane__inner {
-      padding-left: 96px;
-      padding-top: 0px;
-      padding-right: 96px;
-      padding-bottom: 0px; } }
+      width: 880px; } }
+  @media screen and (max-width: 850px) {
+    .wrapper__inner, .project-pane .project-pane__inner {
+      width: 540px; } }
   @media screen and (max-width: 600px) {
     .wrapper__inner, .project-pane .project-pane__inner {
       padding-left: 48px;
       padding-top: 0px;
       padding-right: 48px;
-      padding-bottom: 0px; } }
+      padding-bottom: 0px;
+      width: 100%; } }
 
 .sections {
   padding-top: 64px;
@@ -181,6 +177,9 @@ canvas {
         width: 250px;
         height: 140px;
         overflow: hidden; }
+        @media screen and (max-width: 600px) {
+          .sections .section .section__inner .image-card {
+            width: 100%; } }
         .sections .section .section__inner .image-card img {
           width: 100%; }
       .sections .section .section__inner .section-title {
@@ -275,8 +274,8 @@ canvas {
       .sections .section {
         width: 100%; }
         .sections .section:nth-child(2n), .sections .section:nth-child(2n-1) {
-          -ms-flex-pack: center;
-              justify-content: center; } }
+          -ms-flex-pack: start;
+              justify-content: flex-start; } }
 
 .nav {
   width: 100%;
@@ -285,6 +284,9 @@ canvas {
   .nav .title {
     font-family: "Playfair Display", sans-serif;
     font-size: 100px; }
+    @media screen and (max-width: 850px) {
+      .nav .title {
+        font-size: 50px; } }
   .nav .filters {
     width: auto;
     display: -ms-flexbox;
@@ -373,6 +375,10 @@ canvas {
   left: 0;
   width: 100vw;
   height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
   overflow-y: scroll;
   transform: translateX(100vw);
   opacity: 0;

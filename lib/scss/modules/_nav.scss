@@ -6,6 +6,10 @@
   .title {
     font-family: $fontStackAlt;
     font-size: $fontLarge;
+
+    @media screen and (max-width: $tabletPortrait) {
+      font-size: $fontMedium;
+    }
   }
 
   .filters {
