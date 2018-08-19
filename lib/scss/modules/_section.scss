@@ -1,8 +1,8 @@
-$sectionWidth: 260px;
-$sectionHeight: 160px;
+$sectionWidth: 250px;
+$sectionHeight: 140px;
 
 .sections {
-  padding-top: $space * 12;
+  padding-top: $space * 8;
   width: 100%;
   transition: opacity $transitionSlow;
   display: flex;
@@ -16,26 +16,28 @@ $sectionHeight: 160px;
   .section {
     width: 25%;
     font-weight: lighter;
-    font-family: $fontStackAlt;
     letter-spacing: $letterSpacingAlt;
     cursor: pointer;
-    //transition: $transition;
-    margin-bottom: $space * 16;
+    margin-bottom: $space * 12;
     display: flex;
 
-    &:hover {
-      //opacity: 0.5;
-    }
-
     .section__inner {
+      position: relative;
+
+      .filtered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+
       .image-card {
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
         width: $sectionWidth;
         height: $sectionHeight;
         overflow: hidden;
-        background: black;
 
         img {
-          height: 100%;
+          width: 100%;
         }
       }
 
@@ -109,6 +111,13 @@ $sectionHeight: 160px;
             opacity: 0.5;
           }
         }
+      }
+    }
+
+    &:hover {
+      .section__inner .image-card {
+        outline: 1px solid black;
+        box-shadow: 5px 5px 10px black;
       }
     }
 

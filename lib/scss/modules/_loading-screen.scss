@@ -5,6 +5,7 @@
 
 .loading-screen {
   @include pad(6, 6);
+  user-select: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,9 +14,10 @@
   z-index: $indexLoadingScreen;
   transition: opacity $transitionSlow;
   font-size: $fontLarge;
+  color: $colourSecondary;
   background-color: #111;
   background-size: $gridSize $gridSize;
-  background-image: linear-gradient(to right, $colourGrid 1px, transparent 1px), linear-gradient(to bottom, $colourGrid 1px, transparent 1px);
+  background-image: linear-gradient(to right, $colourGridAlt 1px, transparent 1px), linear-gradient(to bottom, $colourGridAlt 1px, transparent 1px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,6 +27,6 @@
   }
 
   .loading-screen__inner {
-    animation: flash 0.5s infinite;
+    animation: flash 0.75s infinite;
   }
 }

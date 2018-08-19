@@ -14,6 +14,7 @@
         <img src='<?php echo $image['url']; ?>'/>
       <?php endif; ?>
     </div>
+
     <!--
     <div class='section-title'>
       <?php if ($links): ?>

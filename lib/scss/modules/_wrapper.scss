@@ -10,23 +10,34 @@
   background-size: $gridSize $gridSize;
   background-image: linear-gradient(to right, $colourGrid 1px, transparent 1px), linear-gradient(to bottom, $colourGrid 1px, transparent 1px);
 
-  .wrapper__inner {
-    @include pad(24, 0);
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  &.hidden {
+    pointer-events: none;
 
-    @media screen and (max-width: $tablet) {
-      @include pad(12, 0);
+    .wrapper__inner {
+      opacity: 0;
+      transform: translateX(-100vw);
     }
+  }
+}
 
-    @media screen and (max-width: $tabletPortrait) {}
+// don't nest
+.wrapper__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: $transition;
+  @include pad(24, 0);
 
-    @media screen and (max-width: $mobile) {
-      @include pad(6, 0);
-    }
+  @media screen and (max-width: $tablet) {
+    @include pad(12, 0);
+  }
+
+  @media screen and (max-width: $tabletPortrait) {}
+
+  @media screen and (max-width: $mobile) {
+    @include pad(6, 0);
   }
 }

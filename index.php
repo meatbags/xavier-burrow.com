@@ -14,8 +14,12 @@
         <div class='item active'>art</div>
       </div>
       <div class='contact'>
-        about<br />
-        &#9993;&#xFE0E;
+        <svg width="24" height="16">
+          <polygon points="1,1 23,1 23,15 1,15 1,1 12,10 23,1" style="stroke:#000;fill:transparent;stroke-width:1;" />
+        </svg>
+        <svg width="24" height="16">
+          <polygon points="1,1 23,1 23,15 1,15 1,1 12,7 23,1" style="stroke:#000;fill:transparent;stroke-width:1;" />
+        </svg>
       </div>
     </div>
     <div id='sections-target' class='sections'>
@@ -28,6 +32,23 @@
           }
         }
       ?>
+    </div>
+  </div>
+</div>
+
+<div class='project-pane'>
+  <div class='project-pane__inner'>
+    <div id='project-pane-close' class='back'>
+      << back
+    </div>
+    <div class='title'>
+      Title.
+    </div>
+    <div class='description'>
+      This is the description.
+    </div>
+    <div class='links'>
+      Project Links!
     </div>
   </div>
 </div>

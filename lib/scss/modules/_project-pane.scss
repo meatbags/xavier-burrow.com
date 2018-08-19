@@ -1,0 +1,38 @@
+.project-pane {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  transform: translateX(100vw);
+  opacity: 0;
+  transition: $transition;
+
+  &.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .project-pane__inner {
+    @extend .wrapper__inner;
+    padding-top: $space * 7;
+
+    .back {
+      text-decoration: underline;
+      cursor: pointer;
+      padding-top: $space;
+      padding-bottom: $space;
+    }
+
+    .title {
+      font-size: $fontLarge;
+      font-family: $fontStackAlt;
+      text-transform: lowercase;
+    }
+
+    .description {
+      font-size: $fontMedium;
+    }
+  }
+}

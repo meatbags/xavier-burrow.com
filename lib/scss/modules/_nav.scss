@@ -1,7 +1,7 @@
 .nav {
   width: 100%;
   position: relative;
-  margin-top: $space * 2;
+  margin-top: $space * 8;
 
   .title {
     font-family: $fontStackAlt;
@@ -9,12 +9,12 @@
   }
 
   .filters {
+    width: auto;
     display: flex;
     justify-content: flex-start;
 
     .label {
       @include padding(1, 1, 1, 0);
-      text-decoration: underline;
     }
 
     .item {
@@ -30,10 +30,29 @@
 
   .contact {
     padding-top: $space * 4;
+    padding-bottom: $space;
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
     text-align: center;
     cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    svg:nth-child(2) {
+      display: none;
+    }
+
+    &:hover {
+      padding-bottom: $space * 1.25;
+
+      svg:nth-child(1) {
+        display: none;
+      }
+      svg:nth-child(2) {
+        display: block;
+      }
+    }
   }
 }
