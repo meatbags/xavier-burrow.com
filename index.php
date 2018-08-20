@@ -12,7 +12,7 @@
         <div data-filter='web' class='item active'>web</div>
         <div data-filter='video' class='item active'>video</div>
         <div data-filter='art' class='item active'>art</div>
-        <div data-filter='clear' class='item active dimmed'>clear</div>
+        <div data-filter='clear' class='item active dimmed'>(clear)</div>
       </div>
       <div class='contact'>
         <svg width="24" height="16">
@@ -34,24 +34,11 @@
         }
       ?>
     </div>
-    <div class='footer'>
-      <a href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a>
-      <a href='https://www.instagram.com/xavebabes/' target='_blank'>insta</a>
-    </div>
+    <?php get_template_part('index_footer'); ?>
   </div>
 </div>
 
-<div class='project-pane'>
-  <div class='project-pane__inner'>
-    <div class='back project-pane-close'>&larr; back</div>
-    <div class='title'></div>
-    <div class='description'></div>
-    <div class='video'></div>
-    <div class='image'></div>
-    <br /><br /><br /><br />
-    <br /><br /><br />
-  </div>
-</div>
+<?php get_template_part('index_pane'); ?>
 
 <div class='loading-screen'>
   <div class='loading-screen__inner'>

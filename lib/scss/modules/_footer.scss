@@ -2,9 +2,10 @@
   @include pad(0, 4);
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 
   a {
-    @include padding(1, 0, 1, 1);
+    @include padding(1, 2, 1, 0);
+    text-decoration: underline;
   }
 }

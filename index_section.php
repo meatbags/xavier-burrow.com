@@ -1,5 +1,6 @@
 <?php
   $title = get_the_title();
+  $date = get_field('date');
   $desc = get_field('description');
   $thumb = get_field('thumbnail');
   $images = get_field('images');
@@ -22,6 +23,17 @@
     </div>
     <div class='section-data'>
       <div class='title'><?php echo $title; ?>.</div>
+      <div class='date'><?php
+        if ($links): ?>
+          <div class='links'>
+            links:&nbsp;&nbsp;
+            <?php foreach($links as $link): ?>
+              <a class='link' href='<?php echo $link['url']; ?>' target='_blank'><?php echo $link['label']; ?></a>
+            <?php endforeach; ?>
+          </div>
+        <?php endif;
+      ?></div>
+      <div class='description'><?php echo $desc; ?></div>
       <div class='image'><?php
         if ($images): ?>
           <div class='slider'>
@@ -42,20 +54,7 @@
           </div>
         <?php endif;
       ?></div>
-      <div class='description'><?php
-        echo $desc;
-        if ($links): ?>
-          <br />
-          <div class='links'>
-            <?php foreach($links as $link): ?>
-              <a class='link' href='<?php echo $link['url']; ?>' target='_blank'><?php echo $link['label']; ?></a>
-            <?php endforeach; ?>
-          </div>
-        <?php
-        endif;
-      ?></div>
       <div class='video'><?php echo $video; ?></div>
-
     </div>
   </div>
 </div>

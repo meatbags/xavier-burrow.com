@@ -60,13 +60,13 @@ body, html {
     overflow: hidden; }
 
 body {
-  font-family: "Karla", sans-serif;
+  font-family: "Playfair Display", sans-serif;
   font-size: 20px;
   letter-spacing: 0px;
   width: 100%;
   height: 100%;
   color: #111;
-  line-height: 1.1;
+  line-height: 1.2;
   background: #fff; }
 
 a {
@@ -233,6 +233,7 @@ canvas {
       .nav .title {
         font-size: 42px; } }
   .nav .filters {
+    font-family: "Playfair Display", sans-serif;
     width: auto;
     display: -ms-flexbox;
     display: flex;
@@ -285,13 +286,14 @@ canvas {
   width: 100%;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: end;
-      justify-content: flex-end; }
+  -ms-flex-pack: start;
+      justify-content: flex-start; }
   .footer a {
     padding-top: 8px;
-    padding-right: 0px;
+    padding-right: 16px;
     padding-bottom: 8px;
-    padding-left: 8px; }
+    padding-left: 0px;
+    text-decoration: underline; }
 
 @keyframes flash {
   0% {
@@ -349,23 +351,23 @@ canvas {
   transform: translateX(100vw);
   opacity: 0;
   transition: transform 0.8s, opacity 0.8s;
-  padding-bottom: 48px;
   z-index: 101; }
   .project-pane.active {
     opacity: 1;
     transform: translateX(0); }
   .project-pane .project-pane__inner {
     display: block;
-    padding-top: 56px; }
+    padding-top: 80px; }
     .project-pane .project-pane__inner .back {
+      position: absolute;
+      top: 0;
       text-decoration: underline;
       cursor: pointer;
-      padding-top: 8px;
-      padding-bottom: 8px; }
+      padding-top: 8px; }
+      .project-pane .project-pane__inner .back:hover {
+        opacity: 0.5; }
     .project-pane .project-pane__inner .title {
       width: 75%;
-      padding-top: 8px;
-      padding-bottom: 32px;
       font-size: 100px;
       font-family: "Playfair Display", sans-serif;
       text-transform: lowercase; }
@@ -375,16 +377,25 @@ canvas {
       @media screen and (max-width: 850px) {
         .project-pane .project-pane__inner .title {
           font-size: 60px; } }
-    .project-pane .project-pane__inner .description {
-      padding-bottom: 32px;
+    .project-pane .project-pane__inner .line {
+      width: 50%;
+      border-bottom: 2px solid black; }
+    .project-pane .project-pane__inner .date {
       width: 100%;
-      font-size: 28px; }
-      .project-pane .project-pane__inner .description .links {
+      font-size: 42px;
+      padding-top: 24px; }
+      .project-pane .project-pane__inner .date .links {
         display: -ms-flexbox;
-        display: flex; }
-        .project-pane .project-pane__inner .description .links .link {
-          text-decoration: underline;
-          padding-right: 16px; }
+        display: flex;
+        font-size: 20px; }
+        .project-pane .project-pane__inner .date .links .link {
+          padding-right: 16px;
+          text-decoration: underline; }
+    .project-pane .project-pane__inner .description {
+      font-family: "Playfair Display", sans-serif;
+      padding-top: 48px;
+      width: 80%;
+      font-size: 42px; }
       @media screen and (max-width: 1280px) {
         .project-pane .project-pane__inner .description {
           width: 100%; } }
@@ -395,16 +406,18 @@ canvas {
         .project-pane .project-pane__inner .description {
           font-size: 20px; } }
     .project-pane .project-pane__inner .image {
-      width: 65%; }
-      @media screen and (max-width: 1280px) {
-        .project-pane .project-pane__inner .image {
-          width: 75%; } }
-      @media screen and (max-width: 600px) {
-        .project-pane .project-pane__inner .image {
-          width: 100%; } }
+      padding-top: 80px;
+      padding-bottom: 64px;
+      width: 100%; }
       .project-pane .project-pane__inner .image .slider {
-        padding-top: 32px;
-        width: 100%; }
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+            flex-direction: column;
+        width: 95%; }
+        @media screen and (max-width: 1280px) {
+          .project-pane .project-pane__inner .image .slider {
+            width: 100%; } }
         .project-pane .project-pane__inner .image .slider .slides {
           width: 100%; }
           .project-pane .project-pane__inner .image .slider .slides .slide {
@@ -416,6 +429,8 @@ canvas {
               width: 100%;
               box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); }
         .project-pane .project-pane__inner .image .slider .thumbnails {
+          margin-top: 16px;
+          padding-top: 16px;
           width: 100%;
           display: -ms-flexbox;
           display: flex;
@@ -424,11 +439,10 @@ canvas {
           -ms-flex-pack: start;
               justify-content: flex-start;
           -ms-flex-wrap: wrap;
-              flex-wrap: wrap;
-          padding-top: 32px; }
+              flex-wrap: wrap; }
           .project-pane .project-pane__inner .image .slider .thumbnails .thumb {
-            width: 180px;
-            margin-right: 32px;
+            width: 200px;
+            margin-right: 16px;
             cursor: pointer;
             opacity: 0.5; }
             .project-pane .project-pane__inner .image .slider .thumbnails .thumb img {
@@ -440,4 +454,10 @@ canvas {
               .project-pane .project-pane__inner .image .slider .thumbnails .thumb.active img, .project-pane .project-pane__inner .image .slider .thumbnails .thumb:hover img {
                 box-shadow: 3px 3px 10px black;
                 outline: 1px solid black; }
+            @media screen and (max-width: 1280px) {
+              .project-pane .project-pane__inner .image .slider .thumbnails .thumb {
+                width: 140px; } }
+            @media screen and (max-width: 850px) {
+              .project-pane .project-pane__inner .image .slider .thumbnails .thumb {
+                width: 80px; } }
 
