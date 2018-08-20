@@ -23,22 +23,21 @@
 .wrapper__inner {
   position: relative;
   width: 1200px;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  transition: opacity $transition, transform $transition;
+  transition: transform $transition, opacity $transition;
 
   @media screen and (max-width: $tablet) {
     width: 880px;
   }
 
   @media screen and (max-width: $tabletPortrait) {
-    width: 540px;
+    width: 560px;
   }
 
   @media screen and (max-width: $mobile) {
-    @include pad(6, 0);
+    @include pad(4, 0);
     width: 100%;
   }
 }

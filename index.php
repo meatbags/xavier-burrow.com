@@ -7,7 +7,7 @@
         xavier burrow.
       </div>
       <div class='filters'>
-        <div class='label'>filter &rarr;</div>
+        <div class='label'>filter:</div>
         <div data-filter='code' class='item active'>code</div>
         <div data-filter='web' class='item active'>web</div>
         <div data-filter='video' class='item active'>video</div>
@@ -34,17 +34,22 @@
         }
       ?>
     </div>
+    <div class='footer'>
+      <a href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a>
+      <a href='https://www.instagram.com/xavebabes/' target='_blank'>insta</a>
+    </div>
   </div>
 </div>
 
 <div class='project-pane'>
   <div class='project-pane__inner'>
-    <div id='project-pane-close' class='back'><< back</div>
+    <div class='back project-pane-close'>&larr; back</div>
     <div class='title'></div>
     <div class='description'></div>
-    <div class='image'></div>
     <div class='video'></div>
-    <div class='links'></div>
+    <div class='image'></div>
+    <br /><br /><br /><br />
+    <br /><br /><br />
   </div>
 </div>
 

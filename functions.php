@@ -27,19 +27,7 @@ function add_admin_post_types() {
 		'taxonomies' => array('category', 'post_tag'),
 		'supports' => array('title', 'editor', 'revisions', 'thumbnail')
 	));
-	register_post_type('Artworks', array(
-		'label' => 'Artworks',
-		'public' => true,
-		'capability_type' => 'post',
-		'hierarchical' => true,
-		'rewrite' => array('slug' => 'artworks'),
-		'query_var' => true,
-		'menu_icon' => 'dashicons-admin-appearance',
-		'taxonomies' => array('category', 'post_tag'),
-		'supports' => array('title', 'editor', 'revisions', 'thumbnail')
-	));
 	remove_post_type_support('projects', 'editor');
-	remove_post_type_support('artworks', 'editor');
 }
 add_action('init', 'add_admin_post_types');
 
@@ -73,14 +61,17 @@ function xb_custom_pings( $comment ){
 add_action( 'wp_enqueue_scripts', 'xb_load_scripts' );
 function xb_load_scripts()
 {
-	//wp_enqueue_script('xbscript_jquery', get_stylesheet_directory_uri() . '/lib/build/jquery.min.js');
-	wp_enqueue_script('xbscript_base64', get_stylesheet_directory_uri() . '/lib/build/base64binary.js');
-	wp_enqueue_script('xbscript_three', get_stylesheet_directory_uri() . '/lib/build/three.min.js');
-	wp_enqueue_script('xbscript_piano', get_stylesheet_directory_uri() . '/lib/build/midi.min.js');
 	wp_enqueue_script('xbscript_app', get_stylesheet_directory_uri() . '/lib/build/app.min.js');
-	wp_enqueue_script('xbscript_objloader', get_stylesheet_directory_uri() . '/lib/build/objloader.js');
-	wp_enqueue_script('xbscript_mtlloader', get_stylesheet_directory_uri() . '/lib/build/mtlloader.js');
+	//wp_enqueue_script('xbscript_jquery', get_stylesheet_directory_uri() . '/lib/build/jquery.min.js');
+	//wp_enqueue_script('xbscript_app', get_stylesheet_directory_uri() . '/lib/build/slick.min.js');
+	//wp_enqueue_script('xbscript_base64', get_stylesheet_directory_uri() . '/lib/build/base64binary.js');
+	//wp_enqueue_script('xbscript_three', get_stylesheet_directory_uri() . '/lib/build/three.min.js');
+	//wp_enqueue_script('xbscript_piano', get_stylesheet_directory_uri() . '/lib/build/midi.min.js');
+	//wp_enqueue_script('xbscript_objloader', get_stylesheet_directory_uri() . '/lib/build/objloader.js');
+	//wp_enqueue_script('xbscript_mtlloader', get_stylesheet_directory_uri() . '/lib/build/mtlloader.js');
 
+	wp_register_style('xbslick', get_stylesheet_directory_uri() . '/lib/build/slick.css' );
   wp_register_style('xbstyle', get_stylesheet_directory_uri() . '/lib/build/style.css' );
+	wp_enqueue_style('xbslick');
 	wp_enqueue_style('xbstyle');
 }

@@ -1,0 +1,10 @@
+.footer {
+  @include pad(0, 4);
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    @include padding(1, 0, 1, 1);
+  }
+}
