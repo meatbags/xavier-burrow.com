@@ -26,7 +26,6 @@
       <div class='date'><?php
         if ($links): ?>
           <div class='links'>
-            links:&nbsp;&nbsp;
             <?php foreach($links as $link): ?>
               <a class='link' href='<?php echo $link['url']; ?>' target='_blank'><?php echo $link['label']; ?></a>
             <?php endforeach; ?>

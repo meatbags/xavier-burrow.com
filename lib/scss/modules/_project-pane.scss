@@ -20,17 +20,16 @@
   .project-pane__inner {
     @extend .wrapper__inner;
     display: block;
-    padding-top: $space * 10;
+    padding-top: $space * 14;
 
     .back {
-      position: absolute;
-      top: 0;
       text-decoration: underline;
       cursor: pointer;
-      padding-top: $space;
+      padding-bottom: $space;
 
       &:hover {
         opacity: 0.5;
+        padding-left: $space / 2;
       }
     }
 
@@ -72,7 +71,7 @@
     .description {
       font-family: $fontStackAlt;
       padding-top: $space * 6;
-      width: 80%;
+      width: 85%;
       font-size: $fontMedium;
 
       @media screen and (max-width: $tablet) {
@@ -91,7 +90,7 @@
     }
 
     .image {
-      padding-top: $space * 10;
+      padding-top: $space * 8;
       padding-bottom: $space * 8;
       width: 100%;
 
@@ -133,7 +132,7 @@
 
           .thumb {
             width: 200px;
-            margin-right: $space * 2;
+            margin-right: $space * 3;
             cursor: pointer;
             opacity: 0.5;
 

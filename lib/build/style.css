@@ -357,15 +357,14 @@ canvas {
     transform: translateX(0); }
   .project-pane .project-pane__inner {
     display: block;
-    padding-top: 80px; }
+    padding-top: 112px; }
     .project-pane .project-pane__inner .back {
-      position: absolute;
-      top: 0;
       text-decoration: underline;
       cursor: pointer;
-      padding-top: 8px; }
+      padding-bottom: 8px; }
       .project-pane .project-pane__inner .back:hover {
-        opacity: 0.5; }
+        opacity: 0.5;
+        padding-left: 4px; }
     .project-pane .project-pane__inner .title {
       width: 75%;
       font-size: 100px;
@@ -394,7 +393,7 @@ canvas {
     .project-pane .project-pane__inner .description {
       font-family: "Playfair Display", sans-serif;
       padding-top: 48px;
-      width: 80%;
+      width: 85%;
       font-size: 42px; }
       @media screen and (max-width: 1280px) {
         .project-pane .project-pane__inner .description {
@@ -406,7 +405,7 @@ canvas {
         .project-pane .project-pane__inner .description {
           font-size: 20px; } }
     .project-pane .project-pane__inner .image {
-      padding-top: 80px;
+      padding-top: 64px;
       padding-bottom: 64px;
       width: 100%; }
       .project-pane .project-pane__inner .image .slider {
@@ -442,7 +441,7 @@ canvas {
               flex-wrap: wrap; }
           .project-pane .project-pane__inner .image .slider .thumbnails .thumb {
             width: 200px;
-            margin-right: 16px;
+            margin-right: 24px;
             cursor: pointer;
             opacity: 0.5; }
             .project-pane .project-pane__inner .image .slider .thumbnails .thumb img {
