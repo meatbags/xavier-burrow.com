@@ -164,6 +164,7 @@ canvas {
     display: -ms-flexbox;
     display: flex; }
     .sections .section.filtered .section__inner .image-card img {
+      display: none;
       opacity: 0.2; }
     .sections .section .section__inner {
       position: relative; }
