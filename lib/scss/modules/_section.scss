@@ -7,11 +7,6 @@ $sectionHeight: 140px;
   transition: opacity $transitionSlow;
   display: flex;
   flex-wrap: wrap;
-  opacity: 0;
-
-  &.active {
-    opacity: 1;
-  }
 
   .section {
     width: 25%;
@@ -21,19 +16,24 @@ $sectionHeight: 140px;
     margin-bottom: $space * 12;
     display: flex;
 
+    &.filtered {
+      .section__inner {
+        .image-card {
+          img {
+            opacity: 0.2;
+          }
+        }
+      }
+    }
+
     .section__inner {
       position: relative;
-
-      .filtered {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-      }
 
       .image-card {
         box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
         width: $sectionWidth;
         height: $sectionHeight;
+        background: $white;
         overflow: hidden;
 
         @media screen and (max-width: $mobile) {
@@ -41,87 +41,20 @@ $sectionHeight: 140px;
         }
 
         img {
+        //  transition: opacity 0.5s;
           width: 100%;
         }
       }
 
-      .section-title {
-        font-size: $fontLarge;
-        text-decoration: underline;
-        text-transform: lowercase;
-        font-family: $fontStack;
-        letter-spacing: $letterSpacing;
-      }
-
-      .section-description {
-        @include pad(0, 1);
-        font-size: $fontSize;
-      }
-
-      .section-image {
+      .section-data {
         display: none;
       }
 
-      .section-video {
-        display: none;
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        pointer-events: none;
-
-        .section-video__inner {
-          display: none;
-          background: $black;
-          pointer-events: all;
-
-          iframe {
-            width: 45vw !important;
-            height: 25vw;
-          }
+      &:hover {
+        .image-card {
+          outline: 1px solid black;
+          box-shadow: 5px 5px 10px black;
         }
-
-        @media screen and (max-width: $mobile) {
-          display: flex;
-          position: relative;
-          width: 100%;
-          height: auto;
-
-          .section-video__inner {
-            padding: 0;
-
-            iframe {
-              width: 100% !important;
-              height: auto;
-            }
-          }
-        }
-      }
-
-      .section-links {
-        font-size: $fontSmall;
-        padding-bottom: $space / 4;
-
-        .link {
-          text-transform: lowercase;
-          margin-right: $space / 2;
-          transition: $transition;
-
-          &:hover {
-            opacity: 0.5;
-          }
-        }
-      }
-    }
-
-    &:hover {
-      .section__inner .image-card {
-        outline: 1px solid black;
-        box-shadow: 5px 5px 10px black;
       }
     }
 

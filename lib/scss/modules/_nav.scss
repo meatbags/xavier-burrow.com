@@ -29,6 +29,10 @@
       &.active {
         text-decoration: none;
       }
+
+      &.dimmed {
+        opacity: 0;
+      }
     }
   }
 

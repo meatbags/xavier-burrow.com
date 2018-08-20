@@ -7,11 +7,12 @@
         xavier burrow.
       </div>
       <div class='filters'>
-        <div class='label'>filter:</div>
-        <div class='item active'>code</div>
-        <div class='item active'>web</div>
-        <div class='item active'>video</div>
-        <div class='item active'>art</div>
+        <div class='label'>filter &rarr;</div>
+        <div data-filter='code' class='item active'>code</div>
+        <div data-filter='web' class='item active'>web</div>
+        <div data-filter='video' class='item active'>video</div>
+        <div data-filter='art' class='item active'>art</div>
+        <div data-filter='clear' class='item active dimmed'>clear</div>
       </div>
       <div class='contact'>
         <svg width="24" height="16">
@@ -38,18 +39,12 @@
 
 <div class='project-pane'>
   <div class='project-pane__inner'>
-    <div id='project-pane-close' class='back'>
-      << back
-    </div>
-    <div class='title'>
-      Title.
-    </div>
-    <div class='description'>
-      This is the description.
-    </div>
-    <div class='links'>
-      Project Links!
-    </div>
+    <div id='project-pane-close' class='back'><< back</div>
+    <div class='title'></div>
+    <div class='description'></div>
+    <div class='image'></div>
+    <div class='video'></div>
+    <div class='links'></div>
   </div>
 </div>
 
