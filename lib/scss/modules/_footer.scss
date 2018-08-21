@@ -3,6 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 
   a {
     @include padding(1, 2, 1, 0);

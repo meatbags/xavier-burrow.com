@@ -8,21 +8,27 @@
     font-size: $fontLarge;
 
     @media screen and (max-width: $tabletPortrait) {
-      font-size: $fontMedium;
+      font-size: $fontMediumLarge;
+      line-height: 0.95;
+      text-transform: uppercase;
     }
   }
 
   .filters {
     font-family: $fontStackAlt;
-    width: auto;
     display: flex;
     justify-content: flex-start;
-    
+    flex-wrap: wrap;
+
     .label {
       @include padding(1, 1, 1, 0);
 
       &:last-child {
         padding: $space;
+      }
+
+      @media screen and (max-width: $tabletPortrait) {
+        display: none;
       }
     }
 
@@ -38,6 +44,11 @@
       &.dimmed {
         opacity: 0;
         display: none;
+      }
+
+      @media screen and (max-width: $tabletPortrait) {
+        padding-left: 0;
+        padding-right: $space * 1.5;
       }
     }
   }
@@ -56,6 +67,11 @@
 
     svg:nth-child(2) {
       display: none;
+    }
+
+    @media screen and (max-width: $tabletPortrait) {
+      bottom: auto;
+      top: 0;
     }
 
     &:hover {

@@ -11,6 +11,7 @@
   opacity: 0;
   transition: transform $transition, opacity $transition;
   z-index: $indexWrapper + 1;
+  user-select: none;
 
   &.active {
     opacity: 1;
@@ -23,9 +24,12 @@
     padding-top: $space * 14;
 
     .back {
+      position: absolute;
+      top: 0;
       text-decoration: underline;
       cursor: pointer;
       padding-bottom: $space;
+      padding-top: $space * 2;
 
       &:hover {
         opacity: 0.5;
@@ -55,10 +59,11 @@
     .date {
       width: 100%;
       font-size: $fontMedium;
-      padding-top: $space * 3;
+      padding-top: $space * 4;
 
       .links {
         display: flex;
+        flex-wrap: wrap;
         font-size: $fontSize;
 
         .link {
@@ -70,7 +75,7 @@
 
     .description {
       font-family: $fontStackAlt;
-      padding-top: $space * 6;
+      padding-top: $space * 4;
       width: 85%;
       font-size: $fontMedium;
 
@@ -86,12 +91,30 @@
     }
 
     .video {
+      width: 100%;
 
+      iframe {
+        padding-top: $space * 4;
+        width: 100%;
+        height: 620px;
+
+        @media screen and (max-width: $tablet) {
+          height: 460px;
+        }
+
+        @media screen and (max-width: $tabletPortrait) {
+          height: 400px;
+        }
+
+        @media screen and (max-width: $mobile) {
+          height: 280px;
+        }
+      }
     }
 
     .image {
-      padding-top: $space * 8;
-      padding-bottom: $space * 8;
+      padding-top: $space * 4;
+      padding-bottom: $space * 12;
       width: 100%;
 
       .slider {
@@ -133,6 +156,7 @@
           .thumb {
             width: 200px;
             margin-right: $space * 3;
+            margin-bottom: $space * 2;
             cursor: pointer;
             opacity: 0.5;
 
@@ -157,6 +181,7 @@
 
             @media screen and (max-width: $tabletPortrait) {
               width: 80px;
+              margin-right: $space * 2;
             }
           }
         }

@@ -42,6 +42,7 @@ $sectionHeight: 140px;
 
         @media screen and (max-width: $mobile) {
           width: 100%;
+          height: $sectionHeight + 20;
         }
 
         img {

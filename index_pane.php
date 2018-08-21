@@ -2,10 +2,10 @@
   <div class='project-pane__inner'>
     <div class='back project-pane-close'><- back to projects</div>
     <div class='title'></div>
-    <!--<div class='line'></div>-->
+    <div class='line'></div>
     <div class='description'></div>
-    <div class='date'></div>
     <div class='video'></div>
+    <div class='date'></div>
     <div class='image'></div>
   </div>
 </div>
@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class='description'>
-      Hi! I'm Xavier, a web designer and animator. I enjoy building interactive spaces.
+      Hi! I'm Xavier, a web developer and animator. I design and built interactive spaces. If you would like to work together, shoot me an email:
     </div>
     <div class='image'></div>
     <div class='video'></div>
