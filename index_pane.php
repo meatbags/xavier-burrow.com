@@ -2,7 +2,7 @@
   <div class='project-pane__inner'>
     <div class='back project-pane-close'><- back to projects</div>
     <div class='title'></div>
-    <div class='line'></div>
+    <!--<div class='line'></div>-->
     <div class='description'></div>
     <div class='video'></div>
     <div class='date'></div>

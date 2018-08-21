@@ -455,7 +455,7 @@ canvas {
           .project-pane .project-pane__inner .video iframe {
             height: 280px; } }
     .project-pane .project-pane__inner .image {
-      padding-top: 32px;
+      padding-top: 64px;
       padding-bottom: 96px;
       width: 100%; }
       .project-pane .project-pane__inner .image .slider {
