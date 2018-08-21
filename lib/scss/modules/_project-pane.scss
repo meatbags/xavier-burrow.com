@@ -79,6 +79,10 @@
       width: 85%;
       font-size: $fontMedium;
 
+      a {
+        text-decoration: underline;
+      }
+
       @media screen and (max-width: $tablet) {
         width: 100%;
       }

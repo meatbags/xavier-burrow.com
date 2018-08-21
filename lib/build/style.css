@@ -305,12 +305,16 @@ canvas {
       justify-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-  .footer a {
+  .footer a, .footer .contact {
     padding-top: 8px;
     padding-right: 16px;
     padding-bottom: 8px;
     padding-left: 0px;
     text-decoration: underline; }
+  .footer .contact {
+    cursor: pointer; }
+    .footer .contact:hover {
+      opacity: 0.5; }
 
 @keyframes flash {
   0% {
@@ -424,6 +428,8 @@ canvas {
       padding-top: 32px;
       width: 85%;
       font-size: 42px; }
+      .project-pane .project-pane__inner .description a {
+        text-decoration: underline; }
       @media screen and (max-width: 1280px) {
         .project-pane .project-pane__inner .description {
           width: 100%; } }
