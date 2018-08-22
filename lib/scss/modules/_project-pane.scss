@@ -31,9 +31,11 @@
       padding-bottom: $space;
       padding-top: $space * 2;
 
-      &:hover {
-        opacity: 0.5;
-        padding-left: $space / 2;
+      @media screen and (min-width: $tabletPortrait) {
+        &:hover {
+          opacity: 0.5;
+          padding-left: $space / 2;
+        }
       }
     }
 

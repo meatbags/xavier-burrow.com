@@ -22,7 +22,7 @@
       <?php endif; ?>
     </div>
     <div class='section-data'>
-      <div class='title'><?php echo $title; ?>.</div>
+      <div class='title'><?php echo $title; ?></div>
       <div class='date'><?php
         if ($links): ?>
           <div class='links'>

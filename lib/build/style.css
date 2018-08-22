@@ -286,12 +286,13 @@ canvas {
       .nav .contact {
         bottom: auto;
         top: 0; } }
-    .nav .contact:hover {
-      padding-bottom: 10px; }
-      .nav .contact:hover svg:nth-child(1) {
-        display: none; }
-      .nav .contact:hover svg:nth-child(2) {
-        display: block; }
+    @media screen and (min-width: 850px) {
+      .nav .contact:hover {
+        padding-bottom: 10px; }
+        .nav .contact:hover svg:nth-child(1) {
+          display: none; }
+        .nav .contact:hover svg:nth-child(2) {
+          display: block; } }
 
 .footer {
   padding-left: 0px;
@@ -393,9 +394,10 @@ canvas {
       cursor: pointer;
       padding-bottom: 8px;
       padding-top: 16px; }
-      .project-pane .project-pane__inner .back:hover {
-        opacity: 0.5;
-        padding-left: 4px; }
+      @media screen and (min-width: 850px) {
+        .project-pane .project-pane__inner .back:hover {
+          opacity: 0.5;
+          padding-left: 4px; } }
     .project-pane .project-pane__inner .title {
       width: 75%;
       font-size: 100px;

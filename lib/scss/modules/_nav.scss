@@ -74,14 +74,16 @@
       top: 0;
     }
 
-    &:hover {
-      padding-bottom: $space * 1.25;
+    @media screen and (min-width: $tabletPortrait) {
+      &:hover {
+        padding-bottom: $space * 1.25;
 
-      svg:nth-child(1) {
-        display: none;
-      }
-      svg:nth-child(2) {
-        display: block;
+        svg:nth-child(1) {
+          display: none;
+        }
+        svg:nth-child(2) {
+          display: block;
+        }
       }
     }
   }

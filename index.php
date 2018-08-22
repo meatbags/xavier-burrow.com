@@ -4,7 +4,7 @@
   <div class='wrapper__inner'>
     <div class='nav'>
       <div class='title'>
-        xavier burrow.
+        xavier burrow
       </div>
       <div class='filters'>
         <div class='label'>filter:</div>

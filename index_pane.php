@@ -13,7 +13,7 @@
 <!-- about section -->
 <div class='section-contact display-none'>
   <div class='section-data'>
-    <div class='title'>About.</div>
+    <div class='title'>About</div>
     <div class='date'>
       <div class='links'>
         <a class='link' href='mailto:jxburrow@gmail.com'>jxburrow@gmail.com</a>
