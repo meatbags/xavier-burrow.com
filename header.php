@@ -22,5 +22,12 @@
 		var isHome = '<?php echo is_home(); ?>';
 		/* ]]> */
 	</script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-60746754-6"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-60746754-6');
+	</script>
 </head>
 <body class="<?php echo join(' ', get_body_class(''));?>">
