@@ -40,10 +40,12 @@
 
 <?php get_template_part('index_pane'); ?>
 
+<!--
 <div class='loading-screen'>
   <div class='loading-screen__inner'>
     loading.
   </div>
 </div>
+-->
 
 <?php get_footer(); ?>
