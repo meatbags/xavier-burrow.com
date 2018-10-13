@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class='description'>
-      Hi! I'm Xavier, a web developer and animator. I design and built interactive spaces. If you would like to work together, shoot me an email:
+      Hi! I'm Xavier, a web developer and animator. I design and build interactive spaces. If you would like to work together, shoot me an email:
     </div>
     <div class='image'></div>
     <div class='video'></div>
