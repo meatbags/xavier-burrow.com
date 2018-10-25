@@ -53,7 +53,7 @@
           </div>
         <?php endif;
       ?></div>
-      <div class='video'><?php echo $video; ?></div>
+      <div class='video' data-src='<?php echo $video; ?>'></div>
     </div>
   </div>
 </div>
