@@ -8,6 +8,7 @@
   $links = get_field('links');
   $id = get_the_ID();
   $cats = wp_get_post_categories($id);
+  $order = get_post($id)->menu_order - 1;
   $classList = '';
   foreach($cats as $c){
     $cat = get_category($c);
@@ -16,12 +17,17 @@
 ?>
 <div class='section <?php echo $classList; ?>'>
   <div class='section__inner'>
+    <div class='project-title'>
+      <?php echo $order . '. ' . $title; ?>
+    </div>
     <div class='image-card'>
+      <div class='filter-icon'></div>
       <?php if ($thumb): ?>
         <img src='<?php echo $thumb['url']; ?>'/>
       <?php endif; ?>
     </div>
-    <div class='section-data'>
+
+    <div class='section-data' style='display: none;'>
       <div class='title'><?php echo $title; ?></div>
       <div class='date'><?php
         if ($links): ?>

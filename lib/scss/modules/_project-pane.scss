@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 50vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -15,7 +15,15 @@
 
   &.active {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(50vw);
+  }
+
+  @media screen and (max-width: $tablet) {
+    width: 100vw;
+
+    &.active {
+      transform: translateX(0);
+    }
   }
 
   .project-pane__inner {

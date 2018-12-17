@@ -7,16 +7,18 @@ li {
   text-decoration: none;
 }
 
-body, html {
+html {
   padding: 0;
   margin: 0;
 
   &.freeze {
-    overflow: hidden;
+    //overflow: hidden;
   }
 }
 
 body {
+  padding: 0;
+  margin: 0;
   font-family: $fontStack;
   font-size: $fontSize;
   letter-spacing: $letterSpacing;
@@ -29,12 +31,13 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 
   &:hover {
     opacity: 0.5;
   }
-}
 
-a, a:visited {
-  color: inherit;
+  &:visited {
+    color: inherit;
+  }
 }

@@ -22,6 +22,10 @@ $sectionHeight: 140px;
           img {
             opacity: 0.2;
           }
+
+          .filter-icon {
+            opacity: 1;
+          }
         }
       }
 
@@ -33,12 +37,19 @@ $sectionHeight: 140px;
     .section__inner {
       position: relative;
 
+      .project-title {
+        @include pad(0, 1);
+        text-transform: lowercase;
+        font-size: $fontSmall;
+      }
+
       .image-card {
         box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
         width: $sectionWidth;
         height: $sectionHeight;
         background: $white;
         overflow: hidden;
+        position: relative;
 
         @media screen and (max-width: $mobile) {
           width: 100%;
@@ -49,10 +60,15 @@ $sectionHeight: 140px;
           transition: opacity 0.5s;
           width: 100%;
         }
-      }
 
-      .section-data {
-        display: none;
+        .filter-icon {
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          user-select: none;
+        }
       }
 
       &:hover {

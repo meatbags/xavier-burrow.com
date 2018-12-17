@@ -1,8 +1,7 @@
 .wrapper {
-  position: absolute;
+  position: relative;
   user-select: none;
   width: 100%;
-  min-height: 100vh;
   z-index: $indexWrapper;
   display: flex;
   justify-content: center;
@@ -10,23 +9,23 @@
   background-image: linear-gradient(to right, $colourGrid 1px, transparent 1px), linear-gradient(to bottom, $colourGrid 1px, transparent 1px);
 
   &.hidden {
-    pointer-events: none;
+    //pointer-events: none;
 
     .wrapper__inner {
-      opacity: 0;
-      transform: translateX(-100vw);
+      opacity: 0.25;
+      transform: translateX(-50vw);
     }
   }
 }
 
-// don't nest
+// don't nest -- .project-pane__inner extends
 .wrapper__inner {
-  position: relative;
+  //position: relative;
   width: 1200px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  transition: transform $transition, opacity $transition;
+  transition: $transition;
+  transform: translateX(0);
 
   @media screen and (max-width: $tablet) {
     width: 880px;

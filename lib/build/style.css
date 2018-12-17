@@ -53,13 +53,13 @@ div, * {
 li {
   text-decoration: none; }
 
-body, html {
+html {
   padding: 0;
   margin: 0; }
-  body.freeze, html.freeze {
-    overflow: hidden; }
 
 body {
+  padding: 0;
+  margin: 0;
   font-family: "Playfair Display", sans-serif;
   font-size: 20px;
   letter-spacing: 0px;
@@ -70,12 +70,12 @@ body {
   background: #fff; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: inherit; }
   a:hover {
     opacity: 0.5; }
-
-a, a:visited {
-  color: inherit; }
+  a:visited {
+    color: inherit; }
 
 canvas {
   top: 0;
@@ -102,13 +102,12 @@ canvas {
     position: relative; }
 
 .wrapper {
-  position: absolute;
+  position: relative;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   width: 100%;
-  min-height: 100vh;
   z-index: 100;
   display: -ms-flexbox;
   display: flex;
@@ -116,22 +115,18 @@ canvas {
       justify-content: center;
   background-size: 8px 8px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 1px, transparent 1px); }
-  .wrapper.hidden {
-    pointer-events: none; }
-    .wrapper.hidden .wrapper__inner, .wrapper.hidden .project-pane .project-pane__inner, .project-pane .wrapper.hidden .project-pane__inner {
-      opacity: 0;
-      transform: translateX(-100vw); }
+  .wrapper.hidden .wrapper__inner, .wrapper.hidden .project-pane .project-pane__inner, .project-pane .wrapper.hidden .project-pane__inner {
+    opacity: 0.25;
+    transform: translateX(-50vw); }
 
 .wrapper__inner, .project-pane .project-pane__inner {
-  position: relative;
   width: 1200px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
-  transition: transform 0.8s, opacity 0.8s; }
+  transition: 0.8s;
+  transform: translateX(0); }
   @media screen and (max-width: 1280px) {
     .wrapper__inner, .project-pane .project-pane__inner {
       width: 880px; } }
@@ -164,17 +159,27 @@ canvas {
     display: flex; }
     .sections .section.filtered .section__inner .image-card img {
       opacity: 0.2; }
+    .sections .section.filtered .section__inner .image-card .filter-icon {
+      opacity: 1; }
     @media screen and (max-width: 600px) {
       .sections .section.filtered {
         display: none; } }
     .sections .section .section__inner {
       position: relative; }
+      .sections .section .section__inner .project-title {
+        padding-left: 0px;
+        padding-top: 8px;
+        padding-right: 0px;
+        padding-bottom: 8px;
+        text-transform: lowercase;
+        font-size: 16px; }
       .sections .section .section__inner .image-card {
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
         width: 250px;
         height: 140px;
         background: #fff;
-        overflow: hidden; }
+        overflow: hidden;
+        position: relative; }
         @media screen and (max-width: 600px) {
           .sections .section .section__inner .image-card {
             width: 100%;
@@ -182,8 +187,16 @@ canvas {
         .sections .section .section__inner .image-card img {
           transition: opacity 0.5s;
           width: 100%; }
-      .sections .section .section__inner .section-data {
-        display: none; }
+        .sections .section .section__inner .image-card .filter-icon {
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+                  user-select: none; }
       .sections .section .section__inner:hover .image-card {
         outline: 1px solid black;
         box-shadow: 5px 5px 10px black; }
@@ -366,7 +379,7 @@ canvas {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 50vw;
   height: 100vh;
   display: -ms-flexbox;
   display: flex;
@@ -383,7 +396,12 @@ canvas {
           user-select: none; }
   .project-pane.active {
     opacity: 1;
-    transform: translateX(0); }
+    transform: translateX(50vw); }
+  @media screen and (max-width: 1280px) {
+    .project-pane {
+      width: 100vw; }
+      .project-pane.active {
+        transform: translateX(0); } }
   .project-pane .project-pane__inner {
     display: block;
     padding-top: 112px; }
