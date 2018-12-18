@@ -28,7 +28,7 @@
     padding-top: $space * 8;
 
     .project-pane-menu {
-      width: 33%;
+      width: 30%;
       padding-top: $space * 6;
       //font-size: $fontSmall;
 
@@ -55,7 +55,7 @@
 
     .right {
       padding-right: $space;
-      width: 66%;
+      width: 70%;
 
       @media screen and (max-width: $tablet) {
         width: 100%;
