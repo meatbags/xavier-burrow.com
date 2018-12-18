@@ -16,6 +16,7 @@
 
   .filters {
     font-family: $fontStackAlt;
+    font-size: $fontSmall;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -33,7 +34,7 @@
     }
 
     .item {
-      padding: $space;
+      @include pad(0.5, 1);
       text-decoration: line-through;
       cursor: pointer;
 

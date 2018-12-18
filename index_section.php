@@ -15,7 +15,7 @@
     $classList .= ' filter-' . $cat->slug;
   }
 ?>
-<div class='section <?php echo $classList; ?>'>
+<div class='section <?php echo $classList; ?>' data-index='<?php echo $order; ?>'>
   <div class='section__inner'>
     <div class='project-title'>
       <?php echo $order . '. ' . $title; ?>

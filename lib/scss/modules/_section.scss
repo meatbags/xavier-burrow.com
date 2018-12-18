@@ -1,5 +1,5 @@
 $sectionWidth: 250px;
-$sectionHeight: 140px;
+$sectionHeightInner: 140px;
 
 .sections {
   padding-top: $space * 8;
@@ -15,6 +15,9 @@ $sectionHeight: 140px;
     cursor: pointer;
     margin-bottom: $space * 10;
     display: flex;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(1200px);
 
     &.filtered {
       .section__inner {
@@ -35,7 +38,7 @@ $sectionHeight: 140px;
     }
 
     .section__inner {
-      position: relative;
+      transition: 0.1s;
 
       .project-title {
         @include pad(0, 1);
@@ -46,14 +49,15 @@ $sectionHeight: 140px;
       .image-card {
         box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
         width: $sectionWidth;
-        height: $sectionHeight;
+        height: $sectionHeightInner;
         background: $white;
         overflow: hidden;
         position: relative;
+        transition: box-shadow 0.1s;
 
         @media screen and (max-width: $mobile) {
           width: 100%;
-          height: $sectionHeight + 20;
+          height: $sectionHeightInner + 20;
         }
 
         img {
@@ -74,7 +78,7 @@ $sectionHeight: 140px;
       &:hover {
         .image-card {
           outline: 1px solid black;
-          box-shadow: 5px 5px 10px black;
+          box-shadow: 10px 10px 30px black;
         }
       }
     }
@@ -83,9 +87,11 @@ $sectionHeight: 140px;
     &:nth-child(4n-1) {
       padding-right: calc((25% - #{$sectionWidth}) / 3);
     }
+
     &:nth-child(4n-2) {
       padding-left: calc((25% - #{$sectionWidth}) / 3);
     }
+
     &:nth-child(4n), &:nth-child(4n-1) {
       justify-content: flex-end;
     }
@@ -97,9 +103,11 @@ $sectionHeight: 140px;
         padding: 0;
         justify-content: flex-start;
       }
+
       &:nth-child(3n-1) {
         justify-content: center;
       }
+
       &:nth-child(3n) {
         justify-content: flex-end;
       }
@@ -111,6 +119,7 @@ $sectionHeight: 140px;
       &:nth-child(3n), &:nth-child(3n-1) {
         justify-content: flex-start;
       }
+
       &:nth-child(2n) {
         justify-content: flex-end;
       }

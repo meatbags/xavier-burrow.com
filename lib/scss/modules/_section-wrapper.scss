@@ -9,11 +9,11 @@
   background-image: linear-gradient(to right, $colourGrid 1px, transparent 1px), linear-gradient(to bottom, $colourGrid 1px, transparent 1px);
 
   &.hidden {
-    //pointer-events: none;
+    pointer-events: none;
 
     .wrapper__inner {
-      opacity: 0.25;
-      transform: translateX(-50vw);
+      opacity: 0;
+      transform: translateX(-100vw);
     }
   }
 }

@@ -56,6 +56,8 @@ li {
 html {
   padding: 0;
   margin: 0; }
+  html.freeze {
+    overflow: hidden; }
 
 body {
   padding: 0;
@@ -115,9 +117,11 @@ canvas {
       justify-content: center;
   background-size: 8px 8px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 1px, transparent 1px); }
-  .wrapper.hidden .wrapper__inner, .wrapper.hidden .project-pane .project-pane__inner, .project-pane .wrapper.hidden .project-pane__inner {
-    opacity: 0.25;
-    transform: translateX(-50vw); }
+  .wrapper.hidden {
+    pointer-events: none; }
+    .wrapper.hidden .wrapper__inner, .wrapper.hidden .project-pane .project-pane__inner, .project-pane .wrapper.hidden .project-pane__inner {
+      opacity: 0;
+      transform: translateX(-100vw); }
 
 .wrapper__inner, .project-pane .project-pane__inner {
   width: 1200px;
@@ -156,7 +160,10 @@ canvas {
     cursor: pointer;
     margin-bottom: 80px;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(1200px); }
     .sections .section.filtered .section__inner .image-card img {
       opacity: 0.2; }
     .sections .section.filtered .section__inner .image-card .filter-icon {
@@ -165,7 +172,7 @@ canvas {
       .sections .section.filtered {
         display: none; } }
     .sections .section .section__inner {
-      position: relative; }
+      transition: 0.1s; }
       .sections .section .section__inner .project-title {
         padding-left: 0px;
         padding-top: 8px;
@@ -179,7 +186,8 @@ canvas {
         height: 140px;
         background: #fff;
         overflow: hidden;
-        position: relative; }
+        position: relative;
+        transition: box-shadow 0.1s; }
         @media screen and (max-width: 600px) {
           .sections .section .section__inner .image-card {
             width: 100%;
@@ -199,7 +207,7 @@ canvas {
                   user-select: none; }
       .sections .section .section__inner:hover .image-card {
         outline: 1px solid black;
-        box-shadow: 5px 5px 10px black; }
+        box-shadow: 10px 10px 30px black; }
     .sections .section:nth-child(4n-1) {
       padding-right: calc((25% - 250px) / 3); }
     .sections .section:nth-child(4n-2) {
@@ -250,6 +258,7 @@ canvas {
         text-transform: uppercase; } }
   .nav .filters {
     font-family: "Playfair Display", sans-serif;
+    font-size: 16px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: start;
@@ -267,7 +276,10 @@ canvas {
         .nav .filters .label {
           display: none; } }
     .nav .filters .item {
-      padding: 8px;
+      padding-left: 4px;
+      padding-top: 8px;
+      padding-right: 4px;
+      padding-bottom: 8px;
       text-decoration: line-through;
       cursor: pointer; }
       .nav .filters .item.active {
@@ -356,7 +368,7 @@ canvas {
   color: #aaa;
   background-color: #111;
   background-size: 8px 8px;
-  background-image: linear-gradient(to right, rgba(170, 170, 170, 0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(170, 170, 170, 0.025) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -379,7 +391,7 @@ canvas {
   position: fixed;
   top: 0;
   left: 0;
-  width: 50vw;
+  width: 100vw;
   height: 100vh;
   display: -ms-flexbox;
   display: flex;
@@ -396,19 +408,43 @@ canvas {
           user-select: none; }
   .project-pane.active {
     opacity: 1;
-    transform: translateX(50vw); }
-  @media screen and (max-width: 1280px) {
-    .project-pane {
-      width: 100vw; }
-      .project-pane.active {
-        transform: translateX(0); } }
+    transform: translateX(0); }
   .project-pane .project-pane__inner {
-    display: block;
-    padding-top: 112px; }
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    padding-top: 64px; }
+    .project-pane .project-pane__inner .project-pane-menu {
+      width: 33%;
+      padding-top: 48px; }
+      .project-pane .project-pane__inner .project-pane-menu .menu-title {
+        font-size: 16px;
+        font-weight: bold; }
+      .project-pane .project-pane__inner .project-pane-menu .item {
+        padding-left: 8px;
+        padding-top: 4px;
+        padding-right: 8px;
+        padding-bottom: 4px;
+        padding-left: 0;
+        cursor: pointer;
+        text-transform: lowercase; }
+        .project-pane .project-pane__inner .project-pane-menu .item.active, .project-pane .project-pane__inner .project-pane-menu .item:hover {
+          text-decoration: underline; }
+      @media screen and (max-width: 1280px) {
+        .project-pane .project-pane__inner .project-pane-menu {
+          display: none; } }
+    .project-pane .project-pane__inner .right {
+      padding-right: 8px;
+      width: 66%; }
+      @media screen and (max-width: 1280px) {
+        .project-pane .project-pane__inner .right {
+          width: 100%;
+          padding-right: 0; } }
     .project-pane .project-pane__inner .back {
       position: absolute;
       top: 0;
-      text-decoration: underline;
+      left: 0;
       cursor: pointer;
       padding-bottom: 8px;
       padding-top: 16px; }
@@ -417,7 +453,6 @@ canvas {
           opacity: 0.5;
           padding-left: 4px; } }
     .project-pane .project-pane__inner .title {
-      width: 75%;
       font-size: 100px;
       font-family: "Playfair Display", sans-serif;
       text-transform: lowercase; }
@@ -446,7 +481,7 @@ canvas {
     .project-pane .project-pane__inner .description {
       font-family: "Playfair Display", sans-serif;
       padding-top: 32px;
-      width: 85%;
+      width: 100%;
       font-size: 42px; }
       .project-pane .project-pane__inner .description a {
         text-decoration: underline; }
@@ -464,7 +499,7 @@ canvas {
       .project-pane .project-pane__inner .video iframe {
         padding-top: 32px;
         width: 100%;
-        height: 620px; }
+        height: 540px; }
         @media screen and (max-width: 1280px) {
           .project-pane .project-pane__inner .video iframe {
             height: 460px; } }
