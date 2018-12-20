@@ -6,6 +6,10 @@
   display: none;
 }
 
+.hidden {
+  opacity: 0;
+}
+
 @mixin pad($x, $y) {
   padding-left: $x * $space;
   padding-top: $y * $space;

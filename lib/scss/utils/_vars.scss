@@ -3,15 +3,14 @@ $space: 8px;
 $width: $space * 100;
 
 // colour
-$colourPrimary: #111;
-$colourPrimaryDark: darken($colourPrimary, 25%);
-$colourPrimaryLight: #44f;
-$colourSecondary: #aaa;
+$colourPrimary: #222;
+$colourSecondary: #821;
+$colourBackground: #fff;
 $colourSecondaryDark: #a00;
 $colourGrid: rgba(#000, 0.025);
 $colourGridAlt: rgba(#fff, 0.025);
 $gridSize: $space * 1;
-$black: #000;
+$black: $colourPrimary;
 $white: #fff;
 $light: #aaa;
 
@@ -26,8 +25,12 @@ $indexContactBox: 101;
 $indexWindow: 600;
 $indexLoadingScreen: 1000;
 
+// box shadow
+$boxShadow: 5px 5px 10px rgba($colourSecondary, 0.5);
+$boxShadowAlt: 10px 10px 30px $colourSecondary;
+
 // borders
-$border: 1px solid black;
+$border: 1px solid $black;
 
 // animation
 $transition: 0.8s;

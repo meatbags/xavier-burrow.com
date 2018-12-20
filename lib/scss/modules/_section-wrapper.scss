@@ -8,15 +8,15 @@
   justify-content: center;
   background-size: $gridSize $gridSize;
   background-image: linear-gradient(to right, $colourGrid 1px, transparent 1px), linear-gradient(to bottom, $colourGrid 1px, transparent 1px);
-
+  
   &.hidden {
+    opacity: 1;
     //pointer-events: none;
   }
 }
 
 // don't nest -- .project-pane__inner extends
 .wrapper__inner {
-  //position: relative;
   width: 1200px;
   display: flex;
   flex-direction: column;

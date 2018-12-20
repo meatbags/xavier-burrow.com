@@ -2,15 +2,16 @@
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   transition: transform $transition, opacity $transition;
   z-index: $indexWrapper + 1;
   user-select: none;
   position: absolute;
   opacity: 0;
   pointer-events: none;
+  padding-top: $space * 4;
 
   &.active {
     pointer-events: all;
@@ -18,68 +19,54 @@
     position: relative;
   }
 
+  @media screen and (max-width: $mobile) {
+    padding-top: $space * 2;
+  }
+
   .project-pane__inner {
     @extend .wrapper__inner;
-    padding-top: $space * 8;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 
-    .back {
-      position: absolute;
-      top: 0;
-      left: 0;
-      //text-decoration: underline;
-      cursor: pointer;
-      padding-bottom: $space;
-      padding-top: $space * 2;
-
-      @media screen and (min-width: $tabletPortrait) {
-        &:hover {
-          opacity: 0.5;
-          padding-left: $space / 2;
-        }
-      }
+    .left {
+      width: 35%;
+      padding-right: $space * 3;
     }
 
-    .title {
-      //width: 75%;
-      font-size: $fontLarge;
-      font-family: $fontStackAlt;
-      text-transform: lowercase;
+    .right {
+      padding-left: $space * 3;
+      width: 65%;
+    }
 
-      @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $tabletPortrait) {
+      flex-direction: column-reverse;
+      width: 100%;
+
+      .left, .right {
         width: 100%;
+        padding: 0;
       }
-      @media screen and (max-width: $tabletPortrait) {
-        font-size: $fontMediumLarge;
-      }
-    }
-
-    .line {
-      width: 50%;
-      border-bottom: 2px solid black;
     }
 
     .date {
       width: 100%;
-      font-size: $fontMedium;
-      padding-top: $space * 4;
+      font-size: $fontSmall;
+      padding-bottom: $space;
+      text-decoration: underline;
+    }
 
-      .links {
-        display: flex;
-        flex-wrap: wrap;
-        font-size: $fontSize;
-
-        .link {
-          padding-right: $space * 2;
-          text-decoration: underline;
-        }
-      }
+    .spacer {
+      width: 100%;
+      font-size: $fontSmall;
+      padding-bottom: $space;
     }
 
     .description {
       font-family: $fontStackAlt;
-      padding-top: $space * 4;
       width: 100%;
-      font-size: $fontMedium;
+      font-size: $fontMediumSmall;
+      @include pad(0, 1);
 
       a {
         text-decoration: underline;
@@ -93,6 +80,41 @@
       }
       @media screen and (max-width: $mobile) {
         font-size: $fontSize;
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: $fontSize;
+      @include pad(0, 1);
+
+      .link, .label {
+        padding-right: $space * 2;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    .tech {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: $fontSize;
+      @include pad(0, 1);
+
+      .label {
+        padding-right: $space * 2;
+      }
+
+      .item {
+        @include pad(0.5, 0);
+        margin-right: $space * 2;
+        color: $colourBackground;
+        background: $colourPrimary;
+        font-size: $fontSmall;
       }
     }
 
@@ -119,14 +141,12 @@
     }
 
     .image {
-      padding-top: $space * 8;
-      padding-bottom: $space * 12;
       width: 100%;
 
       .slider {
         display: flex;
         flex-direction: column;
-        width: 95%;
+        width: 100%;
 
         @media screen and (max-width: $tablet) {
           width: 100%;
@@ -137,7 +157,8 @@
 
           .slide {
             width: 100%;
-            display: none;
+            padding-bottom: $space * 2;
+            //display: none;
 
             &.active {
               display: block;
@@ -151,16 +172,17 @@
         }
 
         .thumbnails {
+          display: flex;
+          display: none;
           margin-top: $space * 2;
           padding-top: $space * 2;
           width: 100%;
-          display: flex;
           flex-direction: row;
           justify-content: flex-start;
           flex-wrap: wrap;
 
           .thumb {
-            width: 200px;
+            width: 120px;
             margin-right: $space * 3;
             margin-bottom: $space * 2;
             cursor: pointer;

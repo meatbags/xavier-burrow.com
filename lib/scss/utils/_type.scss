@@ -1,6 +1,8 @@
-$fontStackAlt: "Playfair Display", sans-serif;
-$fontStack: $fontStackAlt;
-//$fontStack: "Karla", sans-serif;
+
+//$fontStack: $fontStackAlt;
+$fontStack: "Karla", sans-serif;
+$fontStackAlt: $fontStack;
+//$fontStackAlt: "Playfair Display", sans-serif;
 $letterSpacing: 0px;
 $letterSpacingAlt: 0px;
 $lineHeight: 1.2;
