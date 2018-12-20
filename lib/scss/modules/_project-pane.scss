@@ -1,67 +1,26 @@
 .project-pane {
-  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  overflow-y: scroll;
-  transform: translateX(100vw);
-  opacity: 0;
   transition: transform $transition, opacity $transition;
   z-index: $indexWrapper + 1;
   user-select: none;
-  //background: rgba(#eee, 1);
-  //background-size: $gridSize $gridSize;
-  //background-image: linear-gradient(to right, $colourGrid 1px, transparent 1px), linear-gradient(to bottom, $colourGrid 1px, transparent 1px);
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 
   &.active {
+    pointer-events: all;
     opacity: 1;
-    transform: translateX(0);
+    position: relative;
   }
 
   .project-pane__inner {
     @extend .wrapper__inner;
-    display: flex;
-    flex-direction: row;
     padding-top: $space * 8;
-
-    .project-pane-menu {
-      width: 30%;
-      padding-top: $space * 6;
-      //font-size: $fontSmall;
-
-      .menu-title {
-        font-size: $fontSmall;
-        font-weight: bold;
-      }
-
-      .item {
-        @include pad(1, 0.5);
-        padding-left: 0;
-        cursor: pointer;
-        text-transform: lowercase;
-
-        &.active, &:hover {
-          text-decoration: underline;
-        }
-      }
-
-      @media screen and (max-width: $tablet) {
-        display: none;
-      }
-    }
-
-    .right {
-      padding-right: $space;
-      width: 70%;
-
-      @media screen and (max-width: $tablet) {
-        width: 100%;
-        padding-right: 0;
-      }
-    }
 
     .back {
       position: absolute;

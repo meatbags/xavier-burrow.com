@@ -4,7 +4,7 @@
   <div class='wrapper__inner'>
     <div class='nav'>
       <div class='title'>
-        xavier burrow
+        <span class='title-target'></span>&nbsp;
       </div>
       <div class='filters'>
         <div class='label'>filter:</div>
@@ -34,18 +34,9 @@
         }
       ?>
     </div>
+    <?php get_template_part('index_pane'); ?>
     <?php get_template_part('index_footer'); ?>
   </div>
 </div>
-
-<?php get_template_part('index_pane'); ?>
-
-<!--
-<div class='loading-screen'>
-  <div class='loading-screen__inner'>
-    loading.
-  </div>
-</div>
--->
 
 <?php get_footer(); ?>

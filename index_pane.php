@@ -1,21 +1,15 @@
 <div class='project-pane'>
   <div class='project-pane__inner'>
-    <div class='left project-pane-menu'>
-    </div>
-    <div class='right'>
-      <div class='back project-pane-close'><- home</div>
-      <div class='title'></div>
-      <!--<div class='line'></div>-->
-      <div class='description'></div>
-      <div class='video'></div>
-      <div class='date'></div>
-      <div class='image'></div>
-    </div>
+    <div class='back project-pane-close'>< HOME ></div>
+    <div class='description'></div>
+    <div class='video'></div>
+    <div class='date'></div>
+    <div class='image'></div>
   </div>
 </div>
 
 <!-- about section -->
-<div class='section-contact display-none'>
+<div class='section-contact' style='display: none'>
   <div class='section-data'>
     <div class='title'>About</div>
     <div class='date'>

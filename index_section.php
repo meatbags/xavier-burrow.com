@@ -15,7 +15,7 @@
     $classList .= ' filter-' . $cat->slug;
   }
 ?>
-<div class='section <?php echo $classList; ?>' data-index='<?php echo $order; ?>'>
+<div class='section hidden <?php echo $classList; ?>' data-index='<?php echo $order; ?>'>
   <div class='section__inner'>
     <div class='project-title'>
       <?php echo $order . '. ' . $title; ?>
@@ -26,7 +26,6 @@
         <img src='<?php echo $thumb['url']; ?>'/>
       <?php endif; ?>
     </div>
-
     <div class='section-data' style='display: none;'>
       <div class='title'><?php echo $title; ?></div>
       <div class='date'><?php
@@ -39,8 +38,8 @@
         <?php endif;
       ?></div>
       <div class='description'><?php echo $desc; ?></div>
-      <div class='image'><?php
-        if ($images): ?>
+      <div class='image'>
+        <?php if ($images): ?>
           <div class='slider'>
             <div class='slides'>
               <?php foreach($images as $img): ?>
@@ -57,8 +56,8 @@
               <?php endforeach; ?>
             </div>
           </div>
-        <?php endif;
-      ?></div>
+        <?php endif; ?>
+      </div>
       <div class='video' data-src='<?php echo $video; ?>'></div>
     </div>
   </div>

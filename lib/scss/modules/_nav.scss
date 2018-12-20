@@ -7,6 +7,12 @@
     font-family: $fontStackAlt;
     font-size: $fontLarge;
 
+    .letter {
+      &.hidden {
+        display: none;
+      }
+    }
+
     @media screen and (max-width: $tabletPortrait) {
       font-size: $fontMediumLarge;
       line-height: 0.95;
