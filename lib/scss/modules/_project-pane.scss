@@ -24,47 +24,25 @@
   }
 
   .project-pane__inner {
-    @extend .wrapper__inner;
+    display: block;
     width: 100%;
-    display: flex;
-    flex-direction: row;
 
-    .left {
-      width: 35%;
-      padding-right: $space * 3;
-    }
-
-    .right {
-      padding-left: $space * 3;
-      width: 65%;
-    }
-
-    @media screen and (max-width: $tabletPortrait) {
-      flex-direction: column-reverse;
-      width: 100%;
-
-      .left, .right {
-        width: 100%;
-        padding: 0;
-      }
+    .hidden {
+      opacity: 0;
+      transform: rotate3d(0, 1, 0, 45deg);
     }
 
     .date {
-      width: 100%;
       font-size: $fontSmall;
-      padding-bottom: $space;
       text-decoration: underline;
-    }
-
-    .spacer {
-      width: 100%;
-      font-size: $fontSmall;
-      padding-bottom: $space;
+      display: inline-block;
+      transition: $transition;
     }
 
     .description {
+      transition: $transition;
       font-family: $fontStackAlt;
-      width: 100%;
+      width: 85%;
       font-size: $fontMediumSmall;
       @include pad(0, 1);
 
@@ -83,14 +61,39 @@
       }
     }
 
-    .links {
+    .tech {
+      transition: $transition;
       display: flex;
       flex-wrap: wrap;
-      font-size: $fontSize;
+      font-size: $fontSmall;
+      padding-bottom: $space;
+
+      .item, .label {
+        padding-right: $space * 1;
+      }
+
+      .item {
+        &:after {
+          content: ',';
+        }
+
+        &:last-child {
+          &:after {
+            content: '';
+          }
+        }
+      }
+    }
+
+    .links {
+      transition: $transition;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: $fontSmall;
       @include pad(0, 1);
 
       .link, .label {
-        padding-right: $space * 2;
+        padding-right: $space * 1;
       }
 
       a {
@@ -98,35 +101,18 @@
       }
     }
 
-    .tech {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      font-size: $fontSize;
-      @include pad(0, 1);
-
-      .label {
-        padding-right: $space * 2;
-      }
-
-      .item {
-        @include pad(0.5, 0);
-        margin-right: $space * 2;
-        color: $colourBackground;
-        background: $colourPrimary;
-        font-size: $fontSmall;
-      }
-    }
-
     .video {
+      transition: $transition;
       width: 100%;
 
       iframe {
-        padding-top: $space * 4;
+        background: $colourPrimary;
+        @include pad(4, 0);
         width: 100%;
-        height: 540px;
+        height: 640px;
 
         @media screen and (max-width: $tablet) {
+          @include pad(0, 0);
           height: 460px;
         }
 
@@ -141,7 +127,9 @@
     }
 
     .image {
+      transition: $transition;
       width: 100%;
+      @include pad(0, 2);
 
       .slider {
         display: flex;
@@ -154,62 +142,33 @@
 
         .slides {
           width: 100%;
-
-          .slide {
-            width: 100%;
-            padding-bottom: $space * 2;
-            //display: none;
-
-            &.active {
-              display: block;
-            }
-
-            img {
-              width: 100%;
-              box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-            }
-          }
-        }
-
-        .thumbnails {
           display: flex;
-          display: none;
-          margin-top: $space * 2;
-          padding-top: $space * 2;
-          width: 100%;
-          flex-direction: row;
-          justify-content: flex-start;
+          align-items: flex-start;
           flex-wrap: wrap;
 
-          .thumb {
-            width: 120px;
-            margin-right: $space * 3;
-            margin-bottom: $space * 2;
-            cursor: pointer;
-            opacity: 0.5;
-
-            img {
-              width: 100%;
-              height: auto;
-              box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
-            }
-
-            &.active, &:hover {
-              opacity: 1;
-
-              img {
-                box-shadow: 3px 3px 10px rgba(0,0,0,1);
-                outline: 1px solid black;
-              }
-            }
-
-            @media screen and (max-width: $tablet) {
-              width: 140px;
-            }
+          .slide {
+            width: 33%;
+            @include padding(2, 4, 2, 0);
 
             @media screen and (max-width: $tabletPortrait) {
-              width: 80px;
-              margin-right: $space * 2;
+              width: 50%;
+            }
+
+            @media screen and (max-width: $mobile) {
+              width: 100%;
+              @include padding(2, 0, 2, 0);
+            }
+
+            img {
+              transition: 0.1s;
+              width: 100%;
+              box-shadow: $boxShadow;
+
+              &:hover {
+                outline: $border;
+                box-shadow: $boxShadowAlt;
+                transform: scale(1.05, 1.05);
+              }
             }
           }
         }

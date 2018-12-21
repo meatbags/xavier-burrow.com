@@ -37,7 +37,7 @@
     <?php endif; ?>
     <?php if ($links): ?>
       <div class='links'>
-        <div class='label'>Links</div>
+        <div class='label'>Links:</div>
         <?php foreach($links as $link): ?>
           <a class='link' href='<?php echo $link['url']; ?>' target='_blank'><?php echo $link['label']; ?></a>
         <?php endforeach; ?>
@@ -53,19 +53,12 @@
               </div>
             <?php endforeach; ?>
           </div>
-          <div class='thumbnails'>
-            <?php foreach($images as $img): ?>
-              <div class='thumb'>
-                <img src='<?php echo $img['sizes']['medium']; ?>'>
-              </div>
-            <?php endforeach; ?>
-          </div>
         </div>
       </div>
     <?php endif; ?>
     <?php if ($tech): ?>
       <div class='tech'>
-        <div class='label'>Technology</div>
+        <div class='label'>Technologies:</div>
         <?php foreach($tech as $t): ?>
           <div class='item'><?php echo $t['item']; ?></div>
         <?php endforeach; ?>

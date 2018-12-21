@@ -1,16 +1,11 @@
 <div class='project-pane'>
   <div class='project-pane__inner'>
-    <div class='left'>
-      <div class='spacer'>&nbsp;</div>
-      <div class='video'></div>
-      <div class='image'></div>
-    </div>
-    <div class='right'>
-      <div class='date'></div>
-      <div class='description'></div>
-      <div class='links'></div>
-      <div class='tech'></div>
-    </div>
+    <div class='description hidden'></div>
+    <div class='links hidden'></div>
+    <div class='video hidden'></div>
+    <div class='image hidden'></div>
+    <div class='tech hidden'></div>
+    <div class='date hidden'></div>
   </div>
 </div>
 

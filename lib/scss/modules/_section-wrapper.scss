@@ -8,31 +8,24 @@
   justify-content: center;
   background-size: $gridSize $gridSize;
   background-image: linear-gradient(to right, $colourGrid 1px, transparent 1px), linear-gradient(to bottom, $colourGrid 1px, transparent 1px);
-  
-  &.hidden {
-    opacity: 1;
-    //pointer-events: none;
-  }
-}
 
-// don't nest -- .project-pane__inner extends
-.wrapper__inner {
-  width: 1200px;
-  display: flex;
-  flex-direction: column;
-  transition: $transition;
-  transform: translateX(0);
+  .wrapper__inner {
+    width: $siteWidth;
+    display: flex;
+    flex-direction: column;
+    transition: $transition;
 
-  @media screen and (max-width: $tablet) {
-    width: 880px;
-  }
+    @media screen and (max-width: $tablet) {
+      width: $siteWidthTablet;
+    }
 
-  @media screen and (max-width: $tabletPortrait) {
-    width: 560px;
-  }
+    @media screen and (max-width: $tabletPortrait) {
+      width: $siteWidthTabletPortrait;
+    }
 
-  @media screen and (max-width: $mobile) {
-    @include pad(4, 0);
-    width: 100%;
+    @media screen and (max-width: $mobile) {
+      @include pad(4, 0);
+      width: 100%;
+    }
   }
 }

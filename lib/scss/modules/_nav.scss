@@ -26,16 +26,10 @@
   }
 
   .nav-bar {
-    width: 0;
+    width: 100%;
     height: $space * 3;
     position: relative;
-    //border-bottom: 2px solid $colourPrimary;
     color: $colourSecondary;
-    transition: $transition;
-
-    &.active {
-      width: 100%;
-    }
 
     .filters {
       font-family: $fontStackAlt;
@@ -100,44 +94,6 @@
           text-decoration: underline;
         }
       }
-    }
-  }
-
-  .contact {
-    padding-top: $space;
-    padding-bottom: $space + 3px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    text-align: center;
-    cursor: pointer;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-
-    svg:nth-child(2) {
-      display: none;
-    }
-
-    @media screen and (min-width: $tabletPortrait) {
-      &:hover {
-        padding-bottom: $space * 1.25 + 3px;
-
-        svg:nth-child(1) {
-          display: none;
-        }
-        svg:nth-child(2) {
-          display: block;
-        }
-      }
-    }
-
-    @media screen and (max-width: $tabletPortrait) {
-      bottom: auto;
-      top: 0;
-      position: fixed;
-      padding: $space * 3;
-      padding-top: $space * 2;
     }
   }
 }

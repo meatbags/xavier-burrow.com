@@ -1,6 +1,9 @@
 // spacing
 $space: 8px;
 $width: $space * 100;
+$siteWidth: 1200px;
+$siteWidthTablet: 880px;
+$siteWidthTabletPortrait: 560px;
 
 // colour
 $colourPrimary: #222;
@@ -13,6 +16,7 @@ $gridSize: $space * 1;
 $black: $colourPrimary;
 $white: #fff;
 $light: #aaa;
+$backgroundCustom: linear-gradient(80deg, #222, #000, #444);
 
 // index
 $indexBackgroundImage: 1;
