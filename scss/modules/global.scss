@@ -1,0 +1,43 @@
+div, * {
+	box-sizing: border-box;
+	//outline: 1px solid rgba(white, 0.05);
+}
+
+html {
+	touch-action: manipulation;
+
+	&.is-mobile {
+		position: fixed;
+    width: 100%;
+		height: 100%;
+		touch-action: none;
+
+		body {
+			touch-action: none;
+		}
+	}
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	overflow: hidden;
+}
+
+body {
+	font-family: $fontStack;
+	font-size: $fontSize;
+	line-height: $lineHeight;
+	letter-spacing: $letterSpacing;
+	color: $colour;
+	overflow-x: hidden;
+	user-select: none;
+	background: $background;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}

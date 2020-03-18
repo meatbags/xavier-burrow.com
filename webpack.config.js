@@ -1,63 +1,80 @@
 var path = require('path');
 var webpack = require('webpack');
-var Uglify = require('uglifyjs-webpack-plugin');
-var MiniCssExtractPlugin = require("mini-css-extract-plugin");
-var appName = 'XB';
-var pathJS = './lib/js/main.js';
-var pathSCSS = './lib/scss/main.js';
-var pathOutput = 'lib/build';
+var MiniCssExtract = require("mini-css-extract-plugin");
+var UglifyJs = require("uglifyjs-webpack-plugin");
+var TerserJs = require("terser-webpack-plugin");
+var OptimizeCSSAssets = require("optimize-css-assets-webpack-plugin");
+var appName = 'XAVIER';
+var pathJS = './js/app.js';
+var pathSCSS = './scss/main.js';
+var pathOutput = 'build';
 
 module.exports = [{
-  entry: {'app.min': pathJS},
-  output: {
-    library: appName,
-    libraryTarget: 'var',
-    path: path.resolve(__dirname, pathOutput),
-    filename: '[name].js'
-  },
-  module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {loader: "babel-loader"}
-    }]
-  },
-  optimization: {
-    minimizer: [
-      new Uglify({
-        cache: true,
-        parallel: true,
-        uglifyOptions: {compress: false, ecma: 6, mangle: true, output: {comments: false}},
-        sourceMap: true
-      })
-    ]
-  },
-  stats: {colors: true, warnings: false}
-},{
-  entry: {'style.webpack': pathSCSS},
-  output: {
-    path: path.resolve(__dirname, pathOutput),
-    filename: '[name].js'
-  },
-  module: {
-    rules: [{
-      test: /\.scss$/,
-      use: [
-        MiniCssExtractPlugin.loader, {
-          loader: 'css-loader',
-          options: {importLoaders: 2, sourceMap: true}
-        }, {
-          loader: 'postcss-loader',
+    entry: {'app.min': pathJS},
+    output: {
+      library: appName,
+      libraryTarget: 'var',
+      path: path.resolve(__dirname, pathOutput),
+      filename: '[name].js'
+    },
+    module: {
+      rules: [{
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
           options: {
-            plugins: () => [require('autoprefixer')],
-            sourceMap: true
+            presets: [
+              [
+                "@babel/preset-env",
+                {targets: { chrome: 53, ie: 11 }}
+              ]
+            ]
           }
-        }, {
-          loader: 'sass-loader',
-          options: {sourceMap: true}
         }
+      }]
+    },
+    optimization: {
+      minimizer: [
+        new TerserJs({
+          test: /\.js(\?.*)?$/i,
+          terserOptions: {
+            mangle: true,
+          },
+        }),
+      ],
+    },
+    stats: {colors: true, warnings: false}
+  },{
+    entry: {'style.webpack': pathSCSS},
+    output: {
+      path: path.resolve(__dirname, pathOutput),
+      filename: '[name].js'
+    },
+    module: {
+      rules: [{
+        test: /\.scss$/,
+        use: [
+          MiniCssExtract.loader, {
+            loader: 'css-loader',
+            options: {importLoaders: 2, sourceMap: true}
+          }, {
+            loader: 'sass-loader',
+            options: {sourceMap: true}
+          }
+        ]
+      }]
+    },
+    optimization: {
+      minimizer: [
+        new UglifyJs({
+          cache: true,
+          parallel: true,
+          sourceMap: true
+        }),
+        new OptimizeCSSAssets({})
       ]
-    }]
-  },
-  plugins: [new MiniCssExtractPlugin({filename: "./style.css", allChunks: true})]
-}];
+    },
+    plugins: [new MiniCssExtract({filename: './style.min.css', allChunks: true})]
+  }
+];

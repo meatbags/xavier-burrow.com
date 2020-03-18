@@ -2,20 +2,31 @@
 
 <div class='wrapper'>
   <div class='wrapper__inner'>
-    <?php get_template_part('nav'); ?>
-    <div id='sections-target' class='sections'>
+    <div class='description'>
+      <?php
+      $query = new WP_Query('pagename=about');
+      if ($query->have_posts()) {
+        while ($query->have_posts()) {
+          $query->the_post();
+          echo get_the_content();
+        }
+      }
+      wp_reset_postdata();
+      ?>
+    </div>
+    <div class='grid'>
+    </div>
+    <!--
       <?php
         $query = new WP_Query(array('post_type' => 'projects', 'orderby' => 'menu_order', 'posts_per_page' => -1));
         if ($query->have_posts()) {
           while ($query->have_posts()) {
             $query->the_post();
-            get_template_part('index_section');
+            echo get_the_title() . '<br>';
           }
         }
       ?>
-    </div>
-    <?php get_template_part('index_pane'); ?>
-    <?php get_template_part('index_footer'); ?>
+    -->
   </div>
 </div>
 
