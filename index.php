@@ -25,7 +25,6 @@
         <div class='menu__item' data-target='view-contact'>contact</div>
       </div>
     </div>
-
     <!--
       <?php
         $query = new WP_Query(array('post_type' => 'projects', 'orderby' => 'menu_order', 'posts_per_page' => -1));
@@ -38,6 +37,10 @@
       ?>
     -->
   </div>
+</div>
+
+<div class='background'>
+  <div class='background__grid'></div>
 </div>
 
 <?php get_footer(); ?>

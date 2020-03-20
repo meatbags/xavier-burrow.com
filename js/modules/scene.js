@@ -3,71 +3,35 @@
 import Config from './config';
 import * as THREE from 'three';
 import Clamp from '../util/clamp';
+import Line from './line';
 
 class Scene {
   constructor() {
+    this.maxParticles = 1000;
     this.scene = new THREE.Scene();
   }
 
   bind(root) {
     this.ref = {};
-
-    // pointer
-    const geo = new THREE.BufferGeometry();
-    geo.setFromPoints([new THREE.Vector3()]);
-    const mat = new THREE.PointsMaterial({size: 1, sizeAttenuation: false});
-    this.pointer = new THREE.Points(geo, mat);
-    this.pointer.position.z = 50;
-    this.scene.add(this.pointer);
-    this.showHelper();
-  }
-
-  omputeLine() {
-    var MAX_POINTS = 500;
-    var geometry = new THREE.BufferGeometry();
-
-    // attributes
-    var positions = new Float32Array( MAX_POINTS * 3 ); // 3 vertices per point
-    geometry.setAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
-
-    // draw range
-    var drawCount = 2; // draw the first 2 points, only
-    geometry.setDrawRange( 0, drawCount );
-
-    // material
-    var material = new THREE.LineBasicMaterial( { color: 0xff0000 } );
+    this.particles = [];
 
     // line
-    var line = new THREE.Line( geometry,  material );
-    scene.add( line );
-    var positions = line.geometry.attributes.position.array;
-
-    var x, y, z, index;
-    x = y = z = index = 0;
-
-    for ( var i = 0, l = MAX_POINTS; i < l; i ++ ) {
-        positions[ index ++ ] = x;
-        positions[ index ++ ] = y;
-        positions[ index ++ ] = z;
-        x += ( Math.random() - 0.5 ) * 30;
-        y += ( Math.random() - 0.5 ) * 30;
-        z += ( Math.random() - 0.5 ) * 30;
+    this.lines = [];
+    for (let i=0; i<3; i++) {
+      const line = new Line(this);
+      this.lines.push(line);
     }
-    line.geometry.setDrawRange( 0, newValue );
-    line.geometry.attributes.position.needsUpdate = true; // required after the first render
-    line.geometry.computeBoundingSphere();
+
+    // floor
+    this.showHelper();
   }
 
   showHelper() {
     const s = Config.boxSize;
     const mat = new THREE.LineBasicMaterial({color: 0xffffff});
     const buffers = [
-      [-s, -s, -s, s, -s, -s, s, s, -s, -s, s, -s, -s, -s, -s],
-      [-s, -s, s, s, -s, s, s, s, s, -s, s, s, -s, -s, s],
-      [-s, -s, -s, -s, -s, s],
-      [-s, s, -s, -s, s, s],
-      [s, -s, -s, s, -s, s],
-      [s, s, -s, s, s, s],
+      [-s, -s, -s, s, -s, -s, s, -s, s, -s, -s, s, -s, -s, -s],
+      [-s, s, -s, s, s, -s, s, s, s, -s, s, s, -s, s, -s],
     ];
     buffers.forEach(buffer => {
       const points = new Float32Array(buffer.length);
@@ -81,11 +45,26 @@ class Scene {
     });
   }
 
+  getLineMesh(a, b) {
+    const geo = new THREE.BufferGeometry().setFromPoints([a, b]);
+    const mat = new THREE.LineBasicMaterial({color: 0xffffff});
+    const mesh = new THREE.Line(geo, mat);
+    return mesh;
+  }
+
   update(delta) {
-    const x = this.pointer.position.x + Math.random() - 0.5;
-    const y = this.pointer.position.y + Math.random() - 0.5;
-    this.pointer.position.x = Clamp(x, -50, 50);
-    this.pointer.position.y = Clamp(y, -50, 50);
+    for (let i=this.lines.length-1; i>-1; --i) {
+      const line = this.lines[i];
+      line.update(delta);
+      if (line.destroyFlag) {
+        line.destroy();
+        this.lines.splice(i, 1);
+      }
+    }
+
+    if (Math.random() > 0.98) {
+      this.lines.push(new Line(this));
+    }
   }
 }
 

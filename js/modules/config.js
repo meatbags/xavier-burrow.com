@@ -1,7 +1,7 @@
 /** Config */
 
 const Config = {
-  boxSize: 50,
+  boxSize: 80,
 };
 
 export default Config;
