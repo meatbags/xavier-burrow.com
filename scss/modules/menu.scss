@@ -1,0 +1,15 @@
+.menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  @include padding(3, 3);
+
+  .menu__inner {
+    display: flex;
+    pointer-events: all;
+
+    .menu__item {
+      cursor: pointer;
+    }
+  }
+}

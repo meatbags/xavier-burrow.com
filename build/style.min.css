@@ -156,7 +156,7 @@ html, body {
 
 body {
   font-family: "Karla", sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0;
   color: #FCEAF9;
@@ -184,9 +184,14 @@ a {
   background: transparent; }
 
 .wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none; }
   .wrapper .wrapper__inner {
     position: relative;
     width: 100%;
@@ -209,4 +214,35 @@ a {
       background-size: 32px 32px;
       background-position: 16px 16px;
       transform: translate(-50%, -50%); }
+
+.canvas-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: crosshair; }
+  .canvas-wrapper .canvas-wrapper__inner {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+    .canvas-wrapper .canvas-wrapper__inner canvas {
+      position: absolute;
+      top: 0;
+      left: 0; }
+
+.menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px; }
+  .menu .menu__inner {
+    display: flex;
+    pointer-events: all; }
+    .menu .menu__inner .menu__item {
+      cursor: pointer; }
 
