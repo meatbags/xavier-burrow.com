@@ -35,6 +35,7 @@ class Renderer {
   }
 
   setClippingPlanes() {
+    /*
     const d = Config.boxSize + 0.5;
     this.renderer.clippingPlanes = [
       new THREE.Plane(new THREE.Vector3(1, 0, 0), d),
@@ -44,6 +45,7 @@ class Renderer {
       new THREE.Plane(new THREE.Vector3(0, 0, 1), d),
       new THREE.Plane(new THREE.Vector3(0, 0, -1), d)
     ];
+    */
   }
 
   resize() {

@@ -22,7 +22,7 @@ class Camera {
   bind(root) {
     this.ref = {};
     this.ref.renderer = root.modules.renderer;
-    this.camera.position.set(-10, 0, -10);
+    this.camera.position.set(-5, 0, -5);
     this.camera.lookAt(this.origin);
     this.controls = new Controls({
       camera: this.camera,
@@ -39,14 +39,6 @@ class Camera {
     this.size = {x: window.innerWidth, y: window.innerHeight};
     this.camera.aspect = this.size.x / this.size.y;
     this.camera.updateProjectionMatrix();
-  }
-
-  setPosition() {
-    const x = Math.cos(this.angle) * this.distance;
-    const y = 0;
-    const z = Math.sin(this.angle) * this.distance;
-    this.camera.position.set(x, y, z);
-    this.camera.lookAt(this.origin);
   }
 
   update(delta) {

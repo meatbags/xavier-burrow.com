@@ -7,8 +7,8 @@ import Clamp from '../util/clamp';
 class Line {
   constructor(root) {
     const points = 1 + Math.floor(Math.random() * 100);
-    const speed = (5 + Math.random() * 10) * (Math.random() > 0.5 ? 1 : -1);
-    const jump = 1 + Math.random() * 4;
+    const speed = (0.5 + Math.random() * 1) * (Math.random() > 0.5 ? 1 : -1);
+    const jump = 0.1 + Math.random() * 0.4;
 
     // create buffer
     const floatingPoint = new THREE.Vector3();
@@ -30,13 +30,13 @@ class Line {
     }
     geo.setDrawRange(0, points);
     geo.attributes.position.needsUpdate = true;
-    
-    // create line
-    const x = (Math.random() - 0.5) * Config.boxSize * 2;
-    const y = (Math.random() - 0.5) * Config.boxSize;
-    const z = (Math.random() - 0.5) * Config.boxSize * 2;
-    this.line.position.set(x, y, z);
 
+    // create line
+    const x = (Math.random() - 0.5) * Config.boxSize;
+    const y = Math.random() * Config.boxSize;
+    const z = (Math.random() - 0.5) * Config.boxSize;
+    this.line.position.set(x, y, z);
+    
     // add to scene
     root.scene.add(this.line);
   }

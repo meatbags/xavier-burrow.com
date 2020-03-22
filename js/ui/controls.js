@@ -18,44 +18,34 @@ class Controls {
     this.isMobile = IsMobileDevice();
 
     // position
-    this.height = params.height || 2;
-    this.speed = params.speed || 3;
-    this.speedNoclip = this.speed * 4;
-    this.keys = {
-      up: false,
-      down: false,
-      left: false,
-      right: false,
-      jump: false,
-      noclip: false,
-    };
+    const x = this.camera.position.x;
+    const y = this.camera.position.y;
+    const z = this.camera.position.z;
+    this.height = params.height || 1.8;
+    this.speed = params.speed || 2;
+    this.speedNoclip = 10;
+    this.keys = {up: false, down: false, left: false, right: false, jump: false, noclip: false};
     this.position = {
-      x: this.camera.position.x,
-      y: this.camera.position.y,
-      z: this.camera.position.z,
-      target: this.camera.position.clone(),
+      x: x, y: y, z: z,
+      target: new THREE.Vector3(x, y, z),
       motion: new THREE.Vector3(),
-      motionTarget: new THREE.Vector3(),
     };
     this.el = CreateElement({
       class: 'controls',
       childNodes: [{
         class: 'controls__inner',
-        childNodes: [{
-          class: 'controls__control controls__control--left',
-        }, {
-          class: 'controls__control controls__control--right',
-        }, {
-          class: 'controls__control controls__control--up',
-        }, {
-          class: 'controls__control controls__control--down',
-        }]
+        childNodes: [
+          { class: 'controls__control controls__control--left', },
+          { class: 'controls__control controls__control--right', },
+          { class: 'controls__control controls__control--up', },
+          { class: 'controls__control controls__control--down', },
+        ]
       }]
     });
-    document.querySelector('body').appendChild(this.el);
-    if (this.isMobile) {
+    if (!this.isMobile) {
       this.el.classList.add('hidden');
     }
+    document.querySelector('body').appendChild(this.el);
 
     // rotation
     this.maxPitch = Math.PI * 0.25;
@@ -88,9 +78,7 @@ class Controls {
   onMouseDown(evt) {
     // calculate working area
     const rect = this.domTarget.getBoundingClientRect();
-    this.width = rect.width;
-    this.height = rect.height;
-    this.centre = {x: this.width / 2, y: this.height / 2,};
+    this.centre = {x: rect.width / 2, y: rect.height / 2,};
 
     // cache rotation
     this.rotation.origin.yaw = this.rotation.yaw;
@@ -98,7 +86,7 @@ class Controls {
 
     // calculate rotation size basis
     this.rotation.size.pitch = (this.camera.fov / 2) * (Math.PI / 180);
-    this.rotation.size.yaw = this.rotation.size.pitch * (this.width / this.height);
+    this.rotation.size.yaw = this.rotation.size.pitch * (rect.width / rect.height);
 
     // set touchmove timeout
     this.touchMoveTimeout = false;
@@ -180,44 +168,40 @@ class Controls {
       const speed = (this.keys.noclip) ? this.speedNoclip * (1 - Math.abs(Math.sin(this.rotation.pitch))) : this.speed;
       const ws = ((this.keys.up) ? 1 : 0) + ((this.keys.down) ? -1 : 0);
       const ad = ((this.keys.left) ? 1 : 0) + ((this.keys.right) ? -1 : 0);
-      const pi2 = Math.PI / 2;
       const scale = ws != 0 && ad != 0 ? 0.7071 : 1;
-      this.position.motionTarget.x = (Math.sin(this.rotation.yaw) * speed * ws + Math.sin(this.rotation.yaw + pi2) * speed * ad) * scale;
-      this.position.motionTarget.z = (Math.cos(this.rotation.yaw) * speed * ws + Math.cos(this.rotation.yaw + pi2) * speed * ad) * scale;
+      this.position.motion.x = (Math.sin(this.rotation.yaw) * speed * ws + Math.sin(this.rotation.yaw + Math.PI / 2) * speed * ad) * scale;
+      this.position.motion.z = (Math.cos(this.rotation.yaw) * speed * ws + Math.cos(this.rotation.yaw + Math.PI / 2) * speed * ad) * scale;
     } else {
-      this.position.motionTarget.x = 0;
-      this.position.motionTarget.z = 0;
+      this.position.motion.x = 0;
+      this.position.motion.z = 0;
     }
 
     // noclip
     if (this.keys.noclip) {
-      this.falling = false;
       if (this.keys.up || this.keys.down) {
         const d = ((this.keys.up) ? 1 : 0) + ((this.keys.down) ? -1 : 0);
-        this.position.motionTarget.y = Math.sin(this.rotation.target.pitch) * d * this.speedNoclip;
+        this.position.motion.y = Math.sin(this.rotation.target.pitch) * d * this.speedNoclip;
       } else {
-        this.position.motionTarget.y = 0;
+        this.position.motion.y = 0;
       }
-      this.position.motion.y = this.position.motionTarget.y;
     }
 
-    // set motion
-    this.position.motion.x = this.position.motionTarget.x;
-    this.position.motion.z = this.position.motionTarget.z;
-
-    // set target position
+    // set position
     this.position.target.x += this.position.motion.x * delta;
     this.position.target.y += this.position.motion.y * delta;
     this.position.target.z += this.position.motion.z * delta;
+    this.position.x = Blend(this.position.x, this.position.target.x, this.blendPosition);
+    this.position.y = Blend(this.position.y, this.position.target.y, this.blendPosition);
+    this.position.z = Blend(this.position.z, this.position.target.z, this.blendPosition);
   }
 
   update(delta) {
     this.updatePosition(delta);
 
     // position
-    this.camera.position.x = Blend(this.position.x, this.position.target.x, this.blendPosition);
-    this.camera.position.y = Blend(this.position.y, this.position.target.y + this.height, this.blendPosition);
-    this.camera.position.z = Blend(this.position.z, this.position.target.z, this.blendPosition);
+    this.camera.position.x = this.position.x;
+    this.camera.position.y = this.position.y + this.height;
+    this.camera.position.z = this.position.z;
 
     // rotation
     this.rotation.yaw += MinAngleBetween(this.rotation.yaw, this.rotation.target.yaw) * this.blendRotation;

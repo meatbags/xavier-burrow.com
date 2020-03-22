@@ -18,8 +18,8 @@ class Scene {
     // line
     this.lines = [];
     for (let i=0; i<10; i++) {
-      //const line = new Line(this);
-      //this.lines.push(line);
+      const line = new Line(this);
+      this.lines.push(line);
     }
 
     // floor
@@ -27,23 +27,19 @@ class Scene {
   }
 
   showHelper() {
-    const mesh = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1), new THREE.MeshStandardMaterial());
-    this.scene.add(mesh);
-    /*
-    var geometry = new THREE.SphereBufferGeometry(100, 100, 100);
-    const wireframe = new THREE.WireframeGeometry(geometry);
+    const geo = new THREE.PlaneBufferGeometry(3, 3, 8, 8);
+    const wireframe = new THREE.WireframeGeometry(geo);
     const line = new THREE.LineSegments(wireframe);
+    line.rotation.x = Math.PI / 2;
     line.material.depthTest = false;
-    line.material.opacity = 0.25;
-    line.material.transparent = true;
     this.scene.add(line);
 
-
-    const s = Config.boxSize;
+    const s = Config.boxSize / 2;
+    const t = Config.boxSize;
     const mat = new THREE.LineBasicMaterial({color: 0xffffff});
     const buffers = [
-      [-s, -s, -s, s, -s, -s, s, -s, s, -s, -s, s, -s, -s, -s],
-      [-s, s, -s, s, s, -s, s, s, s, -s, s, s, -s, s, -s],
+      [-s, 0, -s, s, 0, -s, s, 0, s, -s, 0, s, -s, 0, -s],
+      [-s, t, -s, s, t, -s, s, t, s, -s, t, s, -s, t, -s],
     ];
     buffers.forEach(buffer => {
       const points = new Float32Array(buffer.length);
@@ -55,7 +51,6 @@ class Scene {
       lines.geometry.computeBoundingSphere();
       this.scene.add(lines);
     });
-    */
   }
 
   update(delta) {}

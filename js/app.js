@@ -29,7 +29,7 @@ class App {
         this.resize();
       }, 200);
     });
-
+    
     // start
     this.modules.loop.start();
   }
