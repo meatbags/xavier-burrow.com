@@ -17,9 +17,9 @@ class Scene {
 
     // line
     this.lines = [];
-    for (let i=0; i<3; i++) {
-      const line = new Line(this);
-      this.lines.push(line);
+    for (let i=0; i<10; i++) {
+      //const line = new Line(this);
+      //this.lines.push(line);
     }
 
     // floor
@@ -27,6 +27,18 @@ class Scene {
   }
 
   showHelper() {
+    const mesh = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1), new THREE.MeshStandardMaterial());
+    this.scene.add(mesh);
+    /*
+    var geometry = new THREE.SphereBufferGeometry(100, 100, 100);
+    const wireframe = new THREE.WireframeGeometry(geometry);
+    const line = new THREE.LineSegments(wireframe);
+    line.material.depthTest = false;
+    line.material.opacity = 0.25;
+    line.material.transparent = true;
+    this.scene.add(line);
+
+
     const s = Config.boxSize;
     const mat = new THREE.LineBasicMaterial({color: 0xffffff});
     const buffers = [
@@ -43,29 +55,10 @@ class Scene {
       lines.geometry.computeBoundingSphere();
       this.scene.add(lines);
     });
+    */
   }
 
-  getLineMesh(a, b) {
-    const geo = new THREE.BufferGeometry().setFromPoints([a, b]);
-    const mat = new THREE.LineBasicMaterial({color: 0xffffff});
-    const mesh = new THREE.Line(geo, mat);
-    return mesh;
-  }
-
-  update(delta) {
-    for (let i=this.lines.length-1; i>-1; --i) {
-      const line = this.lines[i];
-      line.update(delta);
-      if (line.destroyFlag) {
-        line.destroy();
-        this.lines.splice(i, 1);
-      }
-    }
-
-    if (Math.random() > 0.98) {
-      this.lines.push(new Line(this));
-    }
-  }
+  update(delta) {}
 }
 
 export default Scene;

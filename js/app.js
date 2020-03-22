@@ -24,6 +24,11 @@ class App {
     // resize
     this.resize();
     window.addEventListener('resize', () => { this.resize(); });
+    window.addEventListener('orientationchange', () => {
+      setTimeout(() => {
+        this.resize();
+      }, 200);
+    });
 
     // start
     this.modules.loop.start();

@@ -30,7 +30,7 @@ class Loop {
     this.now = performance.now();
 
     // go!
-    this.loop();
+    this._loop();
   }
 
   start() {
@@ -48,8 +48,8 @@ class Loop {
     }
   }
 
-  loop() {
-    requestAnimationFrame(() => { this.loop(); });
+  _loop() {
+    requestAnimationFrame(() => { this._loop(); });
 
     if (this.active) {
       const now = performance.now();
