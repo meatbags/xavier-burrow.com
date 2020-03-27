@@ -4,6 +4,7 @@ import Camera from './modules/camera';
 import Loop from './modules/loop';
 import Renderer from './modules/renderer';
 import Scene from './modules/scene';
+import Navigation from './modules/navigation';
 
 class App {
   constructor() {
@@ -12,6 +13,7 @@ class App {
       loop: new Loop(),
       renderer: new Renderer(),
       scene: new Scene(),
+      navigation: new Navigation(),
     };
 
     // bind modules
@@ -29,7 +31,7 @@ class App {
         this.resize();
       }, 200);
     });
-    
+
     // start
     this.modules.loop.start();
   }

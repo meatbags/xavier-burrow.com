@@ -16,9 +16,9 @@
 	<?php wp_head(); ?>
 	<script>
 		/* <![CDATA[ */
-		var themePath = '<?php echo get_template_directory_uri(); ?>';
-		var pageTitle = '<?php echo get_the_title(); ?>';
-		var isHome = '<?php echo is_home(); ?>';
+		var APP_ROOT = '<?php echo get_template_directory_uri(); ?>';
+		var PAGE_TITLE = '<?php echo get_the_title(); ?>';
+		var IS_HOME = '<?php echo is_home(); ?>';
 		/* ]]> */
 	</script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-60746754-6"></script>

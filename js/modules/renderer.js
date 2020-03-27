@@ -8,7 +8,7 @@ import { AfterimagePass } from 'three/examples/jsm/postprocessing/AfterimagePass
 
 class Renderer {
   constructor() {
-    this.renderer = new THREE.WebGLRenderer({antialias: false, alpha: true});
+    this.renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
     this.renderer.outputEncoding = THREE.GammaEncoding;
     this.renderer.setClearColor(0x0, 0);
     this.renderer.gammaFactor = 2.0;

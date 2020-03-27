@@ -202,7 +202,7 @@ a {
       padding-top: 24px;
       padding-bottom: 24px;
       font-size: 16px;
-      width: 15%; }
+      width: 25%; }
 
 .canvas-wrapper {
   position: absolute;
@@ -223,7 +223,7 @@ a {
 
 .menu {
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
   padding-left: 24px;
   padding-right: 24px;
@@ -252,4 +252,57 @@ a {
     height: 200px;
     transform: translate(-50%, -50%);
     border: 1px solid #FCEAF9; }
+
+.contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transition: opacity 0.35s, transform 0.35s;
+  opacity: 0; }
+  .contact .contact__inner {
+    perspective: 500px;
+    width: 300px;
+    height: 200px;
+    position: relative; }
+    .contact .contact__inner .contact__card {
+      width: 100%;
+      height: 100%;
+      background: #FCEAF9;
+      transform: rotateX(90deg);
+      transition: transform 0.35s; }
+      .contact .contact__inner .contact__card .contact__card-inner {
+        width: 100%;
+        height: 100%;
+        color: #0c0c0f;
+        font-weight: bold;
+        font-style: italic;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative; }
+        .contact .contact__inner .contact__card .contact__card-inner .contact__card-close {
+          padding-left: 8px;
+          padding-right: 8px;
+          padding-top: 7px;
+          padding-bottom: 7px;
+          line-height: 1;
+          position: absolute;
+          top: 0;
+          right: 0;
+          cursor: pointer; }
+  .contact.active {
+    opacity: 1;
+    transform: translate(0, 0); }
+    .contact.active .contact__card {
+      transform: rotateY(0deg); }
+    .contact.active .contact__inner {
+      pointer-events: all; }
 

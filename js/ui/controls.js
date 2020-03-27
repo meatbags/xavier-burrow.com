@@ -51,8 +51,8 @@ class Controls {
     this.maxPitch = Math.PI * 0.25;
     this.minPitch = -Math.PI * 0.25;
     const d = this.camera.position.distanceTo(new THREE.Vector3());
-    const pitch = params.pitch || Math.atan2(this.camera.position.y, d);
-    const yaw = params.yaw || Math.atan2(-this.camera.position.z, -this.camera.position.x);
+    const pitch = params.pitch || this.camera.rotation.x;
+    const yaw = params.yaw || this.camera.rotation.y;
     this.rotation = {
       pitch: pitch,
       yaw: yaw,
@@ -169,8 +169,8 @@ class Controls {
       const ws = ((this.keys.up) ? 1 : 0) + ((this.keys.down) ? -1 : 0);
       const ad = ((this.keys.left) ? 1 : 0) + ((this.keys.right) ? -1 : 0);
       const scale = ws != 0 && ad != 0 ? 0.7071 : 1;
-      this.position.motion.x = (Math.sin(this.rotation.yaw) * speed * ws + Math.sin(this.rotation.yaw + Math.PI / 2) * speed * ad) * scale;
-      this.position.motion.z = (Math.cos(this.rotation.yaw) * speed * ws + Math.cos(this.rotation.yaw + Math.PI / 2) * speed * ad) * scale;
+      this.position.motion.x = (Math.sin(this.rotation.yaw) * speed * ws + Math.sin(this.rotation.yaw + Math.PI / 2) * speed * ad) * scale * -1;
+      this.position.motion.z = (Math.cos(this.rotation.yaw) * speed * ws + Math.cos(this.rotation.yaw + Math.PI / 2) * speed * ad) * scale * -1;
     } else {
       this.position.motion.x = 0;
       this.position.motion.z = 0;
@@ -190,6 +190,9 @@ class Controls {
     this.position.target.x += this.position.motion.x * delta;
     this.position.target.y += this.position.motion.y * delta;
     this.position.target.z += this.position.motion.z * delta;
+    if (!this.keys.noclip) {
+      this.position.target.y = 0;
+    }
     this.position.x = Blend(this.position.x, this.position.target.x, this.blendPosition);
     this.position.y = Blend(this.position.y, this.position.target.y, this.blendPosition);
     this.position.z = Blend(this.position.z, this.position.target.z, this.blendPosition);
@@ -207,7 +210,7 @@ class Controls {
     this.rotation.yaw += MinAngleBetween(this.rotation.yaw, this.rotation.target.yaw) * this.blendRotation;
     this.rotation.pitch = Blend(this.rotation.pitch, this.rotation.target.pitch, this.blendRotation);
     this.camera.rotation.x = this.rotation.pitch;
-    this.camera.rotation.y = this.rotation.yaw + Math.PI;
+    this.camera.rotation.y = this.rotation.yaw;
   }
 }
 

@@ -19,7 +19,7 @@ class Line {
     this.line = new THREE.Line(geo, mat);
 
     // set buffer data
-    const delta = 1/60;
+    const delta = 1 / 60;
     for (let i=0, lim=points*3; i<lim; i+=3) {
       floatingPoint.x += (Math.random() - 0.5) * jump;
       floatingPoint.y += (Math.random() - 0.5) * jump + speed * delta;
@@ -36,8 +36,9 @@ class Line {
     const y = Math.random() * Config.boxSize;
     const z = (Math.random() - 0.5) * Config.boxSize;
     this.line.position.set(x, y, z);
-    
+
     // add to scene
+    this.buffer = buffer;
     root.scene.add(this.line);
   }
 }

@@ -8,10 +8,11 @@ import Controls from '../ui/controls';
 class Camera {
   constructor(root) {
     this.offset = 0.1;
-    this.camera = new THREE.PerspectiveCamera(65, 1, 0.1, 2000000);
+    const fov = 68;
+    this.camera = new THREE.PerspectiveCamera(fov, 1, 0.1, 2000000);
     this.camera.up = new THREE.Vector3(0, 1, 0);
     this.camera.rotation.order = 'YXZ';
-    this.camera.fov = 65;
+    this.camera.fov = fov;
     this.camera.updateProjectionMatrix();
     this.origin = new THREE.Vector3();
     this.angle = 0;
@@ -22,8 +23,10 @@ class Camera {
   bind(root) {
     this.ref = {};
     this.ref.renderer = root.modules.renderer;
-    this.camera.position.set(-5, 0, -5);
+    this.camera.position.set(3, 0, 0);
     this.camera.lookAt(this.origin);
+
+    // bind controls
     this.controls = new Controls({
       camera: this.camera,
       domTarget: this.ref.renderer.renderer.domElement,
