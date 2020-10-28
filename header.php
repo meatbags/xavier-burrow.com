@@ -11,7 +11,7 @@
 	<meta property='og:image' content='<?php echo get_template_directory_uri(); ?>/images/og-image.jpg'>
 	<meta property='og:site_name' content='Xavier Burrow'>
 	<meta property='og:description' content='<?php echo get_bloginfo('description'); ?>'>
-	<link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png">
 	<?php wp_head(); ?>
 	<script>

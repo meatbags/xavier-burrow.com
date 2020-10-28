@@ -55,7 +55,7 @@ function xb_custom_pings( $comment ){
 }
 
 function xb_load_scripts() {
-	wp_enqueue_script('xbinflate', get_stylesheet_directory_uri() . '/build/inflate.min.js');
+	// wp_enqueue_script('xbinflate', get_stylesheet_directory_uri() . '/build/inflate.min.js');
 	wp_enqueue_script('xbapp', get_stylesheet_directory_uri() . '/build/app.min.js');
   wp_register_style('xbstyle', get_stylesheet_directory_uri() . '/build/style.min.css' );
 	wp_enqueue_style('xbstyle');

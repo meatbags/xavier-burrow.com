@@ -5,8 +5,8 @@ var UglifyJs = require("uglifyjs-webpack-plugin");
 var TerserJs = require("terser-webpack-plugin");
 var OptimizeCSSAssets = require("optimize-css-assets-webpack-plugin");
 var appName = 'XAVIER';
-var pathJS = './js/app.js';
-var pathSCSS = './scss/main.js';
+var pathJS = './lib/js/app.js';
+var pathSCSS = './lib/scss/main.js';
 var pathOutput = 'build';
 
 module.exports = [{
