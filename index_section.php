@@ -20,7 +20,7 @@
 <div class='section hidden <?php echo $classList; ?>' data-index='<?php echo $order; ?>'>
   <div class='section__inner'>
     <div class='project-title'>
-      <?php echo $order . '. ' . $title; ?>
+      <span class='project-title__text'><?php echo $order . '. ' . $title; ?></span>
     </div>
     <div class='image-card'>
       <div class='filter-icon'></div>

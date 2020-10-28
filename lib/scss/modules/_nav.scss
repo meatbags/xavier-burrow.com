@@ -29,10 +29,9 @@
     width: 100%;
     height: $space * 3;
     position: relative;
-    color: $colourSecondary;
+    // color: $colourSecondary;
 
     .filters {
-      font-family: $fontStackAlt;
       font-size: $fontSmall;
       display: flex;
       justify-content: flex-start;
@@ -40,7 +39,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      
+
       .label {
         @include padding(1, 1, 1, 0);
 

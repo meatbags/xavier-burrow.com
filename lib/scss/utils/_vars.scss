@@ -7,13 +7,13 @@ $siteWidthTabletPortrait: 560px;
 
 // colour
 $colourPrimary: #222;
-$colourSecondary: #821;
+$colourSecondary: blue;
 $colourBackground: #fff;
 $colourSecondaryDark: #a00;
 $colourGrid: rgba(#000, 0.025);
 $colourGridAlt: rgba(#fff, 0.025);
 $gridSize: $space * 1;
-$black: $colourPrimary;
+$black: black;
 $white: #fff;
 $light: #aaa;
 $backgroundCustom: linear-gradient(80deg, #222, #000, #444);
@@ -30,11 +30,11 @@ $indexWindow: 600;
 $indexLoadingScreen: 1000;
 
 // box shadow
-$boxShadow: 5px 5px 10px rgba($colourSecondary, 0.5);
-$boxShadowAlt: 10px 10px 30px $colourSecondary;
+$boxShadow: 3px 3px 10px rgba($colourSecondary, 0.5);
+$boxShadowAlt: 5px 5px 30px $colourSecondary;
 
 // borders
-$border: 1px solid $black;
+$border: 1px solid $white;
 
 // animation
 $transition: 0.8s;

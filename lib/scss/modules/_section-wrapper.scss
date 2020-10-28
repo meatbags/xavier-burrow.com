@@ -6,8 +6,9 @@
   z-index: $indexWrapper;
   display: flex;
   justify-content: center;
-  background-size: $gridSize $gridSize;
-  background-image: linear-gradient(to right, $colourGrid 1px, transparent 1px), linear-gradient(to bottom, $colourGrid 1px, transparent 1px);
+  background-size: 16px 16px;
+  background-image: linear-gradient(to right, #222 1px, transparent 1px),
+    linear-gradient(to bottom, #222 1px, transparent 1px);
 
   .wrapper__inner {
     width: $siteWidth;

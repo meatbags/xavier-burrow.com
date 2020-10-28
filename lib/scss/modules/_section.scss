@@ -35,9 +35,13 @@ $sectionHeightInner: 140px;
 
     &.filtered {
       .section__inner {
+        .project-title__text {
+          opacity: 0.25
+        }
+
         .image-card {
           img {
-            opacity: 0.2;
+            opacity: 0.25;
           }
 
           .filter-icon {
@@ -52,23 +56,26 @@ $sectionHeightInner: 140px;
     }
 
     .section__inner {
-      transition: 0.1s;
+      //transition: 0.1s;
+      background: $black;
 
       .project-title {
-        @include pad(0, 1);
+        @include pad(1, 0.5);
         text-transform: lowercase;
         font-size: $fontSmall;
-        //color: $colourSecondary;
+        border: 1px solid $white;
       }
 
       .image-card {
         box-shadow: $boxShadow;
         width: $sectionWidth;
         height: $sectionHeightInner;
-        background: $white;
+        //background: $white;
         overflow: hidden;
         position: relative;
         transition: box-shadow 0.1s;
+        border: 1px solid $white;
+        border-top: none;
 
         @media screen and (max-width: $mobile) {
           width: 100%;
@@ -76,7 +83,7 @@ $sectionHeightInner: 140px;
         }
 
         img {
-          transition: opacity 0.5s;
+          //transition: opacity 0.5s;
           width: 100%;
         }
 
@@ -91,10 +98,7 @@ $sectionHeightInner: 140px;
       }
 
       &:hover {
-        .image-card {
-          outline: $border;
-          box-shadow: $boxShadowAlt;
-        }
+        box-shadow: $boxShadowAlt;
       }
     }
 
